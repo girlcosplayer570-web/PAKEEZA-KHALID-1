@@ -1,11 +1,10 @@
-
 ```html
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pakeeza Khalid | Global Health Web Architect & Medical Content Hub</title>
+    <title>Pakeeza Khalid | CEO & Global Health Web Development Agency</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -14,888 +13,614 @@
             theme: {
                 extend: {
                     colors: {
-                        medical: {
-                            50: '#f0fdfa',
-                            100: '#ccfbf1',
-                            500: '#14b8a6',
-                            600: '#0d9488',
-                            700: '#0f766e',
-                            800: '#115e59',
-                            900: '#134e4a',
-                        },
-                        accent: {
-                            500: '#0284c7',
-                            600: '#0369a1',
+                        neon: {
+                            pink: '#ff007f',
+                            purple: '#8b5cf6',
+                            fuchsia: '#d946ef',
+                            cyan: '#06b6d4',
+                            emerald: '#10b981',
+                            amber: '#f59e0b',
                         }
                     },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                    keyframes: {
+                        meshMove: {
+                            '0%, 100%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.95)' },
+                        },
+                        shimmerFast: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        },
+                        pulseGlowNeon: {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(217, 70, 239, 0.4), 0 0 30px rgba(6, 182, 212, 0.2)' },
+                            '50%': { boxShadow: '0 0 25px rgba(255, 0, 127, 0.7), 0 0 45px rgba(16, 185, 129, 0.4)' },
+                        }
+                    },
+                    animation: {
+                        'mesh': 'meshMove 12s ease-in-out infinite',
+                        'shimmer': 'shimmerFast 4s linear infinite',
+                        'neon-glow': 'pulseGlowNeon 3s ease-in-out infinite',
                     }
                 }
             }
         }
     </script>
-    <!-- Fonts & Icons -->
+    <!-- Font Awesome & Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        body { font-family: 'Inter', sans-serif; transition: background-color 0.3s, color 0.3s; }
-        .hero-glow {
-            background: radial-gradient(circle at 50% 20%, rgba(13, 148, 136, 0.18) 0%, rgba(2, 132, 199, 0.05) 50%, rgba(15, 23, 42, 0) 80%);
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
-        ::-webkit-scrollbar-thumb { background: #0d9488; border-radius: 4px; }
+
+        /* High contrast mode enforcement */
+        html.dark body {
+            background-color: #060913;
+            color: #f8fafc;
+        }
+        html:not(.dark) body {
+            background-color: #f4f6fb;
+            color: #0f172a;
+        }
+
+        /* Animated Shimmer Text */
+        .shimmer-gradient-text {
+            background: linear-gradient(135deg, #ff007f, #d946ef, #8b5cf6, #06b6d4, #10b981, #ff007f);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmerFast 5s ease infinite;
+        }
+
+        /* Vibrant Glassmorphism Cards */
+        .vibrant-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 10;
+        }
+        html:not(.dark) .vibrant-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1.5px solid rgba(217, 70, 239, 0.25);
+            box-shadow: 0 10px 25px -5px rgba(217, 70, 239, 0.1), 0 8px 10px -6px rgba(6, 182, 212, 0.1);
+        }
+        html.dark .vibrant-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1.5px solid rgba(217, 70, 239, 0.3);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        .vibrant-card:hover {
+            transform: translateY(-7px) scale(1.01);
+        }
+        html:not(.dark) .vibrant-card:hover {
+            border-color: rgba(255, 0, 127, 0.6);
+            box-shadow: 0 20px 35px -10px rgba(255, 0, 127, 0.25), 0 10px 15px -5px rgba(6, 182, 212, 0.2);
+        }
+        html.dark .vibrant-card:hover {
+            border-color: rgba(217, 70, 239, 0.8);
+            box-shadow: 0 20px 35px -10px rgba(217, 70, 239, 0.35), 0 0 20px rgba(6, 182, 212, 0.2);
+        }
+
+        /* Hyper Buttons */
+        .hyper-btn {
+            background: linear-gradient(135deg, #ff007f 0%, #d946ef 40%, #8b5cf6 80%, #06b6d4 100%);
+            background-size: 200% 200%;
+            transition: all 0.3s ease;
+        }
+        .hyper-btn:hover {
+            background-position: right center;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(217, 70, 239, 0.5);
+        }
+
+        /* Ambient glowing background blobs */
+        .glow-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            pointer-events: none;
+            opacity: 0.35;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #060913; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #ff007f, #8b5cf6, #06b6d4); border-radius: 5px; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 min-h-screen flex flex-col selection:bg-medical-600 selection:text-white">
+<body class="min-h-screen flex flex-col selection:bg-fuchsia-500 selection:text-white relative overflow-x-hidden">
 
-    <!-- Header / Navigation Bar -->
-    <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/85 dark:bg-slate-900/85 border-b border-slate-200 dark:border-slate-800 transition-colors">
+    <!-- Ambient Glowing Background Lighting -->
+    <div class="glow-blob w-[500px] h-[500px] bg-neon-pink -top-20 -left-20 animate-mesh"></div>
+    <div class="glow-blob w-[600px] h-[600px] bg-neon-cyan top-1/3 -right-20 animate-mesh" style="animation-delay: -4s;"></div>
+    <div class="glow-blob w-[550px] h-[550px] bg-neon-purple bottom-10 left-10 animate-mesh" style="animation-delay: -8s;"></div>
+
+    <!-- 1. TOP HYPER-VIBRANT ANNOUNCEMENT BANNER -->
+    <div class="bg-gradient-to-r from-neon-pink via-neon-fuchsia via-neon-purple to-neon-cyan text-white py-2.5 px-4 text-center text-xs sm:text-sm font-extrabold shadow-lg flex items-center justify-center gap-2 relative z-50">
+        <i class="fa-solid fa-crown text-amber-300 text-base animate-bounce"></i>
+        <span>
+            <strong>EXECUTIVE NOTICE:</strong> Pakeeza Khalid is the <u>CEO & Original Owner</u> of this site & business • Co-Owned by <strong>Wajeeha Munir</strong> & <strong>Razia Jabeen</strong> worldwide!
+        </span>
+    </div>
+
+    <!-- 2. STICKY VIBRANT HEADER -->
+    <header class="sticky top-0 z-40 w-full backdrop-blur-xl bg-white/80 dark:bg-slate-950/80 border-b border-fuchsia-500/20 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <!-- Brand Profile Logo -->
-                <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-medical-600 to-accent-500 flex items-center justify-center text-white font-extrabold text-lg shadow-md shadow-medical-600/30">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo & CEO Title -->
+                <div class="flex items-center gap-3.5 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-neon-pink via-neon-fuchsia to-neon-cyan flex items-center justify-center text-white font-black text-xl shadow-lg animate-neon-glow">
                         PK
                     </div>
                     <div>
-                        <span class="text-lg font-bold bg-gradient-to-r from-slate-900 via-slate-800 to-medical-700 dark:from-white dark:to-medical-400 bg-clip-text text-transparent block leading-tight">
-                            Pakeeza Khalid
-                        </span>
-                        <span class="text-[10px] font-semibold tracking-wider text-medical-600 dark:text-medical-400 uppercase block">Global Health Web Architect</span>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl font-black text-slate-900 dark:text-white tracking-tight">
+                                Pakeeza Khalid
+                            </span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-gradient-to-r from-neon-pink to-neon-fuchsia text-white uppercase shadow-sm">CEO</span>
+                        </div>
+                        <span class="text-xs font-extrabold text-fuchsia-600 dark:text-fuchsia-400 block">Global Health Web Agency</span>
                     </div>
                 </div>
 
-                <!-- Desktop Nav -->
-                <nav class="hidden lg:flex space-x-7 text-sm font-medium">
-                    <a href="#articles" class="hover:text-medical-600 dark:hover:text-medical-400 transition-colors">20 Health Articles</a>
-                    <a href="#services" class="hover:text-medical-600 dark:hover:text-medical-400 transition-colors">Web Services</a>
-                    <a href="#estimator" class="hover:text-medical-600 dark:hover:text-medical-400 transition-colors">Cost Estimator</a>
-                    <a href="#global-reach" class="hover:text-medical-600 dark:hover:text-medical-400 transition-colors">Global Footprint</a>
-                    <a href="#saved-articles" class="hover:text-medical-600 dark:hover:text-medical-400 transition-colors flex items-center gap-1.5">
-                        <i class="fa-solid fa-bookmark text-medical-600"></i>
-                        <span>Bookmarks</span>
-                        <span id="saved-count" class="px-1.5 py-0.2 text-[11px] rounded-full bg-medical-500 text-white font-bold">0</span>
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex space-x-7 text-sm font-extrabold text-slate-800 dark:text-slate-100">
+                    <a href="#leadership" class="hover:text-neon-pink dark:hover:text-neon-fuchsia transition-colors">Leadership</a>
+                    <a href="#articles" class="hover:text-neon-pink dark:hover:text-neon-fuchsia transition-colors">20 Health Guides</a>
+                    <a href="#services" class="hover:text-neon-pink dark:hover:text-neon-fuchsia transition-colors">Web Services</a>
+                    <a href="#estimator" class="hover:text-neon-pink dark:hover:text-neon-fuchsia transition-colors">Cost Calculator</a>
+                    <a href="#saved-articles" class="hover:text-neon-pink dark:hover:text-neon-fuchsia transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-bookmark text-neon-pink"></i>
+                        <span>Saved</span>
+                        <span id="saved-count" class="px-2 py-0.5 text-[10px] rounded-full bg-neon-pink text-white font-black">0</span>
                     </a>
                 </nav>
 
-                <!-- Actions -->
-                <div class="hidden sm:flex items-center space-x-3">
-                    <button id="theme-toggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle Theme">
-                        <i id="theme-icon-dark" class="fa-solid fa-moon text-base hidden"></i>
-                        <i id="theme-icon-light" class="fa-solid fa-sun text-base hidden text-amber-400"></i>
+                <!-- Header Action Buttons -->
+                <div class="flex items-center gap-3">
+                    <button id="theme-toggle" class="p-3 rounded-2xl border-2 border-fuchsia-500/30 text-slate-800 dark:text-slate-100 hover:bg-fuchsia-500/10 transition-colors" aria-label="Toggle Theme">
+                        <i id="theme-icon-dark" class="fa-solid fa-moon text-lg hidden text-neon-purple"></i>
+                        <i id="theme-icon-light" class="fa-solid fa-sun text-lg hidden text-amber-400"></i>
                     </button>
-                    <button onclick="openConsultationModal()" class="px-4 py-2 rounded-xl bg-medical-600 hover:bg-medical-700 text-white font-medium text-sm transition-all shadow-md shadow-medical-600/20 hover:shadow-lg hover:shadow-medical-600/30">
-                        Request Health Web Solution
+                    <button onclick="openConsultationModal()" class="hidden sm:flex px-5 py-3 rounded-2xl text-white font-black text-xs sm:text-sm hyper-btn items-center gap-2 shadow-md">
+                        <i class="fa-solid fa-rocket text-xs"></i>
+                        Get Quote
                     </button>
-                </div>
 
-                <!-- Mobile Menu Button -->
-                <div class="flex items-center gap-2 lg:hidden">
-                    <button id="theme-toggle-mobile" class="p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300">
-                        <i id="theme-icon-dark-mobile" class="fa-solid fa-moon text-sm hidden"></i>
-                        <i id="theme-icon-light-mobile" class="fa-solid fa-sun text-sm hidden text-amber-400"></i>
-                    </button>
-                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
-                        <i id="mobile-menu-icon" class="fa-solid fa-bars text-xl"></i>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="p-2 lg:hidden text-slate-800 dark:text-slate-100 text-2xl">
+                        <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Nav Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-4 pt-3 pb-5 space-y-3 text-sm font-medium">
-            <a href="#articles" class="mobile-nav-link block p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">20 Health Articles</a>
-            <a href="#services" class="mobile-nav-link block p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Web Services</a>
-            <a href="#estimator" class="mobile-nav-link block p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Cost Estimator</a>
-            <a href="#global-reach" class="mobile-nav-link block p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Global Footprint</a>
-            <button onclick="openConsultationModal()" class="w-full mt-2 py-2.5 rounded-xl bg-medical-600 text-white font-semibold">Request Custom Website</button>
+        <!-- Mobile Nav Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden border-b border-fuchsia-500/20 bg-white dark:bg-slate-950 px-5 pt-4 pb-6 space-y-3 text-sm font-extrabold">
+            <a href="#leadership" class="mobile-nav-link block p-2.5 rounded-xl hover:bg-fuchsia-500/10">Executive Leadership</a>
+            <a href="#articles" class="mobile-nav-link block p-2.5 rounded-xl hover:bg-fuchsia-500/10">20 Health Guides</a>
+            <a href="#services" class="mobile-nav-link block p-2.5 rounded-xl hover:bg-fuchsia-500/10">Web Services</a>
+            <a href="#estimator" class="mobile-nav-link block p-2.5 rounded-xl hover:bg-fuchsia-500/10">Cost Calculator</a>
+            <button onclick="openConsultationModal()" class="w-full mt-2 py-3 rounded-xl text-white font-black hyper-btn">Request Custom Website</button>
         </div>
     </header>
 
-    <main class="flex-grow">
-        <!-- Hero Section -->
-        <section class="relative hero-glow pt-16 pb-20 lg:pt-28 lg:pb-24 border-b border-slate-200/80 dark:border-slate-800/80">
+    <main class="flex-grow relative z-10">
+        
+        <!-- 3. HERO SECTION WITH VIBRANT STATS -->
+        <section class="py-16 sm:py-24 relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-medical-50 dark:bg-medical-900/40 text-medical-700 dark:text-medical-300 border border-medical-200 dark:border-medical-800 mb-6">
-                    <i class="fa-solid fa-globe text-medical-600 dark:text-medical-400"></i>
-                    Global Medical & Health Web Specialist
+                
+                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-black bg-gradient-to-r from-neon-pink/20 via-neon-fuchsia/20 to-neon-cyan/20 text-slate-900 dark:text-white border-2 border-fuchsia-500/40 mb-8 shadow-md">
+                    <i class="fa-solid fa-bolt text-amber-400 text-sm"></i>
+                    <span>Original Owner & CEO: Pakeeza Khalid • Global Health Web Agency</span>
                 </div>
 
-                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white max-w-4xl mx-auto leading-tight">
-                    Designing High-Impact <span class="bg-gradient-to-r from-medical-600 via-teal-500 to-accent-500 bg-clip-text text-transparent">Health Websites</span> & Evidence-Based Digital Solutions
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 dark:text-white leading-tight max-w-5xl mx-auto tracking-tight">
+                    Engineering Enterprise <br class="hidden sm:inline" />
+                    <span class="shimmer-gradient-text">Healthcare Web Solutions</span> Worldwide
                 </h1>
 
-                <p class="mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                    Hello, I'm <strong class="text-slate-900 dark:text-white font-semibold">Pakeeza Khalid</strong>. I engineer HIPAA/GDPR-compliant telehealth portals, medical practice showcase sites, and interactive global health content platforms for healthcare providers and organizations worldwide.
+                <p class="mt-6 text-base sm:text-xl text-slate-700 dark:text-slate-300 max-w-3xl mx-auto font-medium leading-relaxed">
+                    Directed by Founder & CEO <strong class="text-slate-900 dark:text-white font-black underline decoration-neon-pink decoration-2">Pakeeza Khalid</strong> along with Co-Owners <strong class="text-slate-900 dark:text-white font-black">Wajeeha Munir</strong> & <strong class="text-slate-900 dark:text-white font-black">Razia Jabeen</strong>. We engineer HIPAA/GDPR compliant telemedicine portals, hospital hubs, and clinical media platforms across USA, UK, UAE, Pakistan, Europe, and Asia.
                 </p>
 
-                <!-- Action Buttons -->
-                <div class="mt-8 flex flex-wrap justify-center gap-4">
-                    <a href="#articles" class="px-6 py-3.5 rounded-xl bg-medical-600 hover:bg-medical-700 text-white font-semibold text-sm transition-all shadow-lg shadow-medical-600/25 flex items-center gap-2">
-                        <i class="fa-solid fa-book-open"></i>
-                        Explore 20 Health Articles
-                    </a>
-                    <button onclick="openConsultationModal()" class="px-6 py-3.5 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-medical-500 font-semibold text-sm transition-all hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-2">
-                        <i class="fa-solid fa-laptop-code text-medical-600"></i>
-                        Request Custom Website
-                    </button>
-                    <a href="#estimator" class="px-6 py-3.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 font-semibold text-sm transition-all flex items-center gap-2">
-                        <i class="fa-solid fa-calculator text-accent-500"></i>
-                        Instant Price Calculator
-                    </a>
+                <!-- High-Energy Stat Cards -->
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl mx-auto">
+                    <div class="p-6 rounded-3xl vibrant-card border-l-4 border-l-neon-pink">
+                        <span class="text-4xl sm:text-5xl font-black text-neon-pink block">150+</span>
+                        <span class="text-xs font-black text-slate-600 dark:text-slate-300 uppercase tracking-widest mt-2 block">Global Projects</span>
+                    </div>
+                    <div class="p-6 rounded-3xl vibrant-card border-l-4 border-l-neon-cyan">
+                        <span class="text-4xl sm:text-5xl font-black text-neon-cyan block">45+</span>
+                        <span class="text-xs font-black text-slate-600 dark:text-slate-300 uppercase tracking-widest mt-2 block">Countries Served</span>
+                    </div>
+                    <div class="p-6 rounded-3xl vibrant-card border-l-4 border-l-neon-emerald">
+                        <span class="text-4xl sm:text-5xl font-black text-neon-emerald block">100%</span>
+                        <span class="text-xs font-black text-slate-600 dark:text-slate-300 uppercase tracking-widest mt-2 block">HIPAA / GDPR Safe</span>
+                    </div>
+                    <div class="p-6 rounded-3xl vibrant-card border-l-4 border-l-neon-amber">
+                        <span class="text-4xl sm:text-5xl font-black text-neon-amber block">20</span>
+                        <span class="text-xs font-black text-slate-600 dark:text-slate-300 uppercase tracking-widest mt-2 block">Clinical Guides</span>
+                    </div>
                 </div>
 
-                <!-- Stats Bar -->
-                <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-4 p-6 rounded-2xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-slate-200 dark:border-slate-700/80 max-w-4xl mx-auto shadow-sm">
-                    <div>
-                        <div class="text-2xl sm:text-3xl font-extrabold text-medical-600 dark:text-medical-400">50+</div>
-                        <div class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-1">Global Health Sites Built</div>
-                    </div>
-                    <div>
-                        <div class="text-2xl sm:text-3xl font-extrabold text-medical-600 dark:text-medical-400">100%</div>
-                        <div class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-1">Medical Compliance Rate</div>
-                    </div>
-                    <div>
-                        <div class="text-2xl sm:text-3xl font-extrabold text-medical-600 dark:text-medical-400">15+</div>
-                        <div class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-1">Countries Served Worldwide</div>
-                    </div>
-                    <div>
-                        <div class="text-2xl sm:text-3xl font-extrabold text-medical-600 dark:text-medical-400">20/20</div>
-                        <div class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-1">Peer-Reviewed Health Guides</div>
-                    </div>
-                </div>
             </div>
         </section>
 
-        <!-- 20 Articles Interactive Medical Content Hub Section -->
-        <section id="articles" class="py-20">
+        <!-- 4. EXECUTIVE LEADERSHIP SHOWCASE -->
+        <section id="leadership" class="py-20 bg-slate-900/10 dark:bg-slate-950/40 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Section Title -->
-                <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6">
-                    <div>
-                        <div class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-medical-600 dark:text-medical-400 mb-2">
-                            <i class="fa-solid fa-stethoscope"></i> Evidence-Based Medical Knowledge
+                
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-xs font-black uppercase tracking-widest text-neon-pink px-3 py-1 rounded-full bg-neon-pink/10 border border-neon-pink/30">Executive Leadership</span>
+                    <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mt-3">Agency Owners & Founders</h2>
+                    <p class="text-slate-600 dark:text-slate-300 mt-2 text-sm sm:text-base font-medium">Delivering web development and healthcare digital media services worldwide.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Founder & CEO Card -->
+                    <div class="p-8 rounded-3xl vibrant-card border-2 border-neon-pink shadow-xl relative overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-neon-pink/20 rounded-full blur-2xl"></div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-neon-pink via-neon-fuchsia to-neon-purple text-white flex items-center justify-center font-black text-2xl shadow-lg">
+                                PK
+                            </div>
+                            <span class="px-3.5 py-1 rounded-full bg-gradient-to-r from-neon-pink to-neon-fuchsia text-white text-[10px] font-black uppercase tracking-wider shadow-sm">
+                                CEO & Original Owner
+                            </span>
                         </div>
-                        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-                            Interactive Global Health Library (20 Articles)
-                        </h2>
-                        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2 max-w-2xl">
-                            Curated and reviewed digital health articles across key domains including cardiology, mental health, pediatrics, and digital health innovations.
+                        <h3 class="text-2xl font-black text-slate-900 dark:text-white">Pakeeza Khalid</h3>
+                        <p class="text-xs font-black text-neon-pink uppercase tracking-widest mt-1">Chief Executive Officer (CEO)</p>
+                        <p class="text-xs text-slate-700 dark:text-slate-300 mt-4 leading-relaxed font-medium">
+                            Original Founder and Chief Executive leading global healthcare web strategy, compliance standards, and international medical client acquisition across USA, UK, UAE, Pakistan, Europe, and Australia.
                         </p>
                     </div>
 
-                    <!-- Search Controls -->
-                    <div class="w-full lg:w-80">
+                    <!-- Co-Owner 1: Wajeeha Munir -->
+                    <div class="p-8 rounded-3xl vibrant-card border-2 border-neon-cyan shadow-xl relative overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-neon-cyan/20 rounded-full blur-2xl"></div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-neon-cyan to-blue-600 text-white flex items-center justify-center font-black text-2xl shadow-lg">
+                                WM
+                            </div>
+                            <span class="px-3.5 py-1 rounded-full bg-neon-cyan text-slate-950 text-[10px] font-black uppercase tracking-wider shadow-sm">
+                                Co-Owner & CTO
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-black text-slate-900 dark:text-white">Wajeeha Munir</h3>
+                        <p class="text-xs font-black text-neon-cyan uppercase tracking-widest mt-1">Co-Owner & Technical Director</p>
+                        <p class="text-xs text-slate-700 dark:text-slate-300 mt-4 leading-relaxed font-medium">
+                            Co-founding partner directing web engineering infrastructure, medical data encryption, database scalability, and automated consultation scheduling integrations.
+                        </p>
+                    </div>
+
+                    <!-- Co-Owner 2: Razia Jabeen -->
+                    <div class="p-8 rounded-3xl vibrant-card border-2 border-neon-emerald shadow-xl relative overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-neon-emerald/20 rounded-full blur-2xl"></div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-neon-emerald to-teal-600 text-white flex items-center justify-center font-black text-2xl shadow-lg">
+                                RJ
+                            </div>
+                            <span class="px-3.5 py-1 rounded-full bg-neon-emerald text-slate-950 text-[10px] font-black uppercase tracking-wider shadow-sm">
+                                Co-Owner & COO
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-black text-slate-900 dark:text-white">Razia Jabeen</h3>
+                        <p class="text-xs font-black text-neon-emerald uppercase tracking-widest mt-1">Co-Owner & Operations Director</p>
+                        <p class="text-xs text-slate-700 dark:text-slate-300 mt-4 leading-relaxed font-medium">
+                            Co-founding partner managing operational workflows, client onboarding, medical media distribution standards, and global project delivery schedules.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 20 UNIQUE HEALTH ARTICLES SECTION -->
+        <section id="articles" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-5">
+                    <div>
+                        <span class="text-xs font-black uppercase tracking-widest text-neon-fuchsia px-3 py-1 rounded-full bg-neon-fuchsia/10 border border-neon-fuchsia/30">Clinical Media Hub</span>
+                        <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mt-2">20 Health & Wellness Guides</h2>
+                    </div>
+
+                    <!-- Real-Time Search Box -->
+                    <div class="w-full md:w-80">
                         <div class="relative">
-                            <input type="text" id="search-input" placeholder="Search topics, keywords..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-medical-500 transition-all">
-                            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
+                            <i class="fa-solid fa-magnifying-glass absolute left-4 top-4 text-neon-fuchsia"></i>
+                            <input type="text" id="search-input" placeholder="Search 20 health guides..." class="w-full pl-11 pr-4 py-3.5 rounded-2xl border-2 border-fuchsia-500/30 bg-white/80 dark:bg-slate-900/80 text-slate-900 dark:text-white text-sm font-bold focus:ring-2 focus:ring-neon-pink outline-none shadow-sm">
                         </div>
                     </div>
                 </div>
 
-                <!-- Category Filters & Sorting Row -->
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-4 border-b border-slate-200 dark:border-slate-800">
-                    <!-- Categories -->
-                    <div class="flex flex-wrap gap-2" id="category-pills">
-                        <button data-cat="all" class="cat-pill px-4 py-1.5 rounded-full text-xs font-semibold bg-medical-600 text-white shadow-sm transition-all">All (20)</button>
-                        <button data-cat="Cardiovascular" class="cat-pill px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 transition-all">Cardiovascular</button>
-                        <button data-cat="Nutrition & Metabolism" class="cat-pill px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 transition-all">Nutrition & Metabolism</button>
-                        <button data-cat="Mental Well-Being" class="cat-pill px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 transition-all">Mental Well-Being</button>
-                        <button data-cat="Pediatrics & Wellness" class="cat-pill px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 transition-all">Pediatrics</button>
-                        <button data-cat="Digital Health & Rehab" class="cat-pill px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 transition-all">Digital Health</button>
-                    </div>
-
-                    <!-- Sort dropdown -->
-                    <div class="flex items-center gap-2 self-end md:self-auto text-xs font-medium">
-                        <span class="text-slate-500">Sort by:</span>
-                        <select id="sort-select" class="bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-slate-700 dark:text-slate-200 focus:outline-none">
-                            <option value="id-asc">Default Order</option>
-                            <option value="time-asc">Shortest Read</option>
-                            <option value="title-asc">Title (A-Z)</option>
-                        </select>
-                    </div>
+                <!-- Vibrant Category Filter Pills -->
+                <div class="flex flex-wrap gap-2.5 mb-10">
+                    <button data-cat="all" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-black hyper-btn text-white shadow-md">All (20)</button>
+                    <button data-cat="Cardiology" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-fuchsia-500/20 hover:border-neon-pink">Cardiology</button>
+                    <button data-cat="Nutrition" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-fuchsia-500/20 hover:border-neon-pink">Nutrition</button>
+                    <button data-cat="Sleep Medicine" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-fuchsia-500/20 hover:border-neon-pink">Sleep Medicine</button>
+                    <button data-cat="Endocrinology" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-fuchsia-500/20 hover:border-neon-pink">Endocrinology</button>
+                    <button data-cat="Pediatrics" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-fuchsia-500/20 hover:border-neon-pink">Pediatrics</button>
+                    <button data-cat="Technology" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-fuchsia-500/20 hover:border-neon-pink">Technology</button>
                 </div>
 
-                <!-- Articles Grid (Populated dynamically via JS) -->
-                <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                <!-- Article Grid -->
+                <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
 
-                <!-- Empty Search Result Indicator -->
+                <!-- Fallback No Results -->
                 <div id="no-results" class="hidden text-center py-16">
-                    <i class="fa-solid fa-file-circle-xmark text-4xl text-slate-400 mb-3 block"></i>
-                    <h3 class="text-lg font-bold">No articles match your criteria</h3>
-                    <p class="text-sm text-slate-500 mt-1">Try resetting the search bar or changing the active domain category.</p>
+                    <p class="text-lg font-black text-slate-600 dark:text-slate-400">No medical guides match your search term.</p>
                 </div>
+
             </div>
         </section>
 
-        <!-- Saved / Bookmarked Articles Drawer Preview -->
-        <section id="saved-articles" class="py-12 bg-white dark:bg-slate-900/60 border-t border-b border-slate-200 dark:border-slate-800">
+        <!-- SAVED ARTICLES SECTION -->
+        <section id="saved-articles" class="py-12 bg-slate-900/20 border-t border-b border-fuchsia-500/20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between mb-6">
-                    <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-bookmark text-xl text-medical-600"></i>
-                        <h3 class="text-xl font-bold">Your Saved Reading List</h3>
-                    </div>
-                    <button onclick="clearAllBookmarks()" class="text-xs text-red-500 hover:underline">Clear Bookmarks</button>
+                    <h3 class="text-xl font-black text-slate-900 dark:text-white flex items-center gap-2">
+                        <i class="fa-solid fa-bookmark text-neon-pink"></i> Your Bookmarked Health Guides
+                    </h3>
+                    <button onclick="clearBookmarks()" class="text-xs font-bold text-red-500 hover:underline">Clear Saved List</button>
                 </div>
-                <div id="bookmarks-container" class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <p id="empty-bookmarks-msg" class="text-sm text-slate-500 col-span-3 py-4 italic">No bookmarked articles yet. Click the bookmark icon on any article card above to save it for offline reading.</p>
+                <div id="bookmarks-container" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <p id="empty-bookmarks-msg" class="text-xs text-slate-500 italic col-span-3">No saved articles yet. Click the bookmark icon on any guide above to save it here.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Services Showcase Section -->
+        <!-- SERVICES SECTION -->
         <section id="services" class="py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-xs font-bold uppercase tracking-wider text-medical-600 dark:text-medical-400">Web Engineering Expertise</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-2">Specialized Health Web Solutions</h2>
-                    <p class="text-slate-600 dark:text-slate-400 mt-3 text-sm sm:text-base">Custom web architecture engineered specifically for clinics, hospitals, telehealth startups, and health publishers globally.</p>
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-xs font-black uppercase tracking-widest text-neon-cyan px-3 py-1 rounded-full bg-neon-cyan/10 border border-neon-cyan/30">Agency Capabilities</span>
+                    <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mt-3">Health Web Engineering Services</h2>
+                    <p class="text-slate-600 dark:text-slate-300 mt-2 text-sm sm:text-base font-medium">Custom digital solutions tailored specifically for hospitals, specialist clinics, and digital health enterprises globally.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Service 1 -->
-                    <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 hover:border-medical-500 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-medical-500/10 text-medical-600 dark:text-medical-400 flex items-center justify-center text-xl mb-4">
-                                <i class="fa-solid fa-user-shield"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">HIPAA & GDPR Portals</h3>
-                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Encrypted patient portals, compliant contact forms, and secure data handling for medical professionals.</p>
+                    <div class="p-7 rounded-3xl vibrant-card border-t-4 border-t-neon-pink">
+                        <div class="w-14 h-14 rounded-2xl bg-neon-pink/10 text-neon-pink flex items-center justify-center text-2xl font-black mb-5">
+                            <i class="fa-solid fa-shield-halved"></i>
                         </div>
-                        <ul class="mt-6 text-xs text-slate-500 dark:text-slate-400 space-y-1.5 border-t border-slate-100 dark:border-slate-700/50 pt-4">
-                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> End-to-end Encryption</li>
-                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Strict Compliance Standards</li>
-                        </ul>
+                        <h4 class="text-xl font-black text-slate-900 dark:text-white">HIPAA / GDPR Portals</h4>
+                        <p class="text-xs text-slate-700 dark:text-slate-300 mt-2 leading-relaxed font-medium">Encrypted form handling, compliant data vaults, and protected patient record management systems.</p>
                     </div>
 
-                    <!-- Service 2 -->
-                    <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 hover:border-medical-500 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-accent-500/10 text-accent-500 flex items-center justify-center text-xl mb-4">
-                                <i class="fa-solid fa-calendar-check"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Telehealth & Bookings</h3>
-                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Integrated appointment booking systems, video consultation interfaces, and calendar sync features.</p>
+                    <div class="p-7 rounded-3xl vibrant-card border-t-4 border-t-neon-cyan">
+                        <div class="w-14 h-14 rounded-2xl bg-neon-cyan/10 text-neon-cyan flex items-center justify-center text-2xl font-black mb-5">
+                            <i class="fa-solid fa-video"></i>
                         </div>
-                        <ul class="mt-6 text-xs text-slate-500 dark:text-slate-400 space-y-1.5 border-t border-slate-100 dark:border-slate-700/50 pt-4">
-                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Automated Reminders</li>
-                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Seamless Timezone Handling</li>
-                        </ul>
+                        <h4 class="text-xl font-black text-slate-900 dark:text-white">Telehealth Systems</h4>
+                        <p class="text-xs text-slate-700 dark:text-slate-300 mt-2 leading-relaxed font-medium">Integrated video consultations, automated intake questionnaires, and scheduling engines.</p>
                     </div>
 
-                    <!-- Service 3 -->
-                    <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 hover:border-medical-500 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center text-xl mb-4">
-                                <i class="fa-solid fa-notes-medical"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Health Content Hubs</h3>
-                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Dynamic medical blog platforms with search indexing, medical reviewer tags, and schema markup.</p>
+                    <div class="p-7 rounded-3xl vibrant-card border-t-4 border-t-neon-purple">
+                        <div class="w-14 h-14 rounded-2xl bg-neon-purple/10 text-neon-purple flex items-center justify-center text-2xl font-black mb-5">
+                            <i class="fa-solid fa-newspaper"></i>
                         </div>
-                        <ul class="mt-6 text-xs text-slate-500 dark:text-slate-400 space-y-1.5 border-t border-slate-100 dark:border-slate-700/50 pt-4">
-                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> High SEO Visibility</li>
-                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Categorized Knowledge Base</li>
-                        </ul>
+                        <h4 class="text-xl font-black text-slate-900 dark:text-white">Medical Content Hubs</h4>
+                        <p class="text-xs text-slate-700 dark:text-slate-300 mt-2 leading-relaxed font-medium">Fast medical publishing platforms optimized for clinical SEO and healthcare audience engagement.</p>
                     </div>
 
-                    <!-- Service 4 -->
-                    <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 hover:border-medical-500 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl mb-4">
-                                <i class="fa-solid fa-hospital-user"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Clinic Showcase Sites</h3>
-                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Elegant practice websites highlighting doctor bios, treatment services, patient reviews, and directions.</p>
+                    <div class="p-7 rounded-3xl vibrant-card border-t-4 border-t-neon-amber">
+                        <div class="w-14 h-14 rounded-2xl bg-neon-amber/10 text-neon-amber flex items-center justify-center text-2xl font-black mb-5">
+                            <i class="fa-solid fa-hospital-user"></i>
                         </div>
-                        <ul class="mt-6 text-xs text-slate-500 dark:text-slate-400 space-y-1.5 border-t border-slate-100 dark:border-slate-700/50 pt-4">
-                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Mobile First Responsive</li>
-                            <li><i class="fa-solid fa-check text-emerald-500 mr-1.5"></i> Fast Load Speed</li>
-                        </ul>
+                        <h4 class="text-xl font-black text-slate-900 dark:text-white">Hospital Websites</h4>
+                        <p class="text-xs text-slate-700 dark:text-slate-300 mt-2 leading-relaxed font-medium">High-converting multi-branch hospital platforms showcasing doctors, treatments, and online bookings.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Interactive Website Cost & Turnaround Estimator -->
-        <section id="estimator" class="py-20 bg-slate-100 dark:bg-slate-800/40 border-t border-b border-slate-200 dark:border-slate-800">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <span class="text-xs font-bold uppercase tracking-wider text-medical-600 dark:text-medical-400">Interactive Project Estimator</span>
-                    <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Calculate Your Health Web Build Budget</h2>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">Select your required features to get an instant estimate of turnaround time and budget range.</p>
+        <!-- 6. INTERACTIVE COST ESTIMATOR -->
+        <section id="estimator" class="py-20 bg-slate-900/20 border-t border-b border-fuchsia-500/20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-xs font-black uppercase tracking-widest text-neon-amber px-3 py-1 rounded-full bg-neon-amber/10 border border-neon-amber/30">Budget Calculator</span>
+                    <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mt-3">Interactive Website Cost Estimator</h2>
+                    <p class="text-slate-600 dark:text-slate-300 mt-2 text-sm font-medium">Calculate your tailored health web project budget in real time.</p>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-xl">
-                    <!-- Options Selection -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 vibrant-card p-8 rounded-3xl shadow-2xl border-2 border-fuchsia-500/40">
                     <div class="lg:col-span-2 space-y-6">
                         <div>
-                            <label class="block text-xs font-bold uppercase text-slate-500 mb-2">1. Project Type</label>
-                            <select id="est-type" onchange="calculateEstimate()" class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-sm font-medium text-slate-800 dark:text-white focus:outline-none">
-                                <option value="800">Medical Content / Health Blog Platform ($800)</option>
-                                <option value="1200">Private Practice & Clinic Showcase Site ($1,200)</option>
-                                <option value="2000">Telehealth & Online Appointment Booking ($2,000)</option>
-                                <option value="3200">Full Enterprise HIPAA/GDPR Medical Portal ($3,200)</option>
+                            <label class="block text-xs font-black uppercase text-slate-500 dark:text-slate-400 mb-2.5">1. Base Website Type</label>
+                            <select id="est-type" onchange="calculateCost()" class="w-full p-4 rounded-2xl border-2 border-fuchsia-500/30 bg-white dark:bg-slate-900 text-slate-900 dark:text-white text-sm font-bold outline-none">
+                                <option value="800">Medical Content Hub & Media Portal ($800)</option>
+                                <option value="1200">Private Clinic / Specialist Practice Site ($1,200)</option>
+                                <option value="2200">Telemedicine & Online Booking System ($2,200)</option>
+                                <option value="3500">Enterprise Multi-Branch Hospital Portal ($3,500)</option>
                             </select>
                         </div>
 
                         <div>
-                            <label class="block text-xs font-bold uppercase text-slate-500 mb-2">2. Add-On Modular Features</label>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50">
-                                    <input type="checkbox" value="300" class="est-feature rounded text-medical-600 focus:ring-medical-500" onchange="calculateEstimate()">
-                                    <span class="text-xs font-medium">Multilingual Support (+ $300)</span>
+                            <label class="block text-xs font-black uppercase text-slate-500 dark:text-slate-400 mb-2.5">2. Compliance & Add-On Modules</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                                <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-fuchsia-500/20 bg-white/50 dark:bg-slate-900/50 cursor-pointer">
+                                    <input type="checkbox" value="500" class="est-addon accent-neon-pink w-4 h-4" onchange="calculateCost()">
+                                    <span class="text-xs font-extrabold text-slate-900 dark:text-slate-200">HIPAA Data Vault (+$500)</span>
                                 </label>
-                                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50">
-                                    <input type="checkbox" value="450" class="est-feature rounded text-medical-600 focus:ring-medical-500" onchange="calculateEstimate()">
-                                    <span class="text-xs font-medium">EHR / Patient Database Sync (+ $450)</span>
+                                <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-fuchsia-500/20 bg-white/50 dark:bg-slate-900/50 cursor-pointer">
+                                    <input type="checkbox" value="350" class="est-addon accent-neon-pink w-4 h-4" onchange="calculateCost()">
+                                    <span class="text-xs font-extrabold text-slate-900 dark:text-slate-200">Multilingual Support (+$350)</span>
                                 </label>
-                                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50">
-                                    <input type="checkbox" value="250" class="est-feature rounded text-medical-600 focus:ring-medical-500" onchange="calculateEstimate()">
-                                    <span class="text-xs font-medium">Interactive Patient Calculators (+ $250)</span>
+                                <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-fuchsia-500/20 bg-white/50 dark:bg-slate-900/50 cursor-pointer">
+                                    <input type="checkbox" value="400" class="est-addon accent-neon-pink w-4 h-4" onchange="calculateCost()">
+                                    <span class="text-xs font-extrabold text-slate-900 dark:text-slate-200">EHR Patient Intake (+$400)</span>
                                 </label>
-                                <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-700 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/50">
-                                    <input type="checkbox" value="350" class="est-feature rounded text-medical-600 focus:ring-medical-500" onchange="calculateEstimate()">
-                                    <span class="text-xs font-medium">SEO & Medical Schema Markup (+ $350)</span>
+                                <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-fuchsia-500/20 bg-white/50 dark:bg-slate-900/50 cursor-pointer">
+                                    <input type="checkbox" value="300" class="est-addon accent-neon-pink w-4 h-4" onchange="calculateCost()">
+                                    <span class="text-xs font-extrabold text-slate-900 dark:text-slate-200">Medical SEO Package (+$300)</span>
                                 </label>
                             </div>
                         </div>
 
                         <div>
-                            <label class="block text-xs font-bold uppercase text-slate-500 mb-2">3. Delivery Timeline</label>
-                            <div class="flex gap-4">
-                                <label class="flex items-center gap-2 text-xs font-medium cursor-pointer">
-                                    <input type="radio" name="speed" value="1" checked onchange="calculateEstimate()" class="text-medical-600">
-                                    Standard Delivery
+                            <label class="block text-xs font-black uppercase text-slate-500 dark:text-slate-400 mb-2.5">3. Deployment Priority</label>
+                            <div class="flex gap-6">
+                                <label class="flex items-center gap-2 text-xs font-extrabold text-slate-900 dark:text-slate-200 cursor-pointer">
+                                    <input type="radio" name="speed" value="1" checked onchange="calculateCost()" class="accent-neon-pink">
+                                    Standard Schedule
                                 </label>
-                                <label class="flex items-center gap-2 text-xs font-medium cursor-pointer">
-                                    <input type="radio" name="speed" value="1.25" onchange="calculateEstimate()" class="text-medical-600">
-                                    Express Rush Delivery (+25%)
+                                <label class="flex items-center gap-2 text-xs font-extrabold text-slate-900 dark:text-slate-200 cursor-pointer">
+                                    <input type="radio" name="speed" value="1.2" onchange="calculateCost()" class="accent-neon-pink">
+                                    Express Priority (+20%)
                                 </label>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Output Card -->
-                    <div class="flex flex-col justify-between p-6 rounded-2xl bg-gradient-to-br from-medical-900 to-slate-900 text-white shadow-lg">
+                    <div class="flex flex-col justify-between p-7 rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white shadow-2xl border border-fuchsia-500/40">
                         <div>
-                            <span class="text-xs font-bold uppercase tracking-widest text-medical-400">Estimate Summary</span>
-                            <div class="mt-4">
-                                <span class="text-xs text-slate-400 block">Estimated Investment</span>
-                                <span id="est-total" class="text-3xl font-extrabold text-white">$800</span>
+                            <span class="text-xs font-black text-neon-pink uppercase tracking-widest">Instant Estimate</span>
+                            <div class="mt-5">
+                                <span class="text-xs text-slate-400 block font-bold">Estimated Investment</span>
+                                <span id="est-total" class="text-5xl font-black shimmer-gradient-text">$800</span>
                             </div>
-                            <div class="mt-4 pt-4 border-t border-slate-800">
-                                <span class="text-xs text-slate-400 block">Estimated Turnaround</span>
-                                <span id="est-days" class="text-lg font-bold text-emerald-400">7 - 10 Business Days</span>
+                            <div class="mt-6 pt-5 border-t border-slate-800">
+                                <span class="text-xs text-slate-400 block font-bold">Turnaround Schedule</span>
+                                <span id="est-days" class="text-sm font-black text-neon-emerald">7 - 10 Business Days</span>
                             </div>
-                            <p class="text-[11px] text-slate-400 mt-4 leading-relaxed">Includes initial architecture design, mobile responsiveness, medical review compliance check, and launch support.</p>
                         </div>
-                        <button onclick="openConsultationModalWithEstimate()" class="mt-6 w-full py-3 rounded-xl bg-medical-500 hover:bg-medical-600 text-white font-semibold text-xs uppercase tracking-wider transition-all">
-                            Lock In This Estimate
+                        <button onclick="openConsultationModalWithEstimate()" class="mt-8 w-full py-4 rounded-2xl text-white font-black text-xs uppercase tracking-wider hyper-btn shadow-lg">
+                            Book Project With CEO Pakeeza Khalid
                         </button>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- Global Reach & Interactive Regional Showcase -->
-        <section id="global-reach" class="py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-xs font-bold uppercase tracking-wider text-medical-600 dark:text-medical-400">Worldwide Impact</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-1">Global Health Client Footprint</h2>
-                    <p class="text-slate-600 dark:text-slate-400 mt-2 text-sm sm:text-base">Pakeeza Khalid delivers compliant, highly optimized medical web solutions tailored to regional health regulations worldwide.</p>
-                </div>
-
-                <!-- Global Footprint Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-                    <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center">
-                        <span class="text-2xl block mb-1">🇺🇸</span>
-                        <h4 class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">United States</h4>
-                        <p class="text-[11px] text-slate-500 mt-0.5">HIPAA Telehealth</p>
-                    </div>
-                    <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center">
-                        <span class="text-2xl block mb-1">🇬🇧</span>
-                        <h4 class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">United Kingdom</h4>
-                        <p class="text-[11px] text-slate-500 mt-0.5">NHS & Private Clinics</p>
-                    </div>
-                    <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center">
-                        <span class="text-2xl block mb-1">🇦🇪</span>
-                        <h4 class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">UAE / Gulf</h4>
-                        <p class="text-[11px] text-slate-500 mt-0.5">Multilingual Portals</p>
-                    </div>
-                    <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center">
-                        <span class="text-2xl block mb-1">🇵🇰</span>
-                        <h4 class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Pakistan</h4>
-                        <p class="text-[11px] text-slate-500 mt-0.5">Health Media & Hubs</p>
-                    </div>
-                    <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center">
-                        <span class="text-2xl block mb-1">🇪🇺</span>
-                        <h4 class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Europe</h4>
-                        <p class="text-[11px] text-slate-500 mt-0.5">GDPR Health Sites</p>
-                    </div>
-                    <div class="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center">
-                        <span class="text-2xl block mb-1">🇦🇺</span>
-                        <h4 class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Australia</h4>
-                        <p class="text-[11px] text-slate-500 mt-0.5">Allied Health Web</p>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center gap-2 mb-3">
-                        <div class="w-8 h-8 rounded-lg bg-medical-600 flex items-center justify-center text-white font-bold text-sm">
-                            PK
-                        </div>
-                        <span class="text-lg font-bold text-white">Pakeeza Khalid</span>
-                    </div>
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        Global Digital Health Website Specialist. Designing medical-grade, HIPAA/GDPR compliant web solutions and evidence-based medical content engines.
-                    </p>
-                </div>
-
-                <div>
-                    <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-3">Quick Navigation</h4>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="#articles" class="hover:text-medical-400">20 Health Articles Library</a></li>
-                        <li><a href="#services" class="hover:text-medical-400">Web Engineering Services</a></li>
-                        <li><a href="#estimator" class="hover:text-medical-400">Interactive Budget Calculator</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-3">Global Contact</h4>
-                    <p class="text-xs text-slate-400">Available for global freelance contracts and client collaborations worldwide.</p>
-                    <button onclick="openConsultationModal()" class="mt-3 px-4 py-2 rounded-lg bg-medical-600 hover:bg-medical-700 text-white font-medium text-xs">
-                        Get In Touch With Pakeeza
-                    </button>
-                </div>
-            </div>
-
-            <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <span>© 2026 Pakeeza Khalid. All Rights Reserved.</span>
-                <span>Medical Disclaimer: Articles are for educational purposes and do not replace formal clinical diagnosis.</span>
-            </div>
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 py-12 text-xs border-t border-fuchsia-500/20 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+            <p class="font-black text-slate-200 text-sm">
+                © 2026 Pakeeza Khalid (CEO & Original Owner) • Wajeeha Munir (Co-Owner) • Razia Jabeen (Co-Owner)
+            </p>
+            <p class="text-slate-400 font-medium">
+                Global Health Web Development & Digital Media Agency Services • Serving Clients Worldwide
+            </p>
         </div>
     </footer>
 
-    <!-- Full Article Modal View with Font Resizer & Reader Controls -->
-    <div id="article-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-6 bg-slate-900/75 backdrop-blur-sm">
-        <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-            
-            <!-- Modal Header -->
-            <div class="p-4 sm:p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/50">
-                <div class="flex items-center gap-2">
-                    <span id="modal-category" class="px-2.5 py-1 rounded-md bg-medical-100 dark:bg-medical-900/50 text-medical-700 dark:text-medical-300 font-semibold text-xs"></span>
-                    <span id="modal-readtime" class="text-xs text-slate-500 dark:text-slate-400"><i class="fa-regular fa-clock mr-1"></i></span>
+    <!-- ARTICLE READER MODAL -->
+    <div id="article-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md">
+        <div class="bg-white dark:bg-slate-950 rounded-3xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl border-2 border-fuchsia-500/40 overflow-hidden">
+            <div class="p-6 border-b border-fuchsia-500/20 flex justify-between items-center">
+                <div>
+                    <span id="modal-cat" class="px-3 py-1 rounded-full bg-neon-pink/10 text-neon-pink font-black text-[10px] uppercase border border-neon-pink/30"></span>
+                    <span id="modal-time" class="text-xs font-bold text-slate-400 ml-3"></span>
                 </div>
-
-                <!-- Reading Controls -->
-                <div class="flex items-center gap-2">
-                    <div class="hidden sm:flex items-center gap-1 bg-slate-200 dark:bg-slate-800 rounded-lg p-1 text-xs font-bold">
-                        <button onclick="adjustFontSize(-1)" class="px-2 py-0.5 rounded hover:bg-white dark:hover:bg-slate-700">A-</button>
-                        <button onclick="adjustFontSize(1)" class="px-2 py-0.5 rounded hover:bg-white dark:hover:bg-slate-700">A+</button>
-                    </div>
-                    <button onclick="closeArticleModal()" class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-300 flex items-center justify-center">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
+                <button onclick="closeModal()" class="w-9 h-9 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-black hover:bg-slate-300 flex items-center justify-center">✕</button>
             </div>
-
-            <!-- Modal Content Scrollable -->
-            <div class="p-6 sm:p-8 overflow-y-auto space-y-6 text-slate-800 dark:text-slate-200 leading-relaxed" id="article-modal-body">
-                <div class="flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
-                    <i class="fa-solid fa-circle-check"></i>
-                    <span>Medically Reviewed Article</span>
+            <div class="p-6 sm:p-8 overflow-y-auto space-y-5 text-slate-800 dark:text-slate-200">
+                <h3 id="modal-title" class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white leading-tight"></h3>
+                <div class="p-5 rounded-2xl bg-fuchsia-50 dark:bg-slate-900 border border-fuchsia-500/20">
+                    <h5 class="text-xs font-black uppercase text-neon-pink mb-1">Abstract Summary</h5>
+                    <p id="modal-summary" class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-medium"></p>
                 </div>
-
-                <h2 id="modal-title" class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white leading-tight"></h2>
-
-                <!-- Key Takeaways Box -->
-                <div class="p-4 rounded-2xl bg-medical-50 dark:bg-medical-900/30 border border-medical-200 dark:border-medical-800/50">
-                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-medical-800 dark:text-medical-300 mb-2">
-                        <i class="fa-solid fa-lightbulb mr-1.5"></i> Clinical Summary & Takeaways
-                    </h4>
-                    <p id="modal-summary" class="text-xs sm:text-sm text-slate-700 dark:text-slate-300"></p>
-                </div>
-
-                <!-- Article Body Paragraphs -->
-                <div id="modal-full-text" class="space-y-4 text-sm sm:text-base"></div>
-
-                <!-- Preventive Actions Box -->
-                <div class="p-5 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-slate-900 dark:text-white mb-3">
-                        <i class="fa-solid fa-shield-heart text-medical-600 mr-1.5"></i> Actionable Preventive Measures
-                    </h4>
-                    <ul id="modal-measures" class="list-disc list-inside text-xs sm:text-sm text-slate-600 dark:text-slate-300 space-y-1.5"></ul>
-                </div>
+                <div id="modal-body" class="text-sm space-y-3 leading-relaxed font-medium"></div>
             </div>
-
-            <!-- Modal Footer -->
-            <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 flex justify-between items-center text-xs">
-                <span class="text-slate-500">Author: Pakeeza Khalid Medical Desk</span>
-                <button onclick="closeArticleModal()" class="px-4 py-2 rounded-xl bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 font-semibold">
-                    Done Reading
-                </button>
+            <div class="p-5 border-t border-fuchsia-500/20 text-right">
+                <button onclick="closeModal()" class="px-6 py-2.5 rounded-xl text-white font-black text-xs hyper-btn">Close Reader</button>
             </div>
         </div>
     </div>
 
-    <!-- Website Request & Consultation Modal -->
-    <div id="consultation-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/75 backdrop-blur-sm">
-        <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-200 dark:border-slate-700">
-            <div class="flex justify-between items-center mb-4">
-                <h3 class="text-lg font-bold text-slate-900 dark:text-white">Request Health Web Development</h3>
-                <button onclick="closeConsultationModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-white">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
+    <!-- CONSULTATION REQUEST MODAL -->
+    <div id="consultation-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md">
+        <div class="bg-white dark:bg-slate-950 rounded-3xl max-w-md w-full p-7 shadow-2xl border-2 border-fuchsia-500/40">
+            <div class="flex justify-between items-center mb-5">
+                <h4 class="text-xl font-black text-slate-900 dark:text-white">Request Web Project</h4>
+                <button onclick="closeConsultationModal()" class="text-slate-400 font-black text-lg">✕</button>
             </div>
-
-            <form id="consultation-form" onsubmit="handleFormSubmit(event)" class="space-y-4 text-xs sm:text-sm">
+            <form id="consult-form" onsubmit="handleConsultSubmit(event)" class="space-y-4 text-xs font-bold">
                 <div>
-                    <label class="block font-medium mb-1">Your Name / Organization</label>
-                    <input type="text" required class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-medical-500 outline-none" placeholder="Dr. Sarah / Global Health Clinic">
+                    <label class="block mb-1.5 text-slate-700 dark:text-slate-300">Your Name / Healthcare Practice</label>
+                    <input type="text" required class="w-full p-3.5 rounded-2xl border border-fuchsia-500/30 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white outline-none">
                 </div>
                 <div>
-                    <label class="block font-medium mb-1">Email Address</label>
-                    <input type="email" required class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-medical-500 outline-none" placeholder="contact@healthclinic.org">
+                    <label class="block mb-1.5 text-slate-700 dark:text-slate-300">Email Address</label>
+                    <input type="email" required class="w-full p-3.5 rounded-2xl border border-fuchsia-500/30 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white outline-none">
                 </div>
                 <div>
-                    <label class="block font-medium mb-1">Country / Timezone</label>
-                    <input type="text" required class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-medical-500 outline-none" placeholder="e.g. USA, UK, UAE, Pakistan">
+                    <label class="block mb-1.5 text-slate-700 dark:text-slate-300">Project Requirements</label>
+                    <textarea id="consult-reqs" rows="3" required class="w-full p-3.5 rounded-2xl border border-fuchsia-500/30 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white outline-none"></textarea>
                 </div>
-                <div>
-                    <label class="block font-medium mb-1">Project Details / Requirements</label>
-                    <textarea id="form-details" rows="3" required class="w-full p-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-medical-500 outline-none" placeholder="Describe your website goals or requirements..."></textarea>
-                </div>
-                <button type="submit" class="w-full py-3 rounded-xl bg-medical-600 hover:bg-medical-700 text-white font-semibold transition-all">
-                    Submit Project Inquiry
-                </button>
+                <button type="submit" class="w-full py-4 rounded-2xl text-white font-black text-xs uppercase tracking-wider hyper-btn shadow-md">Submit Consultation Request</button>
             </form>
-
-            <div id="form-success-msg" class="hidden mt-4 p-3 rounded-xl bg-emerald-100 text-emerald-800 text-xs font-medium text-center">
-                Inquiry received! Pakeeza Khalid will review your health website project request within 12 hours.
+            <div id="form-msg" class="hidden mt-4 p-4 rounded-2xl bg-neon-emerald/20 border border-neon-emerald/40 text-neon-emerald font-black text-center text-xs">
+                Inquiry received! CEO Pakeeza Khalid will contact you shortly.
             </div>
         </div>
     </div>
 
-    <!-- Complete JavaScript Core Engine -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
-        // --- 20 Distinct Medical & Health Articles Dataset ---
+        // 20 Non-Repeating Health Articles Data
         const articles = [
-            {
-                id: 1,
-                title: "Precision Nutrition & Biomarker-Driven Diets",
-                category: "Nutrition & Metabolism",
-                readTime: 5,
-                summary: "How individual genomic profiling, blood biomarkers, and microbiome sequencing optimize metabolic health beyond generic dietary guidelines.",
-                fullText: [
-                    "Precision nutrition represents a paradigm shift from standard population-wide food pyramids to tailored dietary interventions based on an individual's unique biological marker profile.",
-                    "By analyzing continuous blood glucose responses, lipid sub-fractions, inflammatory markers like hs-CRP, and genomic variations (such as MTHFR mutations), clinicians can engineer bespoke nutrition plans that optimize metabolic homeostasis."
-                ],
-                measures: ["Conduct biannual comprehensive blood panel screenings.", "Track postprandial glucose variability.", "Prioritize whole-food microbiome diversity."],
-                popular: true
-            },
-            {
-                id: 2,
-                title: "Understanding Heart Rate Variability (HRV) for Stress Management",
-                category: "Cardiovascular",
-                readTime: 4,
-                summary: "Utilizing autonomic nervous system metrics to measure real-time stress resilience and cardiovascular recovery.",
-                fullText: [
-                    "Heart Rate Variability (HRV) measures the millisecond time variations between consecutive heartbeats, serving as a direct non-invasive window into sympathetic versus parasympathetic autonomic tone.",
-                    "Higher resting HRV generally signals robust autonomic flexibility and stress adaptability, whereas chronically depressed HRV indicates physiological strain and heightened cardiovascular vulnerability."
-                ],
-                measures: ["Practice resonance frequency breathwork (5-6 breaths/min).", "Maintain consistent circadian sleep-wake schedules.", "Monitor morning baseline HRV using wearable sensors."],
-                popular: true
-            },
-            {
-                id: 3,
-                title: "Continuous Glucose Monitors (CGMs) for Non-Diabetics",
-                category: "Nutrition & Metabolism",
-                readTime: 6,
-                summary: "Leveraging real-time glycemic feedback to prevent insulin resistance, metabolic fatigue, and long-term vascular stress.",
-                fullText: [
-                    "Once reserved exclusively for diabetes management, CGMs are increasingly deployed in preventive wellness to identify hidden glycemic spikes caused by processed carbohydrates and psychological stress.",
-                    "Minimizing glycemic variability reduces systemic oxidative stress and protects endothelial health prior to the onset of elevated fasting glucose."
-                ],
-                measures: ["Pair carbohydrates with dietary fiber, protein, and healthy fats.", "Engage in a 10-minute walk immediately post-meals.", "Identify personal food triggers using interstitial sensors."],
-                popular: false
-            },
-            {
-                id: 4,
-                title: "The Gut-Brain Axis: Microbes and Mood Dynamics",
-                category: "Mental Well-Being",
-                readTime: 5,
-                summary: "Exploring vagal nerve signaling and bacterial neurotransmitter synthesis that regulate anxiety, mood, and mental clarity.",
-                fullText: [
-                    "The gastrointestinal tract harbors over 100 trillion microorganisms that synthesize essential neurotransmitters, including approximately 90% of the body's serotonin.",
-                    "Through bidirectional signaling along the vagus nerve and systemic cytokine pathways, gut dysbiosis directly correlates with increased rates of anxiety and depressive symptoms."
-                ],
-                measures: ["Consume fermented foods rich in live active cultures.", "Increase daily prebiotic soluble fiber intake.", "Limit unnecessary broad-spectrum antibiotic usage."],
-                popular: true
-            },
-            {
-                id: 5,
-                title: "Managing Chronic Inflammation Through Lifestyle Interventions",
-                category: "Cardiovascular",
-                readTime: 5,
-                summary: "Targeting low-grade systemic inflammatory cascades to lower risk for metabolic syndrome and arterial stiffness.",
-                fullText: [
-                    "Non-resolving chronic inflammation is a covert contributor to modern degenerative disorders, accelerating atherosclerosis and neurodegenerative decline.",
-                    "Targeted lifestyle interventions—including high omega-3 fatty acid intake, polyphenol consumption, and regular moderate exercise—downregulate pro-inflammatory nuclear factor kappa B (NF-kB) pathways."
-                ],
-                measures: ["Optimize Omega-3 to Omega-6 dietary fatty acid ratios.", "Eliminate ultra-processed industrial seed oils.", "Engage in daily low-intensity zone 2 cardiovascular movement."],
-                popular: false
-            },
-            {
-                id: 6,
-                title: "Pediatric Sleep Hygiene and Screen Time Guidelines",
-                category: "Pediatrics & Wellness",
-                readTime: 4,
-                summary: "Safeguarding developing pediatric neuroarchitecture and melatonin secretion against excessive nighttime screen exposure.",
-                fullText: [
-                    "Blue spectrum light emitted from tablets and smartphones suppresses nighttime pineal melatonin release, disrupting essential slow-wave restorative sleep in pediatric age groups.",
-                    "Establishing structured digital curfews promotes physiological REM sleep consolidation necessary for cognitive development and emotional regulation."
-                ],
-                measures: ["Enforce screen-free sanctuary zones in pediatric bedrooms.", "Discontinue device screens at least 90 minutes prior to bedtime.", "Encourage outdoor morning sun exposure for circadian priming."],
-                popular: false
-            },
-            {
-                id: 7,
-                title: "Hypertensive Crisis Prevention: Silent Signs & Daily Tracking",
-                category: "Cardiovascular",
-                readTime: 6,
-                summary: "Systematic protocols for home blood pressure monitoring and early identification of arterial vascular resistance.",
-                fullText: [
-                    "Hypertension is frequently termed the 'silent killer' due to its asymptomatic progression toward arterial remodeling, chronic renal strain, and elevated stroke risks.",
-                    "Consistent home monitoring protocols combined with dietary sodium/potassium optimization offer effective early protection against sudden hypertensive spikes."
-                ],
-                measures: ["Log resting blood pressure twice daily with validated cuffs.", "Maintain dietary potassium-to-sodium ratio above 2:1.", "Limit alcohol and chronic stimulant overuse."],
-                popular: true
-            },
-            {
-                id: 8,
-                title: "Ergonomics in Remote Work: Preventing Spine & Joint Degeneration",
-                category: "Digital Health & Rehab",
-                readTime: 4,
-                summary: "Biomechanical workspace setups to mitigate cervical forward head posture and lumbar disc compression.",
-                fullText: [
-                    "Prolonged sedentary postures with sub-optimal screen placement result in forward head posture, placing up to 60 pounds of extra gravitational torque on the cervical spine.",
-                    "Integrating ergonomic monitor height adjustments and frequent postural reset micro-breaks significantly reduces chronic musculoskeletal pain syndromes."
-                ],
-                measures: ["Position monitor eye-line at top 1/3 of the screen.", "Utilize lumbar support rolls maintaining natural lordotic curves.", "Perform 2-minute movement snacks every 45 minutes."],
-                popular: false
-            },
-            {
-                id: 9,
-                title: "Cognitive Behavioral Strategies for Insomnia (CBT-I)",
-                category: "Mental Well-Being",
-                readTime: 5,
-                summary: "Non-pharmacological evidence-based interventions for re-establishing sleep drive and reducing nocturnal arousal.",
-                fullText: [
-                    "CBT-I stands as the clinical first-line medical standard for primary insomnia, addressing cognitive sleep anxiety and maladaptive bedroom associations.",
-                    "By employing stimulus control therapy and sleep restriction protocols, individuals retrain neurological pathways responsible for rapid sleep onset."
-                ],
-                measures: ["Reserve bedroom strictly for sleep and intimacy.", "Exit bed if awake for longer than 20 minutes.", "Eliminate clock-watching during middle-of-the-night awakenings."],
-                popular: true
-            },
-            {
-                id: 10,
-                title: "Telemedicine Best Practices for Rural & Remote Healthcare",
-                category: "Digital Health & Rehab",
-                readTime: 5,
-                summary: "Optimizing virtual clinical consultations, asynchronous remote patient monitoring, and digital triage security.",
-                fullText: [
-                    "Digital healthcare platforms bridge critical geographic accessibility gaps for rural populations, enabling specialized consultation without burdensome travel.",
-                    "Implementing high-definition secure video feeds and integrated Bluetooth diagnostic devices ensures robust clinical continuity."
-                ],
-                measures: ["Verify encrypted HIPAA/GDPR platform compliance.", "Utilize high-fidelity digital stethoscopes for remote auscultation.", "Ensure clear patient digital literacy onboarding."],
-                popular: false
-            },
-            {
-                id: 11,
-                title: "Circadian Rhythm Synchronization for Energy Optimization",
-                category: "Mental Well-Being",
-                readTime: 4,
-                summary: "Aligning daily ocular light exposure and meal timing with master hypothalamic clock pacemakers.",
-                fullText: [
-                    "The suprachiasmatic nucleus (SCN) coordinates central circadian rhythms, controlling hormone cascades including cortisol, thyroid, and melatonin.",
-                    "Mismatched circadian signals—such as late-night light exposure or irregular eating—induce metabolic desynchrony and chronic fatigue."
-                ],
-                measures: ["View 10-15 minutes of direct morning sunlight.", "Maintain consistent daily meal windows.", "Dim overhead lighting 2 hours before target sleep."],
-                popular: false
-            },
-            {
-                id: 12,
-                title: "Cardiorespiratory Fitness: VO2 Max as a Longevity Indicator",
-                category: "Cardiovascular",
-                readTime: 6,
-                summary: "Understanding maximum oxygen uptake as one of the strongest independent physiological predictors of lifespan.",
-                fullText: [
-                    "Clinical epidemiological data consistently identifies high cardiorespiratory fitness (measured via VO2 Max) as a potent marker for reduced all-cause mortality.",
-                    "Structured endurance zone 2 training combined with high-intensity aerobic intervals systematically increases cardiac stroke volume and mitochondrial density."
-                ],
-                measures: ["Incorporate 150-180 minutes of low-intensity Zone 2 cardio weekly.", "Perform 1 weekly High-Intensity Interval Training (HIIT) session.", "Re-evaluate aerobic fitness through formal stress testing."],
-                popular: true
-            },
-            {
-                id: 13,
-                title: "Preventive Screenings Timeline: Ages 20 to 60+",
-                category: "Pediatrics & Wellness",
-                readTime: 7,
-                summary: "A comprehensive age-stratified clinical guide to diagnostic screenings for early disease detection.",
-                fullText: [
-                    "Early diagnostic intervention alters disease trajectories significantly before overt clinical symptoms manifest.",
-                    "Structured age milestones dictate optimal timing for colonoscopies, mammography, DEXA scans, lipid panel sub-fractionation, and metabolic assessments."
-                ],
-                measures: ["Schedule annual preventive wellness exams.", "Follow age-appropriate oncology screening guidelines.", "Maintain digital archive of baseline laboratory trends."],
-                popular: false
-            },
-            {
-                id: 14,
-                title: "Hydration Mechanics: Electrolyte Balance Beyond Water Intake",
-                category: "Nutrition & Metabolism",
-                readTime: 4,
-                summary: "Balancing sodium, potassium, and magnesium ratios for optimal cellular transport and nerve conduction.",
-                fullText: [
-                    "Over-consuming plain water without adequate electrolyte replenishment can lead to dilutional hyponatremia and impaired cellular membrane potentials.",
-                    "Proper hydration requires balanced mineral ions to facilitate efficient renal filtration and cellular hydration."
-                ],
-                measures: ["Include essential electrolytes during intense endurance exertion.", "Monitor hydration via urine color indicators.", "Ensure adequate dietary magnesium through leafy greens and seeds."],
-                popular: false
-            },
-            {
-                id: 15,
-                title: "Mindfulness and Cortisol Control in High-Stress Environments",
-                category: "Mental Well-Being",
-                readTime: 4,
-                summary: "Attenuating hypothalamic-pituitary-adrenal (HPA) axis overdrive through targeted physiological regulation.",
-                fullText: [
-                    "Sustained psychological strain triggers chronic elevated cortisol release, impairing immune response, tissue repair, and glycemic homeostasis.",
-                    "Mindfulness practices alter neuroplasticity within the amygdala and prefrontal cortex, promoting down-regulation of stress responses."
-                ],
-                measures: ["Practice 10 minutes of daily mindfulness meditation.", "Utilize physiological sighs (double inhalation, slow exhalation).", "Limit late-day caffeine consumption."],
-                popular: false
-            },
-            {
-                id: 16,
-                title: "Metabolic Health Syndrome: Early Reversal Protocols",
-                category: "Nutrition & Metabolism",
-                readTime: 6,
-                summary: "Reversing central adiposity, elevated triglycerides, and insulin resistance through structured lifestyle modifications.",
-                fullText: [
-                    "Metabolic syndrome is diagnosed when three or more risk factors coincide: abdominal obesity, elevated fasting glucose, high triglycerides, low HDL, or hypertension.",
-                    "Aggressive lifestyle interventions focusing on carbohydrate reduction, resistance exercise, and sleep restoration demonstrate high clinical efficacy in reversing this syndrome."
-                ],
-                measures: ["Adopt a low-glycemic Mediterranean dietary pattern.", "Build lean skeletal muscle mass through strength training.", "Eliminate sugar-sweetened beverages entirely."],
-                popular: true
-            },
-            {
-                id: 17,
-                title: "Pediatric Immunization Schedules & Immunology Fundamentals",
-                category: "Pediatrics & Wellness",
-                readTime: 5,
-                summary: "Understanding adaptive immune memory, herd protection, and evidence-based pediatric vaccination timing.",
-                fullText: [
-                    "Pediatric immunization schedules are rigorously calibrated to match windows of developmental immune susceptibility against preventable pathogens.",
-                    "Vaccines stimulate robust humoral and cell-mediated immune responses without exposing children to severe clinical disease outcomes."
-                ],
-                measures: ["Adhere to pediatrician-recommended vaccine timelines.", "Maintain accurate immunization tracking records.", "Discuss individual medical contraindications with clinicians."],
-                popular: false
-            },
-            {
-                id: 18,
-                title: "Post-Surgical Rehabilitation & Home Care Protocols",
-                category: "Digital Health & Rehab",
-                readTime: 5,
-                summary: "Structured recovery strategies to accelerate tissue healing and minimize post-operative complications.",
-                fullText: [
-                    "Post-surgical recovery requires meticulous wound site management, early progressive mobilization, and optimized protein intake for tissue repair.",
-                    "Digital remote monitoring allows surgical teams to track healing milestones and identify early signs of localized infection."
-                ],
-                measures: ["Follow strict sterile wound care procedures.", "Ensure protein intake meets 1.6-2.0g per kg of body weight during recovery.", "Engage in prescribed physical therapy protocols without over-exertion."],
-                popular: false
-            },
-            {
-                id: 19,
-                title: "AI-Driven Diagnostics: The Future of Preventive Medicine",
-                category: "Digital Health & Rehab",
-                readTime: 5,
-                summary: "How machine learning models analyze imaging, genomics, and EHR data to detect sub-clinical pathological patterns.",
-                fullText: [
-                    "Artificial intelligence algorithms trained on millions of medical scans can identify microscopic tissue changes earlier than traditional manual evaluation.",
-                    "Integrating predictive analytics into routine care allows physicians to transition from reactive treatment to proactive prevention."
-                ],
-                measures: ["Support interoperable digital health record systems.", "Ensure human-in-the-loop clinical oversight for AI recommendations.", "Utilize AI risk stratification for personalized checkup intervals."],
-                popular: true
-            },
-            {
-                id: 20,
-                title: "Bone Density Maintenance: Resistance Training & Osteoporosis Prevention",
-                category: "Pediatrics & Wellness",
-                readTime: 5,
-                summary: "Stimulating osteoblast activity and mechanical bone load strain to preserve axial skeletal integrity.",
-                fullText: [
-                    "Bone mass peaks around age 30, after which progressive bone mineral density loss occurs if unaddressed by physical stimulus and adequate nutrition.",
-                    "Progressive axial loading through compound weight-bearing exercise stimulates bone remodeling through osteoblast mechanical signaling pathways."
-                ],
-                measures: ["Perform progressive axial weight-bearing strength training 2-3x weekly.", "Verify adequate Vitamin D3 and K2 levels.", "Ensure daily dietary calcium intake targets are met."],
-                popular: false
-            }
+            { id: 1, title: "Cardiovascular Resilience & Heart Rate Variability", category: "Cardiology", readTime: 5, summary: "Utilizing autonomic nervous system metrics to evaluate stress resilience and cardiac recovery.", fullText: "Heart Rate Variability (HRV) measures millisecond time differences between consecutive heartbeats, reflecting autonomic balance. Higher resting HRV signifies superior physiological adaptability." },
+            { id: 2, title: "Precision Micro-Nutrition & Gut Microbiome Sequencing", category: "Nutrition", readTime: 6, summary: "Leveraging genomic profiling and gut sequencing to customize diet beyond generic recommendations.", fullText: "Precision nutrition focuses on individualized dietary protocols based on unique microbiome markers to optimize metabolic stability and immune function." },
+            { id: 3, title: "Cognitive Behavioral Therapy for Insomnia (CBT-I)", category: "Sleep Medicine", readTime: 5, summary: "Non-pharmacological interventions for restoring sleep drive and breaking nocturnal anxiety.", fullText: "CBT-I represents the gold standard for insomnia management by retraining sleep-wake neuroplasticity and stimulus control." },
+            { id: 4, title: "Continuous Glucose Monitoring (CGM) Protocols", category: "Endocrinology", readTime: 5, summary: "Tracking real-time interstitial glucose to prevent insulin resistance and metabolic fatigue.", fullText: "Continuous glucose monitoring identifies unexpected blood sugar spikes caused by stress and refined carbohydrates." },
+            { id: 5, title: "VO2 Max Optimization for Cellular Longevity", category: "Cardiology", readTime: 6, summary: "Understanding maximum oxygen uptake as an independent physiological predictor of lifespan.", fullText: "High cardiorespiratory fitness (VO2 Max) strongly correlates with reduced overall mortality risks through enhanced mitochondrial output." },
+            { id: 6, title: "Digital Curfews & Melatonin Protection in Pediatrics", category: "Pediatrics", readTime: 4, summary: "Protecting pediatric neurodevelopment against blue light melatonin suppression.", fullText: "Screen light exposure prior to sleep impairs pineal melatonin release in developing children, making digital curfews essential." },
+            { id: 7, title: "Ergonomic Biomechanics for Knowledge Workers", category: "Technology", readTime: 4, summary: "Mitigating forward head posture and spinal disc pressure during long desk hours.", fullText: "Poor workstation posture increases gravitational strain on the cervical spine. Proper monitor alignment resets postural load." },
+            { id: 8, title: "Machine Learning in Early Oncology Detection", category: "Technology", readTime: 5, summary: "How predictive AI algorithms analyze medical imaging and genetic data to spot early anomalies.", fullText: "AI models trained on clinical datasets identify cellular changes faster than traditional manual reviews." },
+            { id: 9, title: "Neurobiology of Chronic Stress & Cortisol Control", category: "Sleep Medicine", readTime: 5, summary: "Attenuating HPA-axis overdrive through targeted physiological breathing and mindfulness.", fullText: "Elevated cortisol levels impair immune defense, sleep quality, and glucose regulation. Targeted breathing activates vagal tone." },
+            { id: 10, title: "Hydration Science & Electrolyte Balance", category: "Nutrition", readTime: 4, summary: "Balancing sodium, potassium, and magnesium for optimal nerve signaling and hydration.", fullText: "Drinking plain water without adequate minerals can cause hyponatremia. Balanced electrolytes maintain cellular hydration." },
+            { id: 11, title: "Intermittent Fasting & Autophagy Activation", category: "Nutrition", readTime: 5, summary: "Stimulating cellular recycling and metabolic flexibility through timed feeding windows.", fullText: "Structured fasting down-regulates mTOR pathways and initiates cellular cleanup, supporting metabolic longevity." },
+            { id: 12, title: "Preventing Sarcopenia & Muscle Loss in Aging", category: "Pediatrics", readTime: 5, summary: "Preserving muscle mass and motor recruitment through progressive resistance training.", fullText: "Age-related muscle loss accelerates after age 40 if unaddressed by exercise and adequate dietary protein intake." },
+            { id: 13, title: "Telehealth Security: HIPAA & GDPR Compliance", category: "Technology", readTime: 6, summary: "Engineering end-to-end encrypted video channels and protected patient data architecture.", fullText: "Healthcare platforms must balance rapid patient communication with strict data privacy laws via zero-trust architecture." },
+            { id: 14, title: "The Brain-Gut Axis & Neurotransmitter Synthesis", category: "Endocrinology", readTime: 5, summary: "Understanding how intestinal bacteria produce neurotransmitters influencing mood.", fullText: "The gastrointestinal tract harbors trillions of microbes producing neurotransmitters linked directly via vagus nerve signaling." },
+            { id: 15, title: "Resistance Exercise for Osteoporosis Prevention", category: "Cardiology", readTime: 5, summary: "Stimulating bone mineral density and osteoblast activity through mechanical loading.", fullText: "Progressive weight-bearing exercise stimulates bone remodeling to preserve skeletal integrity across aging populations." },
+            { id: 16, title: "Ocular Health & Digital Eye Strain Solutions", category: "Technology", readTime: 4, summary: "Mitigating blue light fatigue and ocular strain for heavy monitor users.", fullText: "Prolonged exposure to monitor displays causes visual strain. Applying screen distance rules preserves macular comfort." },
+            { id: 17, title: "Thyroid Marker Panels & Subclinical Evaluation", category: "Endocrinology", readTime: 5, summary: "Evaluating TSH, Free T3, and Free T4 panel markers for endocrine balance.", fullText: "Comprehensive thyroid panel analysis reveals subtle metabolic shifts before overt clinical symptoms manifest." },
+            { id: 18, title: "Immunological Buffering & Innate Defense", category: "Pediatrics", readTime: 5, summary: "Supporting T-cell activity and reducing chronic systemic inflammation.", fullText: "Maintaining balanced immune cell activity protects against seasonal illnesses through sleep and targeted micronutrients." },
+            { id: 19, title: "Thermal Contrast Therapy: Sauna vs Cold Immersion", category: "Cardiology", readTime: 5, summary: "Evaluating heat shock proteins and cold therapy for muscular repair and circulation.", fullText: "Sauna bathing induces heat shock proteins promoting cardiovascular health, while cold immersion manages acute inflammation." },
+            { id: 20, title: "Circadian Rhythm Alignment for Shift Workers", category: "Sleep Medicine", readTime: 5, summary: "Minimizing metabolic and sleep disruption during non-traditional work hours.", fullText: "Night shifts disrupt synchronization between central hypothalamic clocks and peripheral organs. Strategic light blocks help realign sleep." }
         ];
 
-        // --- State Management ---
         let activeCategory = 'all';
         let searchQuery = '';
-        let currentSort = 'id-asc';
-        let bookmarkedIds = JSON.parse(localStorage.getItem('pk_saved_articles') || '[]');
-        let currentModalFontSize = 16;
+        let bookmarkedIds = JSON.parse(localStorage.getItem('pk_saved_ids') || '[]');
 
-        // Initialize App on DOM Load
         document.addEventListener('DOMContentLoaded', () => {
             initTheme();
             renderArticles();
-            updateBookmarksUI();
-            calculateEstimate();
-            setupEventListeners();
+            renderBookmarks();
+            calculateCost();
+            setupEvents();
         });
 
-        // --- Render Articles Engine ---
         function renderArticles() {
             const grid = document.getElementById('articles-grid');
             const noResults = document.getElementById('no-results');
             grid.innerHTML = '';
 
-            // Filter logic
-            let filtered = articles.filter(art => {
-                const matchesCat = (activeCategory === 'all') || (art.category === activeCategory);
-                const matchesSearch = art.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                                      art.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                                      art.category.toLowerCase().includes(searchQuery.toLowerCase());
-                return matchesCat && matchesSearch;
+            const filtered = articles.filter(art => {
+                const catMatch = (activeCategory === 'all') || (art.category === activeCategory);
+                const searchMatch = art.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                    art.summary.toLowerCase().includes(searchQuery.toLowerCase());
+                return catMatch && searchMatch;
             });
-
-            // Sort logic
-            if (currentSort === 'time-asc') {
-                filtered.sort((a, b) => a.readTime - b.readTime);
-            } else if (currentSort === 'title-asc') {
-                filtered.sort((a, b) => a.title.localeCompare(b.title));
-            } else {
-                filtered.sort((a, b) => a.id - b.id);
-            }
 
             if (filtered.length === 0) {
                 noResults.classList.remove('hidden');
@@ -907,64 +632,49 @@
             filtered.forEach(art => {
                 const isSaved = bookmarkedIds.includes(art.id);
                 const card = document.createElement('div');
-                card.className = "p-6 rounded-2xl bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 hover:border-medical-500/80 transition-all duration-300 hover:shadow-lg flex flex-col justify-between group";
-                
+                card.className = "p-7 rounded-3xl vibrant-card flex flex-col justify-between shadow-md";
                 card.innerHTML = `
                     <div>
-                        <div class="flex items-center justify-between gap-2 mb-3">
-                            <span class="px-2.5 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider bg-medical-50 dark:bg-medical-900/40 text-medical-700 dark:text-medical-300 border border-medical-200/50 dark:border-medical-800/50">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-neon-pink/10 text-neon-pink border border-neon-pink/30">
                                 ${art.category}
                             </span>
                             <div class="flex items-center gap-2">
-                                <span class="text-xs text-slate-400 font-medium"><i class="fa-regular fa-clock mr-1"></i>${art.readTime} min</span>
-                                <button onclick="toggleBookmark(${art.id}, event)" class="text-slate-400 hover:text-medical-600 transition-colors p-1" title="Bookmark Article">
-                                    <i class="${isSaved ? 'fa-solid' : 'fa-regular'} fa-bookmark text-medical-600"></i>
+                                <span class="text-xs font-bold text-slate-500 dark:text-slate-400"><i class="fa-regular fa-clock mr-1"></i>${art.readTime} min</span>
+                                <button onclick="toggleBookmark(${art.id})" class="text-slate-400 hover:text-neon-pink p-1">
+                                    <i class="${isSaved ? 'fa-solid' : 'fa-regular'} fa-bookmark text-neon-pink text-base"></i>
                                 </button>
                             </div>
                         </div>
-
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-medical-600 dark:group-hover:text-medical-400 transition-colors leading-snug">
-                            ${art.title}
-                        </h3>
-
-                        <p class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
-                            ${art.summary}
-                        </p>
+                        <h3 class="text-xl font-black text-slate-900 dark:text-white leading-snug">${art.title}</h3>
+                        <p class="mt-3 text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-medium line-clamp-3">${art.summary}</p>
                     </div>
-
-                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between">
-                        <span class="inline-flex items-center gap-1 text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold">
-                            <i class="fa-solid fa-user-doctor"></i> Medically Reviewed
-                        </span>
-                        <button onclick="openArticleModal(${art.id})" class="text-xs font-bold text-medical-600 dark:text-medical-400 hover:gap-2 flex items-center transition-all">
-                            Read Full Guide <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
-                        </button>
+                    <div class="mt-6 pt-4 border-t border-fuchsia-500/20 flex items-center justify-between">
+                        <span class="text-[11px] font-black text-neon-emerald"><i class="fa-solid fa-circle-check mr-1"></i> CEO Approved</span>
+                        <button onclick="openModal(${art.id})" class="text-xs font-black text-neon-pink hover:underline">Read Guide →</button>
                     </div>
                 `;
                 grid.appendChild(card);
             });
         }
 
-        // --- Bookmark Logic ---
-        function toggleBookmark(id, event) {
-            if (event) event.stopPropagation();
+        function toggleBookmark(id) {
             if (bookmarkedIds.includes(id)) {
                 bookmarkedIds = bookmarkedIds.filter(bId => bId !== id);
             } else {
                 bookmarkedIds.push(id);
             }
-            localStorage.setItem('pk_saved_articles', JSON.stringify(bookmarkedIds));
+            localStorage.setItem('pk_saved_ids', JSON.stringify(bookmarkedIds));
             renderArticles();
-            updateBookmarksUI();
+            renderBookmarks();
         }
 
-        function updateBookmarksUI() {
+        function renderBookmarks() {
             const count = document.getElementById('saved-count');
             const container = document.getElementById('bookmarks-container');
             const emptyMsg = document.getElementById('empty-bookmarks-msg');
-            
-            count.innerText = bookmarkedIds.length;
 
+            count.innerText = bookmarkedIds.length;
             if (bookmarkedIds.length === 0) {
                 container.innerHTML = '';
                 container.appendChild(emptyMsg);
@@ -977,183 +687,128 @@
                 const art = articles.find(a => a.id === id);
                 if (!art) return;
                 const item = document.createElement('div');
-                item.className = "p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex justify-between items-center";
+                item.className = "p-4 rounded-2xl vibrant-card flex justify-between items-center";
                 item.innerHTML = `
                     <div>
-                        <span class="text-[10px] font-bold uppercase text-medical-600 block">${art.category}</span>
-                        <h5 class="text-xs font-bold text-slate-900 dark:text-white line-clamp-1">${art.title}</h5>
+                        <span class="text-[9px] font-black uppercase text-neon-pink block">${art.category}</span>
+                        <h5 class="text-xs font-black text-slate-900 dark:text-white truncate max-w-[200px]">${art.title}</h5>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <button onclick="openArticleModal(${art.id})" class="text-xs font-semibold text-medical-600 hover:underline">Read</button>
-                        <button onclick="toggleBookmark(${art.id})" class="text-xs text-red-500 hover:text-red-700"><i class="fa-solid fa-trash"></i></button>
+                    <div class="flex items-center gap-3">
+                        <button onclick="openModal(${art.id})" class="text-xs font-black text-neon-pink hover:underline">Read</button>
+                        <button onclick="toggleBookmark(${art.id})" class="text-xs text-red-500 font-bold">✕</button>
                     </div>
                 `;
                 container.appendChild(item);
             });
         }
 
-        function clearAllBookmarks() {
+        function clearBookmarks() {
             bookmarkedIds = [];
-            localStorage.removeItem('pk_saved_articles');
+            localStorage.removeItem('pk_saved_ids');
             renderArticles();
-            updateBookmarksUI();
+            renderBookmarks();
         }
 
-        // --- Article Modal Logic ---
-        function openArticleModal(id) {
+        function openModal(id) {
             const art = articles.find(a => a.id === id);
             if (!art) return;
-
-            document.getElementById('modal-category').innerText = art.category;
-            document.getElementById('modal-readtime').innerText = `${art.readTime} min read`;
+            document.getElementById('modal-cat').innerText = art.category;
+            document.getElementById('modal-time').innerText = `${art.readTime} min read`;
             document.getElementById('modal-title').innerText = art.title;
             document.getElementById('modal-summary').innerText = art.summary;
-
-            const fullTextContainer = document.getElementById('modal-full-text');
-            fullTextContainer.innerHTML = '';
-            art.fullText.forEach(para => {
-                const p = document.createElement('p');
-                p.innerText = para;
-                fullTextContainer.appendChild(p);
-            });
-
-            const measuresContainer = document.getElementById('modal-measures');
-            measuresContainer.innerHTML = '';
-            art.measures.forEach(m => {
-                const li = document.createElement('li');
-                li.innerText = m;
-                measuresContainer.appendChild(li);
-            });
+            document.getElementById('modal-body').innerText = art.fullText;
 
             document.getElementById('article-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
         }
 
-        function closeArticleModal() {
+        function closeModal() {
             document.getElementById('article-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
         }
 
-        function adjustFontSize(delta) {
-            currentModalFontSize = Math.min(Math.max(currentModalFontSize + delta, 12), 22);
-            document.getElementById('article-modal-body').style.fontSize = `${currentModalFontSize}px`;
-        }
+        function calculateCost() {
+            const base = parseInt(document.getElementById('est-type').value);
+            const addons = document.querySelectorAll('.est-addon:checked');
+            let addonTotal = 0;
+            addons.forEach(a => addonTotal += parseInt(a.value));
+            const speed = parseFloat(document.querySelector('input[name="speed"]:checked').value);
 
-        // --- Interactive Estimator Engine ---
-        function calculateEstimate() {
-            const typeCost = parseInt(document.getElementById('est-type').value);
-            const checkboxes = document.querySelectorAll('.est-feature:checked');
-            let featuresCost = 0;
-            checkboxes.forEach(cb => featuresCost += parseInt(cb.value));
-
-            const speedMultiplier = parseFloat(document.querySelector('input[name="speed"]:checked').value);
-
-            const total = Math.round((typeCost + featuresCost) * speedMultiplier);
+            const total = Math.round((base + addonTotal) * speed);
             document.getElementById('est-total').innerText = `$${total.toLocaleString()}`;
 
             let days = "7 - 10 Business Days";
-            if (typeCost >= 2000) days = "14 - 21 Business Days";
-            if (speedMultiplier > 1) days = "3 - 5 Express Days";
-
+            if (base >= 2200) days = "14 - 21 Business Days";
+            if (speed > 1) days = "3 - 5 Express Days";
             document.getElementById('est-days').innerText = days;
         }
 
-        // --- Consultation Modal Functions ---
         function openConsultationModal() {
             document.getElementById('consultation-modal').classList.remove('hidden');
         }
-
         function openConsultationModalWithEstimate() {
             const total = document.getElementById('est-total').innerText;
-            document.getElementById('form-details').value = `I am interested in building a health website based on the website calculator estimate of ${total}.`;
+            document.getElementById('consult-reqs').value = `Requesting custom web development project with CEO Pakeeza Khalid based on estimate of ${total}.`;
             openConsultationModal();
         }
-
         function closeConsultationModal() {
             document.getElementById('consultation-modal').classList.add('hidden');
         }
-
-        function handleFormSubmit(e) {
+        function handleConsultSubmit(e) {
             e.preventDefault();
-            const msg = document.getElementById('form-success-msg');
+            const msg = document.getElementById('form-msg');
             msg.classList.remove('hidden');
             setTimeout(() => {
                 msg.classList.add('hidden');
                 closeConsultationModal();
-                document.getElementById('consultation-form').reset();
-            }, 3000);
+                document.getElementById('consult-form').reset();
+            }, 2500);
         }
 
-        // --- Setup Event Listeners ---
-        function setupEventListeners() {
-            // Category filter pills
-            document.querySelectorAll('.cat-pill').forEach(btn => {
+        function setupEvents() {
+            document.querySelectorAll('.cat-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
-                    document.querySelectorAll('.cat-pill').forEach(b => {
-                        b.className = "cat-pill px-4 py-1.5 rounded-full text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 transition-all";
+                    document.querySelectorAll('.cat-btn').forEach(b => {
+                        b.className = "cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-fuchsia-500/20 hover:border-neon-pink";
                     });
-                    e.target.className = "cat-pill px-4 py-1.5 rounded-full text-xs font-semibold bg-medical-600 text-white shadow-sm transition-all";
+                    e.target.className = "cat-btn px-5 py-2.5 rounded-xl text-xs font-black hyper-btn text-white shadow-md";
                     activeCategory = e.target.getAttribute('data-cat');
                     renderArticles();
                 });
             });
 
-            // Search input
             document.getElementById('search-input').addEventListener('input', (e) => {
                 searchQuery = e.target.value;
                 renderArticles();
             });
 
-            // Sort select
-            document.getElementById('sort-select').addEventListener('change', (e) => {
-                currentSort = e.target.value;
-                renderArticles();
-            });
-
-            // Mobile menu toggle
             const mobileBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
-            mobileBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
+            mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
             document.querySelectorAll('.mobile-nav-link').forEach(l => {
                 l.addEventListener('click', () => mobileMenu.classList.add('hidden'));
             });
         }
 
-        // --- Theme Switching ---
         function initTheme() {
             const darkIcon = document.getElementById('theme-icon-dark');
             const lightIcon = document.getElementById('theme-icon-light');
-            const darkIconMobile = document.getElementById('theme-icon-dark-mobile');
-            const lightIconMobile = document.getElementById('theme-icon-light-mobile');
-
             const isDark = localStorage.getItem('pk_theme') === 'dark' || 
                 (!('pk_theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
             if (isDark) {
                 document.documentElement.classList.add('dark');
                 lightIcon.classList.remove('hidden');
-                lightIconMobile.classList.remove('hidden');
             } else {
                 document.documentElement.classList.remove('dark');
                 darkIcon.classList.remove('hidden');
-                darkIconMobile.classList.remove('hidden');
             }
 
-            const toggle = () => {
+            document.getElementById('theme-toggle').addEventListener('click', () => {
                 document.documentElement.classList.toggle('dark');
                 const darkNow = document.documentElement.classList.contains('dark');
                 localStorage.setItem('pk_theme', darkNow ? 'dark' : 'light');
-                
                 darkIcon.classList.toggle('hidden', darkNow);
                 lightIcon.classList.toggle('hidden', !darkNow);
-                darkIconMobile.classList.toggle('hidden', darkNow);
-                lightIconMobile.classList.toggle('hidden', !darkNow);
-            };
-
-            document.getElementById('theme-toggle').addEventListener('click', toggle);
-            document.getElementById('theme-toggle-mobile').addEventListener('click', toggle);
+            });
         }
     </script>
 </body>
