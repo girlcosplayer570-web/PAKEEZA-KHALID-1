@@ -13,11 +13,11 @@
                 extend: {
                     colors: {
                         neon: {
-                            pink: '#ff007f',
+                            emerald: '#10b981',
+                            teal: '#059669',
                             purple: '#8b5cf6',
                             fuchsia: '#d946ef',
                             cyan: '#06b6d4',
-                            emerald: '#10b981',
                             amber: '#f59e0b',
                         }
                     },
@@ -32,8 +32,8 @@
                             '100%': { backgroundPosition: '200% 0' },
                         },
                         pulseGlowNeon: {
-                            '0%, 100%': { boxShadow: '0 0 15px rgba(217, 70, 239, 0.4), 0 0 30px rgba(6, 182, 212, 0.2)' },
-                            '50%': { boxShadow: '0 0 25px rgba(255, 0, 127, 0.7), 0 0 45px rgba(16, 185, 129, 0.4)' },
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(16, 185, 129, 0.4), 0 0 30px rgba(6, 182, 212, 0.2)' },
+                            '50%': { boxShadow: '0 0 25px rgba(5, 150, 105, 0.7), 0 0 45px rgba(6, 182, 212, 0.4)' },
                         }
                     },
                     animation: {
@@ -69,7 +69,7 @@
 
         /* Animated Shimmer Text */
         .shimmer-gradient-text {
-            background: linear-gradient(135deg, #ff007f, #d946ef, #8b5cf6, #06b6d4, #10b981, #ff007f);
+            background: linear-gradient(135deg, #10b981, #059669, #8b5cf6, #06b6d4, #10b981);
             background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -84,13 +84,13 @@
         }
         html:not(.dark) .vibrant-card {
             background: rgba(255, 255, 255, 0.9);
-            border: 1.5px solid rgba(217, 70, 239, 0.25);
-            box-shadow: 0 10px 25px -5px rgba(217, 70, 239, 0.1), 0 8px 10px -6px rgba(6, 182, 212, 0.1);
+            border: 1.5px solid rgba(16, 185, 129, 0.25);
+            box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.1), 0 8px 10px -6px rgba(6, 182, 212, 0.1);
         }
         html.dark .vibrant-card {
             background: rgba(15, 23, 42, 0.75);
             backdrop-filter: blur(12px);
-            border: 1.5px solid rgba(217, 70, 239, 0.3);
+            border: 1.5px solid rgba(16, 185, 129, 0.3);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
         }
 
@@ -98,24 +98,24 @@
             transform: translateY(-7px) scale(1.01);
         }
         html:not(.dark) .vibrant-card:hover {
-            border-color: rgba(255, 0, 127, 0.6);
-            box-shadow: 0 20px 35px -10px rgba(255, 0, 127, 0.25), 0 10px 15px -5px rgba(6, 182, 212, 0.2);
+            border-color: rgba(5, 150, 105, 0.6);
+            box-shadow: 0 20px 35px -10px rgba(5, 150, 105, 0.25), 0 10px 15px -5px rgba(6, 182, 212, 0.2);
         }
         html.dark .vibrant-card:hover {
-            border-color: rgba(217, 70, 239, 0.8);
-            box-shadow: 0 20px 35px -10px rgba(217, 70, 239, 0.35), 0 0 20px rgba(6, 182, 212, 0.2);
+            border-color: rgba(16, 185, 129, 0.8);
+            box-shadow: 0 20px 35px -10px rgba(16, 185, 129, 0.35), 0 0 20px rgba(6, 182, 212, 0.2);
         }
 
         /* Hyper Buttons */
         .hyper-btn {
-            background: linear-gradient(135deg, #ff007f 0%, #d946ef 40%, #8b5cf6 80%, #06b6d4 100%);
+            background: linear-gradient(135deg, #10b981 0%, #059669 40%, #8b5cf6 80%, #06b6d4 100%);
             background-size: 200% 200%;
             transition: all 0.3s ease;
         }
         .hyper-btn:hover {
             background-position: right center;
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(217, 70, 239, 0.5);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5);
         }
 
         /* Ambient glowing background blobs */
@@ -130,32 +130,24 @@
         /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: #060913; }
-        ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #ff007f, #8b5cf6, #06b6d4); border-radius: 5px; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #10b981, #8b5cf6, #06b6d4); border-radius: 5px; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-fuchsia-500 selection:text-white relative overflow-x-hidden">
+<body class="min-h-screen flex flex-col selection:bg-emerald-500 selection:text-white relative overflow-x-hidden">
 
     <!-- Ambient Glowing Background Lighting -->
-    <div class="glow-blob w-[500px] h-[500px] bg-neon-pink -top-20 -left-20 animate-mesh"></div>
+    <div class="glow-blob w-[500px] h-[500px] bg-neon-emerald -top-20 -left-20 animate-mesh"></div>
     <div class="glow-blob w-[600px] h-[600px] bg-neon-cyan top-1/3 -right-20 animate-mesh" style="animation-delay: -4s;"></div>
     <div class="glow-blob w-[550px] h-[550px] bg-neon-purple bottom-10 left-10 animate-mesh" style="animation-delay: -8s;"></div>
 
-    <!-- 1. TOP HYPER-VIBRANT ANNOUNCEMENT BANNER -->
-    <div class="bg-gradient-to-r from-neon-pink via-neon-fuchsia via-neon-purple to-neon-cyan text-white py-2.5 px-4 text-center text-xs sm:text-sm font-extrabold shadow-lg flex items-center justify-center gap-2 relative z-50">
-        <i class="fa-solid fa-crown text-amber-300 text-base animate-bounce"></i>
-        <span>
-            <strong>EXECUTIVE NOTICE:</strong> Pakeeza Khalid is the <u>CEO & Original Owner</u> of this site & business • Co-Owned by <strong>Wajeeha Munir</strong> & <strong>Razia Jabeen</strong> worldwide!
-        </span>
-    </div>
-
     <!-- 2. STICKY VIBRANT HEADER -->
-    <header class="sticky top-0 z-40 w-full backdrop-blur-xl bg-white/80 dark:bg-slate-950/80 border-b border-fuchsia-500/20 transition-colors">
+    <header class="sticky top-0 z-40 w-full backdrop-blur-xl bg-white/80 dark:bg-slate-950/80 border-b border-emerald-500/20 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 
                 <!-- Logo & CEO Title -->
-                <div class="flex items-center gap-3.5 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-neon-pink via-neon-fuchsia to-neon-cyan flex items-center justify-center text-white font-black text-xl shadow-lg animate-neon-glow">
+                <div class="flex items-center gap-3.5 cursor-pointer" onclick="showMainPage()">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-neon-emerald via-teal-600 to-neon-cyan flex items-center justify-center text-white font-black text-xl shadow-lg animate-neon-glow">
                         PK
                     </div>
                     <div>
@@ -163,28 +155,28 @@
                             <span class="text-xl font-black text-slate-900 dark:text-white tracking-tight">
                                 Pakeeza Khalid
                             </span>
-                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-gradient-to-r from-neon-pink to-neon-fuchsia text-white uppercase shadow-sm">CEO</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-gradient-to-r from-neon-emerald to-teal-600 text-white uppercase shadow-sm">CEO</span>
                         </div>
-                        <span class="text-xs font-extrabold text-fuchsia-600 dark:text-fuchsia-400 block">Global Health Web Agency</span>
+                        <span class="text-xs font-extrabold text-emerald-600 dark:text-emerald-400 block">Global Health Web Agency</span>
                     </div>
                 </div>
 
                 <!-- Desktop Navigation Links -->
                 <nav class="hidden lg:flex space-x-7 text-sm font-extrabold text-slate-800 dark:text-slate-100">
-                    <a href="#leadership" class="hover:text-neon-pink dark:hover:text-neon-fuchsia transition-colors">Leadership</a>
-                    <a href="#articles" class="hover:text-neon-pink dark:hover:text-neon-fuchsia transition-colors">20 Health & Skincare Guides</a>
-                    <a href="#services" class="hover:text-neon-pink dark:hover:text-neon-fuchsia transition-colors">Web Services</a>
-                    <a href="#estimator" class="hover:text-neon-pink dark:hover:text-neon-fuchsia transition-colors">Cost Calculator</a>
-                    <a href="#saved-articles" class="hover:text-neon-pink dark:hover:text-neon-fuchsia transition-colors flex items-center gap-1.5">
-                        <i class="fa-solid fa-bookmark text-neon-pink"></i>
+                    <a href="javascript:void(0)" onclick="showMainPage('#leadership')" class="hover:text-neon-emerald dark:hover:text-neon-emerald transition-colors">Leadership</a>
+                    <a href="javascript:void(0)" onclick="showMainPage('#articles')" class="hover:text-neon-emerald dark:hover:text-neon-emerald transition-colors">20 Health & Skincare Guides</a>
+                    <a href="javascript:void(0)" onclick="showMainPage('#services')" class="hover:text-neon-emerald dark:hover:text-neon-emerald transition-colors">Web Services</a>
+                    <a href="javascript:void(0)" onclick="showMainPage('#estimator')" class="hover:text-neon-emerald dark:hover:text-neon-emerald transition-colors">Cost Calculator</a>
+                    <a href="javascript:void(0)" onclick="showMainPage('#saved-articles')" class="hover:text-neon-emerald dark:hover:text-neon-emerald transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-bookmark text-neon-emerald"></i>
                         <span>Saved</span>
-                        <span id="saved-count" class="px-2 py-0.5 text-[10px] rounded-full bg-neon-pink text-white font-black">0</span>
+                        <span id="saved-count" class="px-2 py-0.5 text-[10px] rounded-full bg-neon-emerald text-white font-black">0</span>
                     </a>
                 </nav>
 
                 <!-- Header Action Buttons -->
                 <div class="flex items-center gap-3">
-                    <button id="theme-toggle" class="p-3 rounded-2xl border-2 border-fuchsia-500/30 text-slate-800 dark:text-slate-100 hover:bg-fuchsia-500/10 transition-colors" aria-label="Toggle Theme">
+                    <button id="theme-toggle" class="p-3 rounded-2xl border-2 border-emerald-500/30 text-slate-800 dark:text-slate-100 hover:bg-emerald-500/10 transition-colors" aria-label="Toggle Theme">
                         <i id="theme-icon-dark" class="fa-solid fa-moon text-lg hidden text-neon-purple"></i>
                         <i id="theme-icon-light" class="fa-solid fa-sun text-lg hidden text-amber-400"></i>
                     </button>
@@ -202,311 +194,335 @@
         </div>
 
         <!-- Mobile Nav Drawer -->
-        <div id="mobile-menu" class="hidden lg:hidden border-b border-fuchsia-500/20 bg-white dark:bg-slate-950 px-5 pt-4 pb-6 space-y-3 text-sm font-extrabold">
-            <a href="#leadership" class="mobile-nav-link block p-2.5 rounded-xl hover:bg-fuchsia-500/10">Executive Leadership</a>
-            <a href="#articles" class="mobile-nav-link block p-2.5 rounded-xl hover:bg-fuchsia-500/10">20 Health & Skincare Guides</a>
-            <a href="#services" class="mobile-nav-link block p-2.5 rounded-xl hover:bg-fuchsia-500/10">Web Services</a>
-            <a href="#estimator" class="mobile-nav-link block p-2.5 rounded-xl hover:bg-fuchsia-500/10">Cost Calculator</a>
+        <div id="mobile-menu" class="hidden lg:hidden border-b border-emerald-500/20 bg-white dark:bg-slate-950 px-5 pt-4 pb-6 space-y-3 text-sm font-extrabold">
+            <a href="javascript:void(0)" onclick="showMainPage('#leadership')" class="mobile-nav-link block p-2.5 rounded-xl hover:bg-emerald-500/10">Executive Leadership</a>
+            <a href="javascript:void(0)" onclick="showMainPage('#articles')" class="mobile-nav-link block p-2.5 rounded-xl hover:bg-emerald-500/10">20 Health & Skincare Guides</a>
+            <a href="javascript:void(0)" onclick="showMainPage('#services')" class="mobile-nav-link block p-2.5 rounded-xl hover:bg-emerald-500/10">Web Services</a>
+            <a href="javascript:void(0)" onclick="showMainPage('#estimator')" class="mobile-nav-link block p-2.5 rounded-xl hover:bg-emerald-500/10">Cost Calculator</a>
             <button onclick="openConsultationModal()" class="w-full mt-2 py-3 rounded-xl text-white font-black hyper-btn">Request Custom Website</button>
         </div>
     </header>
 
     <main class="flex-grow relative z-10">
         
-        <!-- 3. HERO SECTION WITH VIBRANT STATS -->
-        <section class="py-16 sm:py-24 relative overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                
-                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-black bg-gradient-to-r from-neon-pink/20 via-neon-fuchsia/20 to-neon-cyan/20 text-slate-900 dark:text-white border-2 border-fuchsia-500/40 mb-8 shadow-md">
-                    <i class="fa-solid fa-bolt text-amber-400 text-sm"></i>
-                    <span>Original Owner & CEO: Pakeeza Khalid • Health & Skincare Web Agency</span>
-                </div>
-
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 dark:text-white leading-tight max-w-5xl mx-auto tracking-tight">
-                    Engineering Enterprise <br class="hidden sm:inline" />
-                    <span class="shimmer-gradient-text">Health & Skincare Web Solutions</span> Worldwide
-                </h1>
-
-                <p class="mt-6 text-base sm:text-xl text-slate-700 dark:text-slate-300 max-w-3xl mx-auto font-medium leading-relaxed">
-                    Directed by Founder & CEO <strong class="text-slate-900 dark:text-white font-black underline decoration-neon-pink decoration-2">Pakeeza Khalid</strong> along with Co-Owners <strong class="text-slate-900 dark:text-white font-black">Wajeeha Munir</strong> & <strong class="text-slate-900 dark:text-white font-black">Razia Jabeen</strong>. We engineer high-converting glow skincare e-commerce sites, aesthetic dermatology portals, and clinical telemedicine platforms across USA, UK, UAE, Pakistan, Europe, and Asia.
-                </p>
-
-                <!-- High-Energy Stat Cards -->
-                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl mx-auto">
-                    <div class="p-6 rounded-3xl vibrant-card border-l-4 border-l-neon-pink">
-                        <span class="text-4xl sm:text-5xl font-black text-neon-pink block">150+</span>
-                        <span class="text-xs font-black text-slate-600 dark:text-slate-300 uppercase tracking-widest mt-2 block">Global Projects</span>
-                    </div>
-                    <div class="p-6 rounded-3xl vibrant-card border-l-4 border-l-neon-cyan">
-                        <span class="text-4xl sm:text-5xl font-black text-neon-cyan block">45+</span>
-                        <span class="text-xs font-black text-slate-600 dark:text-slate-300 uppercase tracking-widest mt-2 block">Countries Served</span>
-                    </div>
-                    <div class="p-6 rounded-3xl vibrant-card border-l-4 border-l-neon-emerald">
-                        <span class="text-4xl sm:text-5xl font-black text-neon-emerald block">100%</span>
-                        <span class="text-xs font-black text-slate-600 dark:text-slate-300 uppercase tracking-widest mt-2 block">HIPAA / GDPR Safe</span>
-                    </div>
-                    <div class="p-6 rounded-3xl vibrant-card border-l-4 border-l-neon-amber">
-                        <span class="text-4xl sm:text-5xl font-black text-neon-amber block">20</span>
-                        <span class="text-xs font-black text-slate-600 dark:text-slate-300 uppercase tracking-widest mt-2 block">Skincare & Health Guides</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- 4. EXECUTIVE LEADERSHIP SHOWCASE -->
-        <section id="leadership" class="py-20 bg-slate-900/10 dark:bg-slate-950/40 relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-3xl mx-auto mb-14">
-                    <span class="text-xs font-black uppercase tracking-widest text-neon-pink px-3 py-1 rounded-full bg-neon-pink/10 border border-neon-pink/30">Executive Leadership</span>
-                    <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mt-3">Agency Owners & Founders</h2>
-                    <p class="text-slate-600 dark:text-slate-300 mt-2 text-sm sm:text-base font-medium">Delivering web development and skincare/health digital media services worldwide.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- MAIN LANDING VIEW PAGE -->
+        <div id="page-main-view">
+            <!-- 3. HERO SECTION WITH VIBRANT STATS -->
+            <section class="py-16 sm:py-24 relative overflow-hidden">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                     
-                    <!-- Founder & CEO Card -->
-                    <div class="p-8 rounded-3xl vibrant-card border-2 border-neon-pink shadow-xl relative overflow-hidden">
-                        <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-neon-pink/20 rounded-full blur-2xl"></div>
-                        <div class="flex items-center justify-between mb-5">
-                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-neon-pink via-neon-fuchsia to-neon-purple text-white flex items-center justify-center font-black text-2xl shadow-lg">
-                                PK
-                            </div>
-                            <span class="px-3.5 py-1 rounded-full bg-gradient-to-r from-neon-pink to-neon-fuchsia text-white text-[10px] font-black uppercase tracking-wider shadow-sm">
-                                CEO & Original Owner
-                            </span>
-                        </div>
-                        <h3 class="text-2xl font-black text-slate-900 dark:text-white">Pakeeza Khalid</h3>
-                        <p class="text-xs font-black text-neon-pink uppercase tracking-widest mt-1">Chief Executive Officer (CEO)</p>
-                        <p class="text-xs text-slate-700 dark:text-slate-300 mt-4 leading-relaxed font-medium">
-                            Original Founder and Chief Executive leading global health and skincare web strategy, compliance standards, and international aesthetic clinic client acquisition across USA, UK, UAE, Pakistan, Europe, and Australia.
-                        </p>
+                    <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-black bg-gradient-to-r from-neon-emerald/20 via-teal-600/20 to-neon-cyan/20 text-slate-900 dark:text-white border-2 border-emerald-500/40 mb-8 shadow-md">
+                        <i class="fa-solid fa-bolt text-amber-400 text-sm"></i>
+                        <span>Original Owner & CEO: Pakeeza Khalid • Health & Skincare Web Agency</span>
                     </div>
 
-                    <!-- Co-Owner 1: Wajeeha Munir -->
-                    <div class="p-8 rounded-3xl vibrant-card border-2 border-neon-cyan shadow-xl relative overflow-hidden">
-                        <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-neon-cyan/20 rounded-full blur-2xl"></div>
-                        <div class="flex items-center justify-between mb-5">
-                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-neon-cyan to-blue-600 text-white flex items-center justify-center font-black text-2xl shadow-lg">
-                                WM
-                            </div>
-                            <span class="px-3.5 py-1 rounded-full bg-neon-cyan text-slate-950 text-[10px] font-black uppercase tracking-wider shadow-sm">
-                                Co-Owner & CTO
-                            </span>
-                        </div>
-                        <h3 class="text-2xl font-black text-slate-900 dark:text-white">Wajeeha Munir</h3>
-                        <p class="text-xs font-black text-neon-cyan uppercase tracking-widest mt-1">Co-Owner & Technical Director</p>
-                        <p class="text-xs text-slate-700 dark:text-slate-300 mt-4 leading-relaxed font-medium">
-                            Co-founding partner directing web engineering infrastructure, skincare e-commerce checkout architectures, database scalability, and automated aesthetic clinic scheduling integrations.
-                        </p>
-                    </div>
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 dark:text-white leading-tight max-w-5xl mx-auto tracking-tight">
+                        Engineering Enterprise <br class="hidden sm:inline" />
+                        <span class="shimmer-gradient-text">Health & Skincare Web Solutions</span> Worldwide
+                    </h1>
 
-                    <!-- Co-Owner 2: Razia Jabeen -->
-                    <div class="p-8 rounded-3xl vibrant-card border-2 border-neon-emerald shadow-xl relative overflow-hidden">
-                        <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-neon-emerald/20 rounded-full blur-2xl"></div>
-                        <div class="flex items-center justify-between mb-5">
-                            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-neon-emerald to-teal-600 text-white flex items-center justify-center font-black text-2xl shadow-lg">
-                                RJ
-                            </div>
-                            <span class="px-3.5 py-1 rounded-full bg-neon-emerald text-slate-950 text-[10px] font-black uppercase tracking-wider shadow-sm">
-                                Co-Owner & COO
-                            </span>
+                    <p class="mt-6 text-base sm:text-xl text-slate-700 dark:text-slate-300 max-w-3xl mx-auto font-medium leading-relaxed">
+                        Directed by Founder & CEO <strong class="text-slate-900 dark:text-white font-black underline decoration-neon-emerald decoration-2">Pakeeza Khalid</strong> along with Co-Owners <strong class="text-slate-900 dark:text-white font-black">Wajeeha Munir</strong> & <strong class="text-slate-900 dark:text-white font-black">Razia Jabeen</strong>. We engineer high-converting glow skincare e-commerce sites, aesthetic dermatology portals, and clinical telemedicine platforms across USA, UK, UAE, Pakistan, Europe, and Asia.
+                    </p>
+
+                    <!-- High-Energy Stat Cards -->
+                    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl mx-auto">
+                        <div class="p-6 rounded-3xl vibrant-card border-l-4 border-l-neon-emerald">
+                            <span class="text-4xl sm:text-5xl font-black text-neon-emerald block">150+</span>
+                            <span class="text-xs font-black text-slate-600 dark:text-slate-300 uppercase tracking-widest mt-2 block">Global Projects</span>
                         </div>
-                        <h3 class="text-2xl font-black text-slate-900 dark:text-white">Razia Jabeen</h3>
-                        <p class="text-xs font-black text-neon-emerald uppercase tracking-widest mt-1">Co-Owner & Operations Director</p>
-                        <p class="text-xs text-slate-700 dark:text-slate-300 mt-4 leading-relaxed font-medium">
-                            Co-founding partner managing operational workflows, skincare brand client onboarding, beauty media distribution standards, and global project delivery schedules.
-                        </p>
+                        <div class="p-6 rounded-3xl vibrant-card border-l-4 border-l-neon-cyan">
+                            <span class="text-4xl sm:text-5xl font-black text-neon-cyan block">45+</span>
+                            <span class="text-xs font-black text-slate-600 dark:text-slate-300 uppercase tracking-widest mt-2 block">Countries Served</span>
+                        </div>
+                        <div class="p-6 rounded-3xl vibrant-card border-l-4 border-l-teal-500">
+                            <span class="text-4xl sm:text-5xl font-black text-teal-400 block">100%</span>
+                            <span class="text-xs font-black text-slate-600 dark:text-slate-300 uppercase tracking-widest mt-2 block">HIPAA / GDPR Safe</span>
+                        </div>
+                        <div class="p-6 rounded-3xl vibrant-card border-l-4 border-l-neon-amber">
+                            <span class="text-4xl sm:text-5xl font-black text-neon-amber block">20</span>
+                            <span class="text-xs font-black text-slate-600 dark:text-slate-300 uppercase tracking-widest mt-2 block">Skincare & Health Guides</span>
+                        </div>
                     </div>
 
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- 5. 20 UNIQUE HEALTH & SKINCARE ARTICLES SECTION -->
-        <section id="articles" class="py-20">
+            <!-- 4. EXECUTIVE LEADERSHIP SHOWCASE -->
+            <section id="leadership" class="py-20 bg-slate-900/10 dark:bg-slate-950/40 relative">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    
+                    <div class="text-center max-w-3xl mx-auto mb-14">
+                        <span class="text-xs font-black uppercase tracking-widest text-neon-emerald px-3 py-1 rounded-full bg-neon-emerald/10 border border-neon-emerald/30">Executive Leadership</span>
+                        <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mt-3">Agency Owners & Founders</h2>
+                        <p class="text-slate-600 dark:text-slate-300 mt-2 text-sm sm:text-base font-medium">Delivering web development and skincare/health digital media services worldwide.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        
+                        <!-- Founder & CEO Card -->
+                        <div class="p-8 rounded-3xl vibrant-card border-2 border-neon-emerald shadow-xl relative overflow-hidden">
+                            <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-neon-emerald/20 rounded-full blur-2xl"></div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-neon-emerald via-teal-600 to-neon-cyan text-white flex items-center justify-center font-black text-2xl shadow-lg">
+                                    PK
+                                </div>
+                                <span class="px-3.5 py-1 rounded-full bg-gradient-to-r from-neon-emerald to-teal-600 text-white text-[10px] font-black uppercase tracking-wider shadow-sm">
+                                    CEO & Original Owner
+                                </span>
+                            </div>
+                            <h3 class="text-2xl font-black text-slate-900 dark:text-white">Pakeeza Khalid</h3>
+                            <p class="text-xs font-black text-neon-emerald uppercase tracking-widest mt-1">Chief Executive Officer (CEO)</p>
+                            <p class="text-xs text-slate-700 dark:text-slate-300 mt-4 leading-relaxed font-medium">
+                                Original Founder and Chief Executive leading global health and skincare web strategy, compliance standards, and international aesthetic clinic client acquisition across USA, UK, UAE, Pakistan, Europe, and Australia.
+                            </p>
+                        </div>
+
+                        <!-- Co-Owner 1: Wajeeha Munir -->
+                        <div class="p-8 rounded-3xl vibrant-card border-2 border-neon-cyan shadow-xl relative overflow-hidden">
+                            <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-neon-cyan/20 rounded-full blur-2xl"></div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-neon-cyan to-blue-600 text-white flex items-center justify-center font-black text-2xl shadow-lg">
+                                    WM
+                                </div>
+                                <span class="px-3.5 py-1 rounded-full bg-neon-cyan text-slate-950 text-[10px] font-black uppercase tracking-wider shadow-sm">
+                                    Co-Owner & CTO
+                                </span>
+                            </div>
+                            <h3 class="text-2xl font-black text-slate-900 dark:text-white">Wajeeha Munir</h3>
+                            <p class="text-xs font-black text-neon-cyan uppercase tracking-widest mt-1">Co-Owner & Technical Director</p>
+                            <p class="text-xs text-slate-700 dark:text-slate-300 mt-4 leading-relaxed font-medium">
+                                Co-founding partner directing web engineering infrastructure, skincare e-commerce checkout architectures, database scalability, and automated aesthetic clinic scheduling integrations.
+                            </p>
+                        </div>
+
+                        <!-- Co-Owner 2: Razia Jabeen -->
+                        <div class="p-8 rounded-3xl vibrant-card border-2 border-purple-500 shadow-xl relative overflow-hidden">
+                            <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl"></div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-neon-purple to-indigo-600 text-white flex items-center justify-center font-black text-2xl shadow-lg">
+                                    RJ
+                                </div>
+                                <span class="px-3.5 py-1 rounded-full bg-purple-500 text-white text-[10px] font-black uppercase tracking-wider shadow-sm">
+                                    Co-Owner & COO
+                                </span>
+                            </div>
+                            <h3 class="text-2xl font-black text-slate-900 dark:text-white">Razia Jabeen</h3>
+                            <p class="text-xs font-black text-purple-400 uppercase tracking-widest mt-1">Co-Owner & Operations Director</p>
+                            <p class="text-xs text-slate-700 dark:text-slate-300 mt-4 leading-relaxed font-medium">
+                                Co-founding partner managing operational workflows, skincare brand client onboarding, beauty media distribution standards, and global project delivery schedules.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. 20 UNIQUE HEALTH & SKINCARE ARTICLES SECTION -->
+            <section id="articles" class="py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-5">
+                        <div>
+                            <span class="text-xs font-black uppercase tracking-widest text-neon-emerald px-3 py-1 rounded-full bg-neon-emerald/10 border border-neon-emerald/30">Clinical & Glow Media Hub</span>
+                            <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mt-2">20 Health & Skincare Guides</h2>
+                        </div>
+
+                        <!-- Real-Time Search Box -->
+                        <div class="w-full md:w-80">
+                            <div class="relative">
+                                <i class="fa-solid fa-magnifying-glass absolute left-4 top-4 text-neon-emerald"></i>
+                                <input type="text" id="search-input" placeholder="Search skincare & health guides..." class="w-full pl-11 pr-4 py-3.5 rounded-2xl border-2 border-emerald-500/30 bg-white/80 dark:bg-slate-900/80 text-slate-900 dark:text-white text-sm font-bold focus:ring-2 focus:ring-neon-emerald outline-none shadow-sm">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category Navigation Pills -->
+                    <div class="flex flex-wrap gap-2.5 mb-10">
+                        <button onclick="openCategoryPage('all')" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-black hyper-btn text-white shadow-md">All (20 Guides)</button>
+                        <button onclick="openCategoryPage('Skincare & Glow')" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-emerald-500/20 hover:border-neon-emerald">Skincare & Glow Page →</button>
+                        <button onclick="openCategoryPage('Dermatology')" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-emerald-500/20 hover:border-neon-emerald">Dermatology Page →</button>
+                        <button onclick="openCategoryPage('Telehealth')" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-emerald-500/20 hover:border-neon-emerald">Telehealth Page →</button>
+                        <button onclick="openCategoryPage('Clinical Wellness')" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-emerald-500/20 hover:border-neon-emerald">Clinical Wellness Page →</button>
+                    </div>
+
+                    <!-- Article Grid -->
+                    <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+
+                    <!-- Fallback No Results -->
+                    <div id="no-results" class="hidden text-center py-16">
+                        <p class="text-lg font-black text-slate-600 dark:text-slate-400">No health or skincare guides match your search term.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- SAVED ARTICLES SECTION -->
+            <section id="saved-articles" class="py-12 bg-slate-900/20 border-t border-b border-emerald-500/20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-black text-slate-900 dark:text-white flex items-center gap-2">
+                            <i class="fa-solid fa-bookmark text-neon-emerald"></i> Your Bookmarked Skincare & Health Guides
+                        </h3>
+                        <button onclick="clearBookmarks()" class="text-xs font-bold text-red-500 hover:underline">Clear Saved List</button>
+                    </div>
+                    <div id="bookmarks-container" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                        <p id="empty-bookmarks-msg" class="text-xs text-slate-500 italic col-span-3">No saved articles yet. Click the bookmark icon on any guide above to save it here.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SERVICES SECTION -->
+            <section id="services" class="py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-14">
+                        <span class="text-xs font-black uppercase tracking-widest text-neon-cyan px-3 py-1 rounded-full bg-neon-cyan/10 border border-neon-cyan/30">Agency Capabilities</span>
+                        <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mt-3">Health & Skincare Web Engineering Services</h2>
+                        <p class="text-slate-600 dark:text-slate-300 mt-2 text-sm sm:text-base font-medium">Custom digital solutions tailored specifically for skincare brands, glowing aesthetic clinics, and digital health enterprises globally.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="p-7 rounded-3xl vibrant-card border-t-4 border-t-neon-emerald">
+                            <div class="w-14 h-14 rounded-2xl bg-neon-emerald/10 text-neon-emerald flex items-center justify-center text-2xl font-black mb-5">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                            <h4 class="text-xl font-black text-slate-900 dark:text-white">Skincare E-Commerce</h4>
+                            <p class="text-xs text-slate-700 dark:text-slate-300 mt-2 leading-relaxed font-medium">High-converting glow product stores, ingredient filters, and secure checkout experiences.</p>
+                        </div>
+
+                        <div class="p-7 rounded-3xl vibrant-card border-t-4 border-t-neon-cyan">
+                            <div class="w-14 h-14 rounded-2xl bg-neon-cyan/10 text-neon-cyan flex items-center justify-center text-2xl font-black mb-5">
+                                <i class="fa-solid fa-video"></i>
+                            </div>
+                            <h4 class="text-xl font-black text-slate-900 dark:text-white">Teledermatology Portals</h4>
+                            <p class="text-xs text-slate-700 dark:text-slate-300 mt-2 leading-relaxed font-medium">Encrypted skin consultation videos, secure selfie uploads, and dermatologist booking systems.</p>
+                        </div>
+
+                        <div class="p-7 rounded-3xl vibrant-card border-t-4 border-t-purple-500">
+                            <div class="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-2xl font-black mb-5">
+                                <i class="fa-solid fa-newspaper"></i>
+                            </div>
+                            <h4 class="text-xl font-black text-slate-900 dark:text-white">Medical & Glow SEO Hubs</h4>
+                            <p class="text-xs text-slate-700 dark:text-slate-300 mt-2 leading-relaxed font-medium">High-ranking content architecture designed to dominate organic keyword search traffic.</p>
+                        </div>
+
+                        <div class="p-7 rounded-3xl vibrant-card border-t-4 border-t-neon-amber">
+                            <div class="w-14 h-14 rounded-2xl bg-neon-amber/10 text-neon-amber flex items-center justify-center text-2xl font-black mb-5">
+                                <i class="fa-solid fa-hospital-user"></i>
+                            </div>
+                            <h4 class="text-xl font-black text-slate-900 dark:text-white">Aesthetic Clinic Sites</h4>
+                            <p class="text-xs text-slate-700 dark:text-slate-300 mt-2 leading-relaxed font-medium">Luxury multi-branch clinic platforms showcasing laser treatments, facials, and consultations.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. INTERACTIVE COST ESTIMATOR -->
+            <section id="estimator" class="py-20 bg-slate-900/20 border-t border-b border-emerald-500/20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    
+                    <div class="text-center max-w-3xl mx-auto mb-12">
+                        <span class="text-xs font-black uppercase tracking-widest text-neon-amber px-3 py-1 rounded-full bg-neon-amber/10 border border-neon-amber/30">Budget Calculator</span>
+                        <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mt-3">Interactive Website Cost Estimator</h2>
+                        <p class="text-slate-600 dark:text-slate-300 mt-2 text-sm font-medium">Calculate your tailored health or skincare web project budget in real time.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 vibrant-card p-8 rounded-3xl shadow-2xl border-2 border-emerald-500/40">
+                        <div class="lg:col-span-2 space-y-6">
+                            <div>
+                                <label class="block text-xs font-black uppercase text-slate-500 dark:text-slate-400 mb-2.5">1. Base Website Type</label>
+                                <select id="est-type" onchange="calculateCost()" class="w-full p-4 rounded-2xl border-2 border-emerald-500/30 bg-white dark:bg-slate-900 text-slate-900 dark:text-white text-sm font-bold outline-none">
+                                    <option value="950">Skincare Brand & Glow E-Commerce Portal ($950)</option>
+                                    <option value="1400">Aesthetic Dermatology & Clinic Site ($1,400)</option>
+                                    <option value="2400">Teledermatology & Online Booking Hub ($2,400)</option>
+                                    <option value="3600">Enterprise Multi-Branch Health Portal ($3,600)</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-black uppercase text-slate-500 dark:text-slate-400 mb-2.5">2. Compliance & Add-On Modules</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                                    <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-emerald-500/20 bg-white/50 dark:bg-slate-900/50 cursor-pointer">
+                                        <input type="checkbox" value="500" class="est-addon accent-neon-emerald w-4 h-4" onchange="calculateCost()">
+                                        <span class="text-xs font-extrabold text-slate-900 dark:text-slate-200">HIPAA Data Vault (+$500)</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-emerald-500/20 bg-white/50 dark:bg-slate-900/50 cursor-pointer">
+                                        <input type="checkbox" value="350" class="est-addon accent-neon-emerald w-4 h-4" onchange="calculateCost()">
+                                        <span class="text-xs font-extrabold text-slate-900 dark:text-slate-200">Multilingual Support (+$350)</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-emerald-500/20 bg-white/50 dark:bg-slate-900/50 cursor-pointer">
+                                        <input type="checkbox" value="400" class="est-addon accent-neon-emerald w-4 h-4" onchange="calculateCost()">
+                                        <span class="text-xs font-extrabold text-slate-900 dark:text-slate-200">AI Skin Quiz Widget (+$400)</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-emerald-500/20 bg-white/50 dark:bg-slate-900/50 cursor-pointer">
+                                        <input type="checkbox" value="300" class="est-addon accent-neon-emerald w-4 h-4" onchange="calculateCost()">
+                                        <span class="text-xs font-extrabold text-slate-900 dark:text-slate-200">Skincare SEO Package (+$300)</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-black uppercase text-slate-500 dark:text-slate-400 mb-2.5">3. Deployment Priority</label>
+                                <div class="flex gap-6">
+                                    <label class="flex items-center gap-2 text-xs font-extrabold text-slate-900 dark:text-slate-200 cursor-pointer">
+                                        <input type="radio" name="speed" value="1" checked onchange="calculateCost()" class="accent-neon-emerald">
+                                        Standard Schedule
+                                    </label>
+                                    <label class="flex items-center gap-2 text-xs font-extrabold text-slate-900 dark:text-slate-200 cursor-pointer">
+                                        <input type="radio" name="speed" value="1.2" onchange="calculateCost()" class="accent-neon-emerald">
+                                        Express Priority (+20%)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col justify-between p-7 rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white shadow-2xl border border-emerald-500/40">
+                            <div>
+                                <span class="text-xs font-black text-neon-emerald uppercase tracking-widest">Instant Estimate</span>
+                                <div class="mt-5">
+                                    <span class="text-xs text-slate-400 block font-bold">Estimated Investment</span>
+                                    <span id="est-total" class="text-5xl font-black shimmer-gradient-text">$950</span>
+                                </div>
+                                <div class="mt-6 pt-5 border-t border-slate-800">
+                                    <span class="text-xs text-slate-400 block font-bold">Turnaround Schedule</span>
+                                    <span id="est-days" class="text-sm font-black text-neon-emerald">7 - 10 Business Days</span>
+                                </div>
+                            </div>
+                            <button onclick="openConsultationModalWithEstimate()" class="mt-8 w-full py-4 rounded-2xl text-white font-black text-xs uppercase tracking-wider hyper-btn shadow-lg">
+                                Book Project With CEO Pakeeza Khalid
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- DEDICATED SEPARATE CATEGORY PAGE VIEW -->
+        <div id="page-category-view" class="hidden py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-5">
+                <div class="mb-8 flex items-center justify-between border-b border-emerald-500/20 pb-6">
                     <div>
-                        <span class="text-xs font-black uppercase tracking-widest text-neon-fuchsia px-3 py-1 rounded-full bg-neon-fuchsia/10 border border-neon-fuchsia/30">Clinical & Glow Media Hub</span>
-                        <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mt-2">20 Health & Skincare Guides</h2>
-                    </div>
-
-                    <!-- Real-Time Search Box -->
-                    <div class="w-full md:w-80">
-                        <div class="relative">
-                            <i class="fa-solid fa-magnifying-glass absolute left-4 top-4 text-neon-fuchsia"></i>
-                            <input type="text" id="search-input" placeholder="Search skincare & health guides..." class="w-full pl-11 pr-4 py-3.5 rounded-2xl border-2 border-fuchsia-500/30 bg-white/80 dark:bg-slate-900/80 text-slate-900 dark:text-white text-sm font-bold focus:ring-2 focus:ring-neon-pink outline-none shadow-sm">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Vibrant Category Filter Pills -->
-                <div class="flex flex-wrap gap-2.5 mb-10">
-                    <button data-cat="all" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-black hyper-btn text-white shadow-md">All (20)</button>
-                    <button data-cat="Skincare & Glow" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-fuchsia-500/20 hover:border-neon-pink">Skincare & Glow</button>
-                    <button data-cat="Dermatology" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-fuchsia-500/20 hover:border-neon-pink">Dermatology</button>
-                    <button data-cat="Telehealth" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-fuchsia-500/20 hover:border-neon-pink">Telehealth</button>
-                    <button data-cat="Clinical Wellness" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-fuchsia-500/20 hover:border-neon-pink">Clinical Wellness</button>
-                </div>
-
-                <!-- Article Grid -->
-                <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-
-                <!-- Fallback No Results -->
-                <div id="no-results" class="hidden text-center py-16">
-                    <p class="text-lg font-black text-slate-600 dark:text-slate-400">No health or skincare guides match your search term.</p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- SAVED ARTICLES SECTION -->
-        <section id="saved-articles" class="py-12 bg-slate-900/20 border-t border-b border-fuchsia-500/20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between mb-6">
-                    <h3 class="text-xl font-black text-slate-900 dark:text-white flex items-center gap-2">
-                        <i class="fa-solid fa-bookmark text-neon-pink"></i> Your Bookmarked Skincare & Health Guides
-                    </h3>
-                    <button onclick="clearBookmarks()" class="text-xs font-bold text-red-500 hover:underline">Clear Saved List</button>
-                </div>
-                <div id="bookmarks-container" class="grid grid-cols-1 md:grid-cols-3 gap-5">
-                    <p id="empty-bookmarks-msg" class="text-xs text-slate-500 italic col-span-3">No saved articles yet. Click the bookmark icon on any guide above to save it here.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SERVICES SECTION -->
-        <section id="services" class="py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-14">
-                    <span class="text-xs font-black uppercase tracking-widest text-neon-cyan px-3 py-1 rounded-full bg-neon-cyan/10 border border-neon-cyan/30">Agency Capabilities</span>
-                    <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mt-3">Health & Skincare Web Engineering Services</h2>
-                    <p class="text-slate-600 dark:text-slate-300 mt-2 text-sm sm:text-base font-medium">Custom digital solutions tailored specifically for skincare brands, glowing aesthetic clinics, and digital health enterprises globally.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="p-7 rounded-3xl vibrant-card border-t-4 border-t-neon-pink">
-                        <div class="w-14 h-14 rounded-2xl bg-neon-pink/10 text-neon-pink flex items-center justify-center text-2xl font-black mb-5">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        </div>
-                        <h4 class="text-xl font-black text-slate-900 dark:text-white">Skincare E-Commerce</h4>
-                        <p class="text-xs text-slate-700 dark:text-slate-300 mt-2 leading-relaxed font-medium">High-converting glow product stores, ingredient filters, and secure checkout experiences.</p>
-                    </div>
-
-                    <div class="p-7 rounded-3xl vibrant-card border-t-4 border-t-neon-cyan">
-                        <div class="w-14 h-14 rounded-2xl bg-neon-cyan/10 text-neon-cyan flex items-center justify-center text-2xl font-black mb-5">
-                            <i class="fa-solid fa-video"></i>
-                        </div>
-                        <h4 class="text-xl font-black text-slate-900 dark:text-white">Teledermatology Portals</h4>
-                        <p class="text-xs text-slate-700 dark:text-slate-300 mt-2 leading-relaxed font-medium">Encrypted skin consultation videos, secure selfie uploads, and dermatologist booking systems.</p>
-                    </div>
-
-                    <div class="p-7 rounded-3xl vibrant-card border-t-4 border-t-neon-purple">
-                        <div class="w-14 h-14 rounded-2xl bg-neon-purple/10 text-neon-purple flex items-center justify-center text-2xl font-black mb-5">
-                            <i class="fa-solid fa-newspaper"></i>
-                        </div>
-                        <h4 class="text-xl font-black text-slate-900 dark:text-white">Medical & Glow SEO Hubs</h4>
-                        <p class="text-xs text-slate-700 dark:text-slate-300 mt-2 leading-relaxed font-medium">High-ranking content architecture designed to dominate organic keyword search traffic.</p>
-                    </div>
-
-                    <div class="p-7 rounded-3xl vibrant-card border-t-4 border-t-neon-amber">
-                        <div class="w-14 h-14 rounded-2xl bg-neon-amber/10 text-neon-amber flex items-center justify-center text-2xl font-black mb-5">
-                            <i class="fa-solid fa-hospital-user"></i>
-                        </div>
-                        <h4 class="text-xl font-black text-slate-900 dark:text-white">Aesthetic Clinic Sites</h4>
-                        <p class="text-xs text-slate-700 dark:text-slate-300 mt-2 leading-relaxed font-medium">Luxury multi-branch clinic platforms showcasing laser treatments, facials, and consultations.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. INTERACTIVE COST ESTIMATOR -->
-        <section id="estimator" class="py-20 bg-slate-900/20 border-t border-b border-fuchsia-500/20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-3xl mx-auto mb-12">
-                    <span class="text-xs font-black uppercase tracking-widest text-neon-amber px-3 py-1 rounded-full bg-neon-amber/10 border border-neon-amber/30">Budget Calculator</span>
-                    <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mt-3">Interactive Website Cost Estimator</h2>
-                    <p class="text-slate-600 dark:text-slate-300 mt-2 text-sm font-medium">Calculate your tailored health or skincare web project budget in real time.</p>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 vibrant-card p-8 rounded-3xl shadow-2xl border-2 border-fuchsia-500/40">
-                    <div class="lg:col-span-2 space-y-6">
-                        <div>
-                            <label class="block text-xs font-black uppercase text-slate-500 dark:text-slate-400 mb-2.5">1. Base Website Type</label>
-                            <select id="est-type" onchange="calculateCost()" class="w-full p-4 rounded-2xl border-2 border-fuchsia-500/30 bg-white dark:bg-slate-900 text-slate-900 dark:text-white text-sm font-bold outline-none">
-                                <option value="950">Skincare Brand & Glow E-Commerce Portal ($950)</option>
-                                <option value="1400">Aesthetic Dermatology & Clinic Site ($1,400)</option>
-                                <option value="2400">Teledermatology & Online Booking Hub ($2,400)</option>
-                                <option value="3600">Enterprise Multi-Branch Health Portal ($3,600)</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-black uppercase text-slate-500 dark:text-slate-400 mb-2.5">2. Compliance & Add-On Modules</label>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                                <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-fuchsia-500/20 bg-white/50 dark:bg-slate-900/50 cursor-pointer">
-                                    <input type="checkbox" value="500" class="est-addon accent-neon-pink w-4 h-4" onchange="calculateCost()">
-                                    <span class="text-xs font-extrabold text-slate-900 dark:text-slate-200">HIPAA Data Vault (+$500)</span>
-                                </label>
-                                <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-fuchsia-500/20 bg-white/50 dark:bg-slate-900/50 cursor-pointer">
-                                    <input type="checkbox" value="350" class="est-addon accent-neon-pink w-4 h-4" onchange="calculateCost()">
-                                    <span class="text-xs font-extrabold text-slate-900 dark:text-slate-200">Multilingual Support (+$350)</span>
-                                </label>
-                                <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-fuchsia-500/20 bg-white/50 dark:bg-slate-900/50 cursor-pointer">
-                                    <input type="checkbox" value="400" class="est-addon accent-neon-pink w-4 h-4" onchange="calculateCost()">
-                                    <span class="text-xs font-extrabold text-slate-900 dark:text-slate-200">AI Skin Quiz Widget (+$400)</span>
-                                </label>
-                                <label class="flex items-center gap-3 p-3.5 rounded-2xl border border-fuchsia-500/20 bg-white/50 dark:bg-slate-900/50 cursor-pointer">
-                                    <input type="checkbox" value="300" class="est-addon accent-neon-pink w-4 h-4" onchange="calculateCost()">
-                                    <span class="text-xs font-extrabold text-slate-900 dark:text-slate-200">Skincare SEO Package (+$300)</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-black uppercase text-slate-500 dark:text-slate-400 mb-2.5">3. Deployment Priority</label>
-                            <div class="flex gap-6">
-                                <label class="flex items-center gap-2 text-xs font-extrabold text-slate-900 dark:text-slate-200 cursor-pointer">
-                                    <input type="radio" name="speed" value="1" checked onchange="calculateCost()" class="accent-neon-pink">
-                                    Standard Schedule
-                                </label>
-                                <label class="flex items-center gap-2 text-xs font-extrabold text-slate-900 dark:text-slate-200 cursor-pointer">
-                                    <input type="radio" name="speed" value="1.2" onchange="calculateCost()" class="accent-neon-pink">
-                                    Express Priority (+20%)
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col justify-between p-7 rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white shadow-2xl border border-fuchsia-500/40">
-                        <div>
-                            <span class="text-xs font-black text-neon-pink uppercase tracking-widest">Instant Estimate</span>
-                            <div class="mt-5">
-                                <span class="text-xs text-slate-400 block font-bold">Estimated Investment</span>
-                                <span id="est-total" class="text-5xl font-black shimmer-gradient-text">$950</span>
-                            </div>
-                            <div class="mt-6 pt-5 border-t border-slate-800">
-                                <span class="text-xs text-slate-400 block font-bold">Turnaround Schedule</span>
-                                <span id="est-days" class="text-sm font-black text-neon-emerald">7 - 10 Business Days</span>
-                            </div>
-                        </div>
-                        <button onclick="openConsultationModalWithEstimate()" class="mt-8 w-full py-4 rounded-2xl text-white font-black text-xs uppercase tracking-wider hyper-btn shadow-lg">
-                            Book Project With CEO Pakeeza Khalid
+                        <button onclick="showMainPage('#articles')" class="text-xs font-black text-neon-emerald hover:underline flex items-center gap-2 mb-3">
+                            <i class="fa-solid fa-arrow-left"></i> Back to Main Agency Platform
                         </button>
+                        <h2 id="cat-page-title" class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight"></h2>
+                        <p id="cat-page-desc" class="text-sm text-slate-600 dark:text-slate-300 mt-2 font-medium"></p>
                     </div>
+                    <span id="cat-page-count" class="px-4 py-2 rounded-2xl bg-neon-emerald/10 text-neon-emerald border border-neon-emerald/30 font-black text-xs"></span>
                 </div>
 
+                <!-- Dedicated Category Grid -->
+                <div id="cat-page-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+
             </div>
-        </section>
+        </div>
 
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-slate-950 text-slate-400 py-12 text-xs border-t border-fuchsia-500/20 relative z-10">
+    <footer class="bg-slate-950 text-slate-400 py-12 text-xs border-t border-emerald-500/20 relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
             <p class="font-black text-slate-200 text-sm">
                 © 2026 Pakeeza Khalid (CEO & Original Owner) • Wajeeha Munir (Co-Owner) • Razia Jabeen (Co-Owner)
@@ -517,33 +533,68 @@
         </div>
     </footer>
 
-    <!-- ARTICLE READER MODAL -->
-    <div id="article-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md">
-        <div class="bg-white dark:bg-slate-950 rounded-3xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl border-2 border-fuchsia-500/40 overflow-hidden">
-            <div class="p-6 border-b border-fuchsia-500/20 flex justify-between items-center">
+    <!-- EXPANDED LARGE ARTICLE READER MODAL -->
+    <div id="article-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 bg-slate-950/90 backdrop-blur-xl">
+        <div class="bg-white dark:bg-slate-950 rounded-3xl max-w-4xl w-full min-h-[80vh] max-h-[90vh] flex flex-col shadow-2xl border-2 border-emerald-500/50 overflow-hidden relative">
+            
+            <!-- Modal Header -->
+            <div class="p-6 sm:p-8 border-b border-emerald-500/20 flex justify-between items-center bg-slate-50 dark:bg-slate-900/50">
                 <div>
-                    <span id="modal-cat" class="px-3 py-1 rounded-full bg-neon-pink/10 text-neon-pink font-black text-[10px] uppercase border border-neon-pink/30"></span>
-                    <span id="modal-time" class="text-xs font-bold text-slate-400 ml-3"></span>
+                    <span id="modal-cat" class="px-3.5 py-1.5 rounded-full bg-neon-emerald/10 text-neon-emerald font-black text-xs uppercase border border-neon-emerald/30"></span>
+                    <span id="modal-time" class="text-xs font-bold text-slate-500 dark:text-slate-400 ml-3"></span>
                 </div>
-                <button onclick="closeModal()" class="w-9 h-9 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-black hover:bg-slate-300 flex items-center justify-center">✕</button>
+                <button onclick="closeModal()" class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-black hover:bg-neon-emerald hover:text-white transition flex items-center justify-center text-lg">✕</button>
             </div>
-            <div class="p-6 sm:p-8 overflow-y-auto space-y-5 text-slate-800 dark:text-slate-200">
-                <h3 id="modal-title" class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white leading-tight"></h3>
-                <div class="p-5 rounded-2xl bg-fuchsia-50 dark:bg-slate-900 border border-fuchsia-500/20">
-                    <h5 class="text-xs font-black uppercase text-neon-pink mb-1">Abstract Summary</h5>
-                    <p id="modal-summary" class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-medium"></p>
+
+            <!-- Modal Content Body -->
+            <div class="p-6 sm:p-10 overflow-y-auto space-y-6 text-slate-800 dark:text-slate-200">
+                <h3 id="modal-title" class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white leading-tight tracking-tight"></h3>
+                
+                <div class="p-6 rounded-2xl bg-emerald-500/10 border border-emerald-500/30">
+                    <h5 class="text-xs font-black uppercase tracking-wider text-neon-emerald mb-2">Executive Summary</h5>
+                    <p id="modal-summary" class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-semibold"></p>
                 </div>
-                <div id="modal-body" class="text-sm space-y-3 leading-relaxed font-medium"></div>
+
+                <!-- Structured Detailed Content -->
+                <div class="space-y-6 text-sm sm:text-base leading-relaxed">
+                    <div class="p-6 rounded-2xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800">
+                        <h4 class="font-black text-slate-900 dark:text-white text-lg mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-triangle-exclamation text-amber-400"></i> Clinical Breakdown & Problem Analysis
+                        </h4>
+                        <p id="modal-problem" class="text-slate-700 dark:text-slate-300 font-medium leading-relaxed"></p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800">
+                        <h4 class="font-black text-slate-900 dark:text-white text-lg mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-vial-circle-check text-neon-emerald"></i> Targeted Solution & Active Ingredients
+                        </h4>
+                        <p id="modal-solution" class="text-slate-700 dark:text-slate-300 font-medium leading-relaxed"></p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-cyan-500/10 border-2 border-emerald-500/40">
+                        <h4 class="font-black text-slate-900 dark:text-white text-lg mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-laptop-code text-neon-cyan"></i> Custom Agency Web Implementation
+                        </h4>
+                        <p id="modal-web-service" class="text-slate-700 dark:text-slate-300 font-medium leading-relaxed"></p>
+                    </div>
+                </div>
             </div>
-            <div class="p-5 border-t border-fuchsia-500/20 text-right">
-                <button onclick="closeModal()" class="px-6 py-2.5 rounded-xl text-white font-black text-xs hyper-btn">Close Reader</button>
+
+            <!-- Modal Footer -->
+            <div class="p-6 border-t border-emerald-500/20 bg-slate-50 dark:bg-slate-900/50 flex flex-wrap items-center justify-between gap-4">
+                <span class="text-xs font-black text-neon-emerald"><i class="fa-solid fa-shield-heart mr-1"></i> CEO Pakeeza Khalid Agency Approved Guide</span>
+                <div class="flex items-center gap-3">
+                    <button onclick="openConsultationModal(); closeModal();" class="px-5 py-3 rounded-xl text-white font-black text-xs hyper-btn shadow-md">Book Custom Web Platform</button>
+                    <button onclick="closeModal()" class="px-5 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-black text-xs hover:bg-slate-300">Close Window</button>
+                </div>
             </div>
+
         </div>
     </div>
 
     <!-- CONSULTATION REQUEST MODAL -->
     <div id="consultation-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md">
-        <div class="bg-white dark:bg-slate-950 rounded-3xl max-w-md w-full p-7 shadow-2xl border-2 border-fuchsia-500/40">
+        <div class="bg-white dark:bg-slate-950 rounded-3xl max-w-md w-full p-7 shadow-2xl border-2 border-emerald-500/40">
             <div class="flex justify-between items-center mb-5">
                 <h4 class="text-xl font-black text-slate-900 dark:text-white">Request Web Project</h4>
                 <button onclick="closeConsultationModal()" class="text-slate-400 font-black text-lg">✕</button>
@@ -551,15 +602,15 @@
             <form id="consult-form" onsubmit="handleConsultSubmit(event)" class="space-y-4 text-xs font-bold">
                 <div>
                     <label class="block mb-1.5 text-slate-700 dark:text-slate-300">Your Name / Skincare Brand / Clinic</label>
-                    <input type="text" required class="w-full p-3.5 rounded-2xl border border-fuchsia-500/30 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white outline-none">
+                    <input type="text" required class="w-full p-3.5 rounded-2xl border border-emerald-500/30 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white outline-none">
                 </div>
                 <div>
                     <label class="block mb-1.5 text-slate-700 dark:text-slate-300">Email Address</label>
-                    <input type="email" required class="w-full p-3.5 rounded-2xl border border-fuchsia-500/30 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white outline-none">
+                    <input type="email" required class="w-full p-3.5 rounded-2xl border border-emerald-500/30 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white outline-none">
                 </div>
                 <div>
                     <label class="block mb-1.5 text-slate-700 dark:text-slate-300">Project Requirements</label>
-                    <textarea id="consult-reqs" rows="3" required class="w-full p-3.5 rounded-2xl border border-fuchsia-500/30 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white outline-none"></textarea>
+                    <textarea id="consult-reqs" rows="3" required class="w-full p-3.5 rounded-2xl border border-emerald-500/30 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white outline-none"></textarea>
                 </div>
                 <button type="submit" class="w-full py-4 rounded-2xl text-white font-black text-xs uppercase tracking-wider hyper-btn shadow-md">Submit Consultation Request</button>
             </form>
@@ -571,7 +622,7 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // 20 New SEO-Optimized Health & Skincare Articles with Full Details
+        // 20 SEO-Optimized Health & Skincare Articles with Detailed Problem Breakdowns
         const articles = [
             { 
                 id: 1, 
@@ -579,7 +630,9 @@
                 category: "Skincare & Glow", 
                 readTime: 5, 
                 summary: "Mastering lipid replenishment and ceramide ratios to unlock permanent facial glow and luminous skin radiance.", 
-                fullText: "A compromised stratum corneum leads to transepidermal water loss (TEWL), dullness, and sensitivity. Restoring natural skin glow requires topical ceramides, cholesterol, and free fatty acids in an optimal 3:1:1 ratio. High-traffic skincare brands utilize educational web content to drive product sales. Pakeeza Khalid's agency builds custom, high-converting e-commerce and media websites tailored specifically for skincare brands seeking global dominance." 
+                problem: "A compromised stratum corneum caused by over-exfoliation or harsh cleansers allows transepidermal water loss (TEWL). This leads to chronic inflammation, micro-flaking, redness, and dull facial skin lacking natural light reflectance.",
+                solution: "Restoring natural glow requires a golden 3:1:1 lipid ratio of physiological ceramides, cholesterol, and free fatty acids. Combining phytosphingosine with 5% niacinamide repairs inter-cellular cement and seals epidermal moisture permanently.",
+                webService: "High-traffic skincare brands utilize educational web content to drive product sales. Pakeeza Khalid's agency builds custom, high-converting e-commerce stores, ingredient filter systems, and glow routine quiz platforms tailored for skincare brands worldwide." 
             },
             { 
                 id: 2, 
@@ -587,7 +640,9 @@
                 category: "Telehealth", 
                 readTime: 6, 
                 summary: "How secure video consultation apps and encrypted patient data vaults empower global dermatology clinics.", 
-                fullText: "Teledermatology enables patients to submit high-resolution skin photos and undergo live video diagnosis. Implementing zero-trust security architecture, DICOM-compliant image storage, and HIPAA encryption is vital. CEO Pakeeza Khalid and Co-Owners Wajeeha Munir & Razia Jabeen engineer state-of-the-art telehealth portals for medical practices worldwide." 
+                problem: "In-person dermatology waiting times delay crucial acne, eczema, and mole diagnostic care. Unencrypted image sharing exposes clinics to massive privacy penalties under HIPAA and GDPR regulations.",
+                solution: "Deploying end-to-end encrypted video consultation channels with zero-trust server databases and DICOM-compliant image storage allows patients to securely upload close-up skin photos for instant specialist review.",
+                webService: "CEO Pakeeza Khalid and Co-Owners Wajeeha Munir & Razia Jabeen engineer state-of-the-art teledermatology portals featuring real-time appointment booking, encrypted patient intake forms, and automated prescription integration." 
             },
             { 
                 id: 3, 
@@ -595,7 +650,9 @@
                 category: "Skincare & Glow", 
                 readTime: 5, 
                 summary: "The biochemical science of multi-weight hyaluronic acid, snail mucin, and humectant layering for glass skin.", 
-                fullText: "The 'glass skin' trend focuses on intense, multi-depth hydration that reflects light evenly. Formulations incorporating sodium hyaluronate, glycerin, and panthenol plump the epidermis. Skincare web platforms designed by Pakeeza Khalid's agency feature interactive ingredient breakdowns and quiz widgets to guide customers toward their ideal glow routine." 
+                problem: "Superficial dryness prevents light from bouncing evenly off the skin surface, making even healthy skin appear tired and textured.",
+                solution: "Achieving glass skin relies on layering low, medium, and high molecular weight hyaluronic acids under viscous humectants like polyglutamic acid and 96% snail secretion filtrate to plump cell layers across multiple skin depths.",
+                webService: "Skincare web platforms designed by Pakeeza Khalid's agency feature interactive ingredient breakdowns, dynamic routine builder widgets, and subscription checkout funnels to convert beauty shoppers seamlessly." 
             },
             { 
                 id: 4, 
@@ -603,7 +660,9 @@
                 category: "Dermatology", 
                 readTime: 7, 
                 summary: "Advanced chemical formulations featuring tranexamic acid, kojic acid, and Vitamin C for flawless skin tone.", 
-                fullText: "Melasma and post-inflammatory hyperpigmentation stem from overactive tyrosinase enzymes producing excess melanin. Targeted active ingredients disrupt this pathway safely. Aesthetic dermatology clinics partner with Pakeeza Khalid's global agency to build authoritative web portals explaining these treatments to patients." 
+                problem: "UV exposure, hormonal shifts, and acne lesions over-stimulate melanocytes, triggering stubborn dark spots, melasma patches, and uneven skin discoloration.",
+                solution: "Targeting hyperpigmentation requires multi-pathway tyrosinase inhibition. Combining 3% tranexamic acid, 2% alpha arbutin, 5% azelaic acid, and stabilised Vitamin C prevents melanin synthesis while fading dark marks safely.",
+                webService: "Aesthetic dermatology clinics partner with Pakeeza Khalid's global agency to build authoritative web portals, patient education hubs, and pre-procedure online consultation engines." 
             },
             { 
                 id: 5, 
@@ -611,7 +670,9 @@
                 category: "Dermatology", 
                 readTime: 6, 
                 summary: "Clinical guidelines on retinoid adaptation, minimizing purging, and boosting collagen synthesis.", 
-                fullText: "Retinoids accelerate cellular turnover and stimulate dermal collagen production. Managing the adjustment phase ('retinoid dermatitis') requires expert patient guidance. Our web development agency creates educational blog hubs and automated patient portals for dermatology practices." 
+                problem: "Dermal collagen synthesis decreases by 1% annually after age 20, causing fine lines and loss of elasticity. Incorrect retinoid usage triggers severe dryness and peeling.",
+                solution: "Prescription tretinoin and retinaldehyde accelerate cellular turnover and upregulate type I collagen synthesis. The 'retinoid sandwich method' (moisturizer-retinoid-moisturizer) buffers irritation while building skin tolerance.",
+                webService: "Our web development agency creates educational blog hubs, treatment tracking apps, and automated patient booking portals for dermatology and medical aesthetic practices." 
             },
             { 
                 id: 6, 
@@ -619,7 +680,9 @@
                 category: "Clinical Wellness", 
                 readTime: 5, 
                 summary: "Exploring how intestinal flora balance, prebiotics, and probiotics reduce systemic inflammation and acne.", 
-                fullText: "The bidirectional communication network known as the gut-skin axis links intestinal dysbiosis to systemic inflammatory skin disorders like adult acne and eczema. Holistic health websites built by Pakeeza Khalid incorporate nutritional guides and supplement e-commerce systems." 
+                problem: "Intestinal permeability ('leaky gut') allows bacterial lipopolysaccharides (LPS) into systemic circulation, provoking systemic skin inflammation, rosacea, and adult cystic acne breakouts.",
+                solution: "Re-balancing gut flora with spore-forming probiotics (Lactobacillus and Bifidobacterium strains), prebiotic fiber, and anti-inflammatory zinc carnosine restores intestinal tight junctions and restores clear facial skin.",
+                webService: "Holistic health websites built by Pakeeza Khalid incorporate nutritional consultation calendars, supplement store integrations, and patient lifestyle management dashboards." 
             },
             { 
                 id: 7, 
@@ -627,14 +690,19 @@
                 category: "Skincare & Glow", 
                 readTime: 6, 
                 summary: "Integrating interactive selfie-AI diagnostics directly into skincare websites for personalized routines.", 
-                fullText: "Artificial intelligence facial scanning detects wrinkles, pore size, and pigmentation spots in seconds, instantly recommending tailored skincare serums. Pakeeza Khalid's development team integrates advanced AI diagnostic widgets into custom skincare web platforms." 
+                problem: "Online beauty consumers struggle to choose correct skincare products without professional skin analysis, leading to high product return rates and dissatisfied shoppers.",
+                solution: "Integrating machine-learning facial vision models allows visitors to take a quick selfie, receive instant skin type scoring (wrinkles, redness, dark spots), and view a personalized product cart.",
+                webService: "Pakeeza Khalid's development team integrates custom AI diagnostic algorithms and interactive skin analysis widgets directly into Shopify and custom web platforms." 
             },
             { 
                 id: 8, 
                 title: "Mineral Sunscreen Science: Zinc Oxide vs. Chemical Filters", 
                 category: "Skincare & Glow", 
-                readTime: 4, summary: "Non-nano zinc oxide protection against UVA/UVB rays and preventing premature photoaging.", 
-                fullText: "Daily broad-spectrum photoprotection is the single most effective anti-aging intervention. Educating consumers through high-ranking web content drives brand trust. We build high-speed publishing platforms optimized for aesthetic and skincare brands." 
+                readTime: 4, 
+                summary: "Non-nano zinc oxide protection against UVA/UVB rays and preventing premature photoaging.", 
+                problem: "Chemical sunscreen filters can irritate sensitive skin barrier conditions, while heavy mineral sunscreens leave an unsightly chalky white cast.",
+                solution: "Micronized non-nano zinc oxide formulations reflect broad-spectrum UVA1, UVA2, and UVB rays without dermal penetration, blended with tinted iron oxides to block HEV blue light.",
+                webService: "We build ultra-fast skincare e-commerce publishing platforms optimized for high conversion rates, speed, and global SEO dominance." 
             },
             { 
                 id: 9, 
@@ -642,7 +710,9 @@
                 category: "Dermatology", 
                 readTime: 5, 
                 summary: "Addressing adult mandibular breakouts, androgen spikes, and dairy sensitivity through clinical web intake.", 
-                fullText: "Hormonal acne flare-ups along the jawline often require a combination of topical actives and dietary modifications. Dermatology clinics rely on custom intake web forms engineered by our team to streamline patient onboarding." 
+                problem: "Elevated serum dihydrotestosterone (DHT) increases sebum production in jawline sebaceous glands, plugging pores with keratin debris and causing painful deep cysts.",
+                solution: "Topical anti-androgens like clascoterone alongside dietary glycemic index control and spearmint tea supplementation suppress androgen receptor binding and normalize sebum output.",
+                webService: "Dermatology clinics rely on custom online patient intake web forms and automated prescription management portals engineered by our agency." 
             },
             { 
                 id: 10, 
@@ -650,7 +720,9 @@
                 category: "Skincare & Glow", 
                 readTime: 5, 
                 summary: "Formulation chemistry, pH levels, and antioxidant synergism with Vitamin E and Ferulic Acid.", 
-                fullText: "Pure L-ascorbic acid neutralizes free radicals and brightens skin tone, but oxidizes rapidly when exposed to light and air. Skincare e-commerce brands trust Pakeeza Khalid's agency to build high-performance web stores showcasing their formulations." 
+                fullText: "Unstable L-ascorbic acid oxidizes into dehydroascorbic acid, turning serums yellow and causing pro-oxidant cellular damage instead of skin brightening.",
+                solution: "Formulating 15% pure L-ascorbic acid at a precise pH below 3.5 alongside 1% Vitamin E (alpha-tocopherol) and 0.5% ferulic acid stabilizes the serum eight-fold and maximizes collagen stimulation.",
+                webService: "Skincare e-commerce brands trust Pakeeza Khalid's agency to build high-speed, luxury online storefronts showcasing product formulation science." 
             },
             { 
                 id: 11, 
@@ -658,7 +730,9 @@
                 category: "Dermatology", 
                 readTime: 6, 
                 summary: "AHAs, BHAs, and TCA chemical peels for resurfacing texture and stimulating cellular renewal.", 
-                fullText: "Professional aesthetic treatments require meticulous pre-care and post-care instructions delivered digitally to clients. We design seamless patient education portals and booking apps for clinics globally." 
+                problem: "Accumulated dead skin cells (hyperkeratosis) dull the facial complexion and block active serum absorption.",
+                solution: "Salicylic acid (BHA) dissolves pore-clogging lipid sebum, glycolic acid (AHA) breaks desmosome cell bonds, and trichloroacetic acid (TCA) induces controlled dermal remodeling.",
+                webService: "We design aesthetic clinic websites with interactive procedure guides, digital consent forms, and post-treatment recovery tracking portals." 
             },
             { 
                 id: 12, 
@@ -666,67 +740,92 @@
                 category: "Clinical Wellness", 
                 readTime: 5, 
                 summary: "Soothing chronic inflammatory flare-ups with colloidal oatmeal, squalane, and prescription emollients.", 
-                fullText: "Managing chronic barrier disorders demands compassionate, accessible digital healthcare portals that connect patients with specialists seamlessly." 
+                problem: "Genetic defects in filaggrin protein synthesis disrupt the skin barrier, allowing environmental allergens to trigger immune-mediated eczema and psoriasis plaques.",
+                solution: "Applying 1% colloidal oatmeal, biomimetic squalane, and topical calcineurin inhibitors soothes itching, restores skin lipids, and suppresses IL-13 inflammatory cascades.",
+                webService: "Managing chronic skin conditions demands accessible, fast digital healthcare platforms connecting patients with specialist care." 
             },
             { 
                 id: 13, 
                 title: "Global Patient Intake & Automated Scheduling Software", 
                 category: "Telehealth", 
-                readTime: 5, summary: "Streamlining international doctor-patient appointments with real-time calendar syncing.", 
-                fullText: "Eliminating friction in patient booking increases clinic conversion rates by over 40%. Our agency builds custom automated scheduling workflows for healthcare providers worldwide." 
+                readTime: 5, 
+                summary: "Streamlining international doctor-patient appointments with real-time calendar syncing.", 
+                problem: "Clunky appointment scheduling systems lead to dropped patient bookings, missed clinic consultations, and lost revenue.",
+                solution: "Deploying automated SMS reminders, multi-time-zone calendar syncing, and friction-free digital intake questionnaires increases appointment compliance by over 45%.",
+                webService: "Our agency builds custom automated scheduling workflows and web applications for clinics, spa chains, and doctors worldwide." 
             },
             { 
                 id: 14, 
                 title: "Optimizing Page Speed for Health & Skincare Web Apps", 
-                category: "Technology", 
-                readTime: 5, summary: "Technical SEO strategies for ranking medical and beauty websites #1 on global search engines.", 
-                fullText: "Sub-second load times and mobile-first responsiveness are vital for e-commerce and medical portal success. Pakeeza Khalid's engineering team optimizes every line of code for peak search performance." 
+                category: "Telehealth", 
+                readTime: 5, 
+                summary: "Technical SEO strategies for ranking medical and beauty websites #1 on global search engines.", 
+                problem: "Slow web page loading speeds destroy organic Google rankings and cause over 50% of mobile store visitors to bounce before viewing products.",
+                solution: "Implementing lightweight Tailwind CSS, WebP image compression, script deferred execution, and edge CDN hosting delivers sub-second global page loading speeds.",
+                webService: "Pakeeza Khalid's technical team optimizes every line of web code to guarantee top Google Core Web Vitals performance." 
             },
             { 
                 id: 15, 
                 title: "Collagen Induction Therapy: Microneedling & Exosomes", 
                 category: "Dermatology", 
-                readTime: 6, summary: "Advanced regenerative aesthetics, micro-channels, and stem-cell derived exosome therapy.", 
-                fullText: "Microneedling combined with topical growth factors and exosomes accelerates dermal healing and scar remodeling. Aesthetic clinics use custom websites built by our agency to showcase before-and-after case studies." 
+                readTime: 6, 
+                summary: "Advanced regenerative aesthetics, micro-channels, and stem-cell derived exosome therapy.", 
+                problem: "Atrophic acne scars and deep facial furrows result from destroyed collagen matrix bands that topical creams cannot reach.",
+                solution: "Controlled automated microneedling creates thousands of microscopic dermal micro-channels, allowing cell-signaling exosomes to penetrate deeply and stimulate collagen type III formation.",
+                webService: "Aesthetic clinics utilize custom web applications built by our agency to showcase before-and-after image galleries and procedure booking pages." 
             },
             { 
                 id: 16, 
                 title: "Digital Health Security: Protecting Patient Data Worldwide", 
-                category: "Technology", 
-                readTime: 6, summary: "Ensuring GDPR, HIPAA, and international privacy standards on all custom health web applications.", 
-                fullText: "Data breaches destroy patient trust. We construct impregnable digital vaults and encrypted databases under the technical leadership of Co-Owner Wajeeha Munir." 
+                category: "Telehealth", 
+                readTime: 6, 
+                summary: "Ensuring GDPR, HIPAA, and international privacy standards on all custom health web applications.", 
+                problem: "Healthcare websites face constant cyber threat attacks attempting to steal sensitive patient personal data.",
+                solution: "Constructing SSL/TLS encrypted pipelines, database tokenization, strict role-based access control, and zero-trust security architecture guarantees complete compliance.",
+                webService: "We build secure, compliant digital vaults and health web applications under the technical oversight of Co-Owner Wajeeha Munir." 
             },
             { 
                 id: 17, 
                 title: "Antioxidant Synergies in Anti-Pollution Skincare", 
                 category: "Skincare & Glow", 
-                readTime: 4, summary: "Shielding skin against urban particulate matter (PM2.5) and oxidative stress.", 
-                fullText: "Urban air pollution generates free radicals that degrade collagen and cause dullness. Anti-pollution skincare is a multi-billion dollar market driven by targeted digital marketing campaigns." 
+                readTime: 4, 
+                summary: "Shielding skin against urban particulate matter (PM2.5) and oxidative stress.", 
+                problem: "Urban smog, ozone, and particulate matter generate reactive oxygen species (ROS) that degrade elastin fiber strands and cause dull skin tone.",
+                solution: "Layering resveratrol, EGCG green tea polyphenols, and niacinamide neutralizes free radicals and forms a physical shield against heavy-metal particle adherence.",
+                webService: "Skincare brands leverage high-ranking educational content hubs engineered by Pakeeza Khalid's agency to educate customers and scale sales." 
             },
             { 
                 id: 18, 
                 title: "Pediatric Telehealth Web Systems for Global Pediatrics", 
                 category: "Clinical Wellness", 
-                readTime: 5, summary: "Creating child-friendly, parental-portal booking engines with secure pediatric records.", 
-                fullText: "Parents require intuitive, fast access to pediatricians during urgent health queries. We build specialized family healthcare portals with instant telehealth connectivity." 
+                readTime: 5, 
+                summary: "Creating child-friendly, parental-portal booking engines with secure pediatric records.", 
+                problem: "Parents face significant anxiety when seeking fast medical guidance for childhood skin rashes or fevers after regular clinic hours.",
+                solution: "User-friendly parent web portals with instant video chat capabilities and direct prescription routing connect families with pediatric specialists in minutes.",
+                webService: "We design accessible family healthcare web platforms with instant video connectivity and secure medical history archives." 
             },
             { 
                 id: 19, 
                 title: "The Science of Liposomal Delivery in Advanced Serums", 
                 category: "Skincare & Glow", 
-                readTime: 5, summary: "Encapsulating active ingredients in phospholipid vesicles for deeper dermal penetration.", 
-                fullText: "Liposomal technology protects unstable active compounds until they reach target skin layers, maximizing efficacy. Skincare brands highlight these innovations through high-converting web content." 
+                readTime: 5, 
+                summary: "Encapsulating active ingredients in phospholipid vesicles for deeper dermal penetration.", 
+                problem: "Large active molecule ingredients sit on top of the skin surface without penetrating the hydrophobic stratum corneum layer.",
+                solution: "Encapsulating peptides, retinoids, and antioxidants inside nano-sized phospholipid bilayer vesicles allows active ingredients to pass through skin barriers before releasing.",
+                webService: "Skincare brands highlight these formulation breakthroughs through high-converting, custom e-commerce web applications built by our agency." 
             },
             { 
                 id: 20, 
                 title: "Scaling Your Health or Skincare Brand with Pakeeza Khalid Agency", 
                 category: "Telehealth", 
-                readTime: 6, summary: "Partnering with CEO Pakeeza Khalid and co-owners Wajeeha Munir & Razia Jabeen for elite digital growth.", 
-                fullText: "Ready to launch or scale your global health website or skincare brand? Partner with CEO Pakeeza Khalid and Co-Owners Wajeeha Munir & Razia Jabeen for world-class web development services tailored to your enterprise." 
+                readTime: 6, 
+                summary: "Partnering with CEO Pakeeza Khalid and co-owners Wajeeha Munir & Razia Jabeen for elite digital growth.", 
+                problem: "Generic agency websites lack deep healthcare compliance understanding, conversion optimization, and high-energy modern design.",
+                solution: "Partnering with an industry-specialized digital web development team guarantees custom design, global SEO performance, and compliant patient booking workflows.",
+                webService: "Contact CEO Pakeeza Khalid and Co-Owners Wajeeha Munir & Razia Jabeen today to launch or scale your global healthcare website or skincare brand." 
             }
         ];
 
-        let activeCategory = 'all';
         let searchQuery = '';
         let bookmarkedIds = JSON.parse(localStorage.getItem('pk_saved_ids') || '[]');
 
@@ -738,16 +837,77 @@
             setupEvents();
         });
 
+        // Dynamic Multi-Page Router
+        function openCategoryPage(category) {
+            if (category === 'all') {
+                showMainPage('#articles');
+                return;
+            }
+
+            document.getElementById('page-main-view').classList.add('hidden');
+            const catView = document.getElementById('page-category-view');
+            catView.classList.remove('hidden');
+
+            const categoryArticles = articles.filter(a => a.category === category);
+
+            document.getElementById('cat-page-title').innerText = `${category} Articles Hub`;
+            document.getElementById('cat-page-desc').innerText = `Dedicated collection of SEO guides and web solutions focused on ${category}.`;
+            document.getElementById('cat-page-count').innerText = `${categoryArticles.length} Dedicated Guides`;
+
+            const catGrid = document.getElementById('cat-page-grid');
+            catGrid.innerHTML = '';
+
+            categoryArticles.forEach(art => {
+                const isSaved = bookmarkedIds.includes(art.id);
+                const card = document.createElement('div');
+                card.className = "p-7 rounded-3xl vibrant-card flex flex-col justify-between shadow-md";
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-neon-emerald/10 text-neon-emerald border border-neon-emerald/30">
+                                ${art.category}
+                            </span>
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs font-bold text-slate-500 dark:text-slate-400"><i class="fa-regular fa-clock mr-1"></i>${art.readTime} min</span>
+                                <button onclick="toggleBookmark(${art.id})" class="text-slate-400 hover:text-neon-emerald p-1">
+                                    <i class="${isSaved ? 'fa-solid' : 'fa-regular'} fa-bookmark text-neon-emerald text-base"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-black text-slate-900 dark:text-white leading-snug">${art.title}</h3>
+                        <p class="mt-3 text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-medium line-clamp-3">${art.summary}</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-emerald-500/20 flex items-center justify-between">
+                        <span class="text-[11px] font-black text-neon-emerald"><i class="fa-solid fa-circle-check mr-1"></i> CEO Approved</span>
+                        <button onclick="openModal(${art.id})" class="text-xs font-black text-neon-emerald hover:underline">Read Full Article →</button>
+                    </div>
+                `;
+                catGrid.appendChild(card);
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showMainPage(targetHash = null) {
+            document.getElementById('page-category-view').classList.add('hidden');
+            document.getElementById('page-main-view').classList.remove('hidden');
+
+            if (targetHash) {
+                const elem = document.querySelector(targetHash);
+                if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
         function renderArticles() {
             const grid = document.getElementById('articles-grid');
             const noResults = document.getElementById('no-results');
             grid.innerHTML = '';
 
             const filtered = articles.filter(art => {
-                const catMatch = (activeCategory === 'all') || (art.category === activeCategory);
-                const searchMatch = art.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                                    art.summary.toLowerCase().includes(searchQuery.toLowerCase());
-                return catMatch && searchMatch;
+                return art.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                       art.summary.toLowerCase().includes(searchQuery.toLowerCase());
             });
 
             if (filtered.length === 0) {
@@ -764,22 +924,22 @@
                 card.innerHTML = `
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-neon-pink/10 text-neon-pink border border-neon-pink/30">
+                            <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-neon-emerald/10 text-neon-emerald border border-neon-emerald/30">
                                 ${art.category}
                             </span>
                             <div class="flex items-center gap-2">
                                 <span class="text-xs font-bold text-slate-500 dark:text-slate-400"><i class="fa-regular fa-clock mr-1"></i>${art.readTime} min</span>
-                                <button onclick="toggleBookmark(${art.id})" class="text-slate-400 hover:text-neon-pink p-1">
-                                    <i class="${isSaved ? 'fa-solid' : 'fa-regular'} fa-bookmark text-neon-pink text-base"></i>
+                                <button onclick="toggleBookmark(${art.id})" class="text-slate-400 hover:text-neon-emerald p-1">
+                                    <i class="${isSaved ? 'fa-solid' : 'fa-regular'} fa-bookmark text-neon-emerald text-base"></i>
                                 </button>
                             </div>
                         </div>
                         <h3 class="text-xl font-black text-slate-900 dark:text-white leading-snug">${art.title}</h3>
                         <p class="mt-3 text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-medium line-clamp-3">${art.summary}</p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-fuchsia-500/20 flex items-center justify-between">
+                    <div class="mt-6 pt-4 border-t border-emerald-500/20 flex items-center justify-between">
                         <span class="text-[11px] font-black text-neon-emerald"><i class="fa-solid fa-circle-check mr-1"></i> CEO Approved</span>
-                        <button onclick="openModal(${art.id})" class="text-xs font-black text-neon-pink hover:underline">Read Guide →</button>
+                        <button onclick="openModal(${art.id})" class="text-xs font-black text-neon-emerald hover:underline">Read Guide →</button>
                     </div>
                 `;
                 grid.appendChild(card);
@@ -818,11 +978,11 @@
                 item.className = "p-4 rounded-2xl vibrant-card flex justify-between items-center";
                 item.innerHTML = `
                     <div>
-                        <span class="text-[9px] font-black uppercase text-neon-pink block">${art.category}</span>
+                        <span class="text-[9px] font-black uppercase text-neon-emerald block">${art.category}</span>
                         <h5 class="text-xs font-black text-slate-900 dark:text-white truncate max-w-[200px]">${art.title}</h5>
                     </div>
                     <div class="flex items-center gap-3">
-                        <button onclick="openModal(${art.id})" class="text-xs font-black text-neon-pink hover:underline">Read</button>
+                        <button onclick="openModal(${art.id})" class="text-xs font-black text-neon-emerald hover:underline">Read</button>
                         <button onclick="toggleBookmark(${art.id})" class="text-xs text-red-500 font-bold">✕</button>
                     </div>
                 `;
@@ -837,6 +997,7 @@
             renderBookmarks();
         }
 
+        // Open Enlarged Detailed Reader Modal
         function openModal(id) {
             const art = articles.find(a => a.id === id);
             if (!art) return;
@@ -844,7 +1005,9 @@
             document.getElementById('modal-time').innerText = `${art.readTime} min read`;
             document.getElementById('modal-title').innerText = art.title;
             document.getElementById('modal-summary').innerText = art.summary;
-            document.getElementById('modal-body').innerText = art.fullText;
+            document.getElementById('modal-problem').innerText = art.problem;
+            document.getElementById('modal-solution').innerText = art.solution;
+            document.getElementById('modal-web-service').innerText = art.webService;
 
             document.getElementById('article-modal').classList.remove('hidden');
         }
@@ -892,17 +1055,6 @@
         }
 
         function setupEvents() {
-            document.querySelectorAll('.cat-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    document.querySelectorAll('.cat-btn').forEach(b => {
-                        b.className = "cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-fuchsia-500/20 hover:border-neon-pink";
-                    });
-                    e.target.className = "cat-btn px-5 py-2.5 rounded-xl text-xs font-black hyper-btn text-white shadow-md";
-                    activeCategory = e.target.getAttribute('data-cat');
-                    renderArticles();
-                });
-            });
-
             document.getElementById('search-input').addEventListener('input', (e) => {
                 searchQuery = e.target.value;
                 renderArticles();
