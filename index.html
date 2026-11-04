@@ -140,7 +140,7 @@
     <div class="glow-blob w-[600px] h-[600px] bg-neon-cyan top-1/3 -right-20 animate-mesh" style="animation-delay: -4s;"></div>
     <div class="glow-blob w-[550px] h-[550px] bg-neon-purple bottom-10 left-10 animate-mesh" style="animation-delay: -8s;"></div>
 
-    <!-- 2. STICKY VIBRANT HEADER -->
+    <!-- STICKY HEADER -->
     <header class="sticky top-0 z-40 w-full backdrop-blur-xl bg-white/80 dark:bg-slate-950/80 border-b border-emerald-500/20 transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -164,7 +164,7 @@
                 <!-- Desktop Navigation Links -->
                 <nav class="hidden lg:flex space-x-7 text-sm font-extrabold text-slate-800 dark:text-slate-100">
                     <a href="javascript:void(0)" onclick="showMainPage('#leadership')" class="hover:text-neon-emerald dark:hover:text-neon-emerald transition-colors">Leadership</a>
-                    <a href="javascript:void(0)" onclick="showMainPage('#articles')" class="hover:text-neon-emerald dark:hover:text-neon-emerald transition-colors">20 Health & Skincare Guides</a>
+                    <a href="javascript:void(0)" onclick="showMainPage('#articles')" class="hover:text-neon-emerald dark:hover:text-neon-emerald transition-colors">Featured Guides</a>
                     <a href="javascript:void(0)" onclick="showMainPage('#services')" class="hover:text-neon-emerald dark:hover:text-neon-emerald transition-colors">Web Services</a>
                     <a href="javascript:void(0)" onclick="showMainPage('#estimator')" class="hover:text-neon-emerald dark:hover:text-neon-emerald transition-colors">Cost Calculator</a>
                     <a href="javascript:void(0)" onclick="showMainPage('#saved-articles')" class="hover:text-neon-emerald dark:hover:text-neon-emerald transition-colors flex items-center gap-1.5">
@@ -196,7 +196,7 @@
         <!-- Mobile Nav Drawer -->
         <div id="mobile-menu" class="hidden lg:hidden border-b border-emerald-500/20 bg-white dark:bg-slate-950 px-5 pt-4 pb-6 space-y-3 text-sm font-extrabold">
             <a href="javascript:void(0)" onclick="showMainPage('#leadership')" class="mobile-nav-link block p-2.5 rounded-xl hover:bg-emerald-500/10">Executive Leadership</a>
-            <a href="javascript:void(0)" onclick="showMainPage('#articles')" class="mobile-nav-link block p-2.5 rounded-xl hover:bg-emerald-500/10">20 Health & Skincare Guides</a>
+            <a href="javascript:void(0)" onclick="showMainPage('#articles')" class="mobile-nav-link block p-2.5 rounded-xl hover:bg-emerald-500/10">Featured Guides</a>
             <a href="javascript:void(0)" onclick="showMainPage('#services')" class="mobile-nav-link block p-2.5 rounded-xl hover:bg-emerald-500/10">Web Services</a>
             <a href="javascript:void(0)" onclick="showMainPage('#estimator')" class="mobile-nav-link block p-2.5 rounded-xl hover:bg-emerald-500/10">Cost Calculator</a>
             <button onclick="openConsultationModal()" class="w-full mt-2 py-3 rounded-xl text-white font-black hyper-btn">Request Custom Website</button>
@@ -207,7 +207,7 @@
         
         <!-- MAIN LANDING VIEW PAGE -->
         <div id="page-main-view">
-            <!-- 3. HERO SECTION WITH VIBRANT STATS -->
+            <!-- HERO SECTION -->
             <section class="py-16 sm:py-24 relative overflow-hidden">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                     
@@ -248,7 +248,7 @@
                 </div>
             </section>
 
-            <!-- 4. EXECUTIVE LEADERSHIP SHOWCASE -->
+            <!-- EXECUTIVE LEADERSHIP SHOWCASE -->
             <section id="leadership" class="py-20 bg-slate-900/10 dark:bg-slate-950/40 relative">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     
@@ -318,36 +318,35 @@
                 </div>
             </section>
 
-            <!-- 5. 20 UNIQUE HEALTH & SKINCARE ARTICLES SECTION -->
+            <!-- 3 FEATURED ARTICLES & CATEGORY NAVIGATION -->
             <section id="articles" class="py-20">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     
                     <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-5">
                         <div>
                             <span class="text-xs font-black uppercase tracking-widest text-neon-emerald px-3 py-1 rounded-full bg-neon-emerald/10 border border-neon-emerald/30">Clinical & Glow Media Hub</span>
-                            <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mt-2">20 Health & Skincare Guides</h2>
+                            <h2 class="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white mt-2">Featured Skincare Guides</h2>
                         </div>
 
                         <!-- Real-Time Search Box -->
                         <div class="w-full md:w-80">
                             <div class="relative">
                                 <i class="fa-solid fa-magnifying-glass absolute left-4 top-4 text-neon-emerald"></i>
-                                <input type="text" id="search-input" placeholder="Search skincare & health guides..." class="w-full pl-11 pr-4 py-3.5 rounded-2xl border-2 border-emerald-500/30 bg-white/80 dark:bg-slate-900/80 text-slate-900 dark:text-white text-sm font-bold focus:ring-2 focus:ring-neon-emerald outline-none shadow-sm">
+                                <input type="text" id="search-input" placeholder="Search guides..." class="w-full pl-11 pr-4 py-3.5 rounded-2xl border-2 border-emerald-500/30 bg-white/80 dark:bg-slate-900/80 text-slate-900 dark:text-white text-sm font-bold focus:ring-2 focus:ring-neon-emerald outline-none shadow-sm">
                             </div>
                         </div>
                     </div>
 
                     <!-- Category Navigation Pills -->
                     <div class="flex flex-wrap gap-2.5 mb-10">
-                        <button onclick="openCategoryPage('all')" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-black hyper-btn text-white shadow-md">All (20 Guides)</button>
                         <button onclick="openCategoryPage('Skincare & Glow')" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-emerald-500/20 hover:border-neon-emerald">Skincare & Glow Page →</button>
                         <button onclick="openCategoryPage('Dermatology')" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-emerald-500/20 hover:border-neon-emerald">Dermatology Page →</button>
                         <button onclick="openCategoryPage('Telehealth')" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-emerald-500/20 hover:border-neon-emerald">Telehealth Page →</button>
                         <button onclick="openCategoryPage('Clinical Wellness')" class="cat-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-emerald-500/20 hover:border-neon-emerald">Clinical Wellness Page →</button>
                     </div>
 
-                    <!-- Article Grid -->
-                    <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                    <!-- Main Grid displaying ONLY 3 FEATURED ARTICLES (Timers Removed) -->
+                    <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
 
                     <!-- Fallback No Results -->
                     <div id="no-results" class="hidden text-center py-16">
@@ -417,7 +416,7 @@
                 </div>
             </section>
 
-            <!-- 6. INTERACTIVE COST ESTIMATOR -->
+            <!-- INTERACTIVE COST ESTIMATOR -->
             <section id="estimator" class="py-20 bg-slate-900/20 border-t border-b border-emerald-500/20">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     
@@ -513,7 +512,7 @@
                     <span id="cat-page-count" class="px-4 py-2 rounded-2xl bg-neon-emerald/10 text-neon-emerald border border-neon-emerald/30 font-black text-xs"></span>
                 </div>
 
-                <!-- Dedicated Category Grid -->
+                <!-- Dedicated Category Grid (Timers Removed) -->
                 <div id="cat-page-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
 
             </div>
@@ -541,7 +540,6 @@
             <div class="p-6 sm:p-8 border-b border-emerald-500/20 flex justify-between items-center bg-slate-50 dark:bg-slate-900/50">
                 <div>
                     <span id="modal-cat" class="px-3.5 py-1.5 rounded-full bg-neon-emerald/10 text-neon-emerald font-black text-xs uppercase border border-neon-emerald/30"></span>
-                    <span id="modal-time" class="text-xs font-bold text-slate-500 dark:text-slate-400 ml-3"></span>
                 </div>
                 <button onclick="closeModal()" class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-black hover:bg-neon-emerald hover:text-white transition flex items-center justify-center text-lg">✕</button>
             </div>
@@ -622,13 +620,12 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // 20 SEO-Optimized Health & Skincare Articles with Detailed Problem Breakdowns
+        // 20 SEO-Optimized Health & Skincare Articles
         const articles = [
             { 
                 id: 1, 
                 title: "Achieving Natural Skin Glow: Skin Barrier Repair & Ceramides", 
                 category: "Skincare & Glow", 
-                readTime: 5, 
                 summary: "Mastering lipid replenishment and ceramide ratios to unlock permanent facial glow and luminous skin radiance.", 
                 problem: "A compromised stratum corneum caused by over-exfoliation or harsh cleansers allows transepidermal water loss (TEWL). This leads to chronic inflammation, micro-flaking, redness, and dull facial skin lacking natural light reflectance.",
                 solution: "Restoring natural glow requires a golden 3:1:1 lipid ratio of physiological ceramides, cholesterol, and free fatty acids. Combining phytosphingosine with 5% niacinamide repairs inter-cellular cement and seals epidermal moisture permanently.",
@@ -638,7 +635,6 @@
                 id: 2, 
                 title: "Teledermatology Portal Architecture & HIPAA Compliance", 
                 category: "Telehealth", 
-                readTime: 6, 
                 summary: "How secure video consultation apps and encrypted patient data vaults empower global dermatology clinics.", 
                 problem: "In-person dermatology waiting times delay crucial acne, eczema, and mole diagnostic care. Unencrypted image sharing exposes clinics to massive privacy penalties under HIPAA and GDPR regulations.",
                 solution: "Deploying end-to-end encrypted video consultation channels with zero-trust server databases and DICOM-compliant image storage allows patients to securely upload close-up skin photos for instant specialist review.",
@@ -648,7 +644,6 @@
                 id: 3, 
                 title: "Glass Skin Routine: Layering Hydration & Humectants for Radiance", 
                 category: "Skincare & Glow", 
-                readTime: 5, 
                 summary: "The biochemical science of multi-weight hyaluronic acid, snail mucin, and humectant layering for glass skin.", 
                 problem: "Superficial dryness prevents light from bouncing evenly off the skin surface, making even healthy skin appear tired and textured.",
                 solution: "Achieving glass skin relies on layering low, medium, and high molecular weight hyaluronic acids under viscous humectants like polyglutamic acid and 96% snail secretion filtrate to plump cell layers across multiple skin depths.",
@@ -658,7 +653,6 @@
                 id: 4, 
                 title: "Hyperpigmentation Treatments: Tyrosinase Inhibitors Explained", 
                 category: "Dermatology", 
-                readTime: 7, 
                 summary: "Advanced chemical formulations featuring tranexamic acid, kojic acid, and Vitamin C for flawless skin tone.", 
                 problem: "UV exposure, hormonal shifts, and acne lesions over-stimulate melanocytes, triggering stubborn dark spots, melasma patches, and uneven skin discoloration.",
                 solution: "Targeting hyperpigmentation requires multi-pathway tyrosinase inhibition. Combining 3% tranexamic acid, 2% alpha arbutin, 5% azelaic acid, and stabilised Vitamin C prevents melanin synthesis while fading dark marks safely.",
@@ -668,99 +662,89 @@
                 id: 5, 
                 title: "Anti-Aging Retinoid Timelines: Tretinoin vs. Retinaldehyde", 
                 category: "Dermatology", 
-                readTime: 6, 
                 summary: "Clinical guidelines on retinoid adaptation, minimizing purging, and boosting collagen synthesis.", 
                 problem: "Dermal collagen synthesis decreases by 1% annually after age 20, causing fine lines and loss of elasticity. Incorrect retinoid usage triggers severe dryness and peeling.",
-                solution: "Prescription tretinoin and retinaldehyde accelerate cellular turnover and upregulate type I collagen synthesis. The 'retinoid sandwich method' (moisturizer-retinoid-moisturizer) buffers irritation while building skin tolerance.",
-                webService: "Our web development agency creates educational blog hubs, treatment tracking apps, and automated patient booking portals for dermatology and medical aesthetic practices." 
+                solution: "Prescription tretinoin and retinaldehyde accelerate cellular turnover and upregulate type I collagen synthesis. The 'retinoid sandwich method' buffers irritation while building skin tolerance.",
+                webService: "Our web development agency creates educational blog hubs, treatment tracking apps, and automated patient booking portals for dermatology practices." 
             },
             { 
                 id: 6, 
                 title: "Gut-Skin Axis: How Microbiome Health Dictates Facial Glow", 
                 category: "Clinical Wellness", 
-                readTime: 5, 
                 summary: "Exploring how intestinal flora balance, prebiotics, and probiotics reduce systemic inflammation and acne.", 
-                problem: "Intestinal permeability ('leaky gut') allows bacterial lipopolysaccharides (LPS) into systemic circulation, provoking systemic skin inflammation, rosacea, and adult cystic acne breakouts.",
-                solution: "Re-balancing gut flora with spore-forming probiotics (Lactobacillus and Bifidobacterium strains), prebiotic fiber, and anti-inflammatory zinc carnosine restores intestinal tight junctions and restores clear facial skin.",
+                problem: "Intestinal permeability allows bacterial lipopolysaccharides into systemic circulation, provoking systemic skin inflammation, rosacea, and adult cystic acne breakouts.",
+                solution: "Re-balancing gut flora with spore-forming probiotics and prebiotic fiber restores intestinal tight junctions and restores clear facial skin.",
                 webService: "Holistic health websites built by Pakeeza Khalid incorporate nutritional consultation calendars, supplement store integrations, and patient lifestyle management dashboards." 
             },
             { 
                 id: 7, 
                 title: "AI-Powered Skin Analysis Tools on Modern E-Commerce Sites", 
                 category: "Skincare & Glow", 
-                readTime: 6, 
                 summary: "Integrating interactive selfie-AI diagnostics directly into skincare websites for personalized routines.", 
-                problem: "Online beauty consumers struggle to choose correct skincare products without professional skin analysis, leading to high product return rates and dissatisfied shoppers.",
-                solution: "Integrating machine-learning facial vision models allows visitors to take a quick selfie, receive instant skin type scoring (wrinkles, redness, dark spots), and view a personalized product cart.",
+                problem: "Online beauty consumers struggle to choose correct skincare products without professional skin analysis, leading to high product return rates.",
+                solution: "Integrating machine-learning facial vision models allows visitors to take a quick selfie, receive instant skin type scoring, and view a personalized product cart.",
                 webService: "Pakeeza Khalid's development team integrates custom AI diagnostic algorithms and interactive skin analysis widgets directly into Shopify and custom web platforms." 
             },
             { 
                 id: 8, 
                 title: "Mineral Sunscreen Science: Zinc Oxide vs. Chemical Filters", 
                 category: "Skincare & Glow", 
-                readTime: 4, 
                 summary: "Non-nano zinc oxide protection against UVA/UVB rays and preventing premature photoaging.", 
                 problem: "Chemical sunscreen filters can irritate sensitive skin barrier conditions, while heavy mineral sunscreens leave an unsightly chalky white cast.",
-                solution: "Micronized non-nano zinc oxide formulations reflect broad-spectrum UVA1, UVA2, and UVB rays without dermal penetration, blended with tinted iron oxides to block HEV blue light.",
+                solution: "Micronized non-nano zinc oxide formulations reflect broad-spectrum UVA/UVB rays without dermal penetration, blended with tinted iron oxides.",
                 webService: "We build ultra-fast skincare e-commerce publishing platforms optimized for high conversion rates, speed, and global SEO dominance." 
             },
             { 
                 id: 9, 
                 title: "Hormonal Acne Management & Nutritional Triggers", 
                 category: "Dermatology", 
-                readTime: 5, 
                 summary: "Addressing adult mandibular breakouts, androgen spikes, and dairy sensitivity through clinical web intake.", 
                 problem: "Elevated serum dihydrotestosterone (DHT) increases sebum production in jawline sebaceous glands, plugging pores with keratin debris and causing painful deep cysts.",
-                solution: "Topical anti-androgens like clascoterone alongside dietary glycemic index control and spearmint tea supplementation suppress androgen receptor binding and normalize sebum output.",
+                solution: "Topical anti-androgens alongside dietary glycemic index control suppress androgen receptor binding and normalize sebum output.",
                 webService: "Dermatology clinics rely on custom online patient intake web forms and automated prescription management portals engineered by our agency." 
             },
             { 
                 id: 10, 
                 title: "Vitamin C Serum Stability & L-Ascorbic Acid Efficacy", 
                 category: "Skincare & Glow", 
-                readTime: 5, 
                 summary: "Formulation chemistry, pH levels, and antioxidant synergism with Vitamin E and Ferulic Acid.", 
-                fullText: "Unstable L-ascorbic acid oxidizes into dehydroascorbic acid, turning serums yellow and causing pro-oxidant cellular damage instead of skin brightening.",
-                solution: "Formulating 15% pure L-ascorbic acid at a precise pH below 3.5 alongside 1% Vitamin E (alpha-tocopherol) and 0.5% ferulic acid stabilizes the serum eight-fold and maximizes collagen stimulation.",
+                problem: "Unstable L-ascorbic acid oxidizes into dehydroascorbic acid, turning serums yellow and causing pro-oxidant cellular damage.",
+                solution: "Formulating 15% pure L-ascorbic acid at a precise pH below 3.5 alongside 1% Vitamin E and 0.5% ferulic acid stabilizes the serum eight-fold.",
                 webService: "Skincare e-commerce brands trust Pakeeza Khalid's agency to build high-speed, luxury online storefronts showcasing product formulation science." 
             },
             { 
                 id: 11, 
                 title: "Chemical Peels & Enzyme Exfoliation: Clinical Protocols", 
                 category: "Dermatology", 
-                readTime: 6, 
                 summary: "AHAs, BHAs, and TCA chemical peels for resurfacing texture and stimulating cellular renewal.", 
-                problem: "Accumulated dead skin cells (hyperkeratosis) dull the facial complexion and block active serum absorption.",
-                solution: "Salicylic acid (BHA) dissolves pore-clogging lipid sebum, glycolic acid (AHA) breaks desmosome cell bonds, and trichloroacetic acid (TCA) induces controlled dermal remodeling.",
+                problem: "Accumulated dead skin cells dull the facial complexion and block active serum absorption.",
+                solution: "Salicylic acid dissolves pore-clogging lipid sebum, glycolic acid breaks desmosome cell bonds, and trichloroacetic acid induces controlled dermal remodeling.",
                 webService: "We design aesthetic clinic websites with interactive procedure guides, digital consent forms, and post-treatment recovery tracking portals." 
             },
             { 
                 id: 12, 
                 title: "Eczema & Psoriasis Barrier Support Regimens", 
                 category: "Clinical Wellness", 
-                readTime: 5, 
                 summary: "Soothing chronic inflammatory flare-ups with colloidal oatmeal, squalane, and prescription emollients.", 
-                problem: "Genetic defects in filaggrin protein synthesis disrupt the skin barrier, allowing environmental allergens to trigger immune-mediated eczema and psoriasis plaques.",
-                solution: "Applying 1% colloidal oatmeal, biomimetic squalane, and topical calcineurin inhibitors soothes itching, restores skin lipids, and suppresses IL-13 inflammatory cascades.",
+                problem: "Genetic defects in filaggrin protein synthesis disrupt the skin barrier, allowing environmental allergens to trigger immune-mediated eczema.",
+                solution: "Applying 1% colloidal oatmeal, biomimetic squalane, and topical calcineurin inhibitors soothes itching and restores skin lipids.",
                 webService: "Managing chronic skin conditions demands accessible, fast digital healthcare platforms connecting patients with specialist care." 
             },
             { 
                 id: 13, 
                 title: "Global Patient Intake & Automated Scheduling Software", 
                 category: "Telehealth", 
-                readTime: 5, 
                 summary: "Streamlining international doctor-patient appointments with real-time calendar syncing.", 
                 problem: "Clunky appointment scheduling systems lead to dropped patient bookings, missed clinic consultations, and lost revenue.",
-                solution: "Deploying automated SMS reminders, multi-time-zone calendar syncing, and friction-free digital intake questionnaires increases appointment compliance by over 45%.",
+                solution: "Deploying automated SMS reminders, multi-time-zone calendar syncing, and friction-free digital intake questionnaires increases appointment compliance.",
                 webService: "Our agency builds custom automated scheduling workflows and web applications for clinics, spa chains, and doctors worldwide." 
             },
             { 
                 id: 14, 
                 title: "Optimizing Page Speed for Health & Skincare Web Apps", 
                 category: "Telehealth", 
-                readTime: 5, 
                 summary: "Technical SEO strategies for ranking medical and beauty websites #1 on global search engines.", 
-                problem: "Slow web page loading speeds destroy organic Google rankings and cause over 50% of mobile store visitors to bounce before viewing products.",
+                problem: "Slow web page loading speeds destroy organic Google rankings and cause over 50% of mobile store visitors to bounce.",
                 solution: "Implementing lightweight Tailwind CSS, WebP image compression, script deferred execution, and edge CDN hosting delivers sub-second global page loading speeds.",
                 webService: "Pakeeza Khalid's technical team optimizes every line of web code to guarantee top Google Core Web Vitals performance." 
             },
@@ -768,17 +752,15 @@
                 id: 15, 
                 title: "Collagen Induction Therapy: Microneedling & Exosomes", 
                 category: "Dermatology", 
-                readTime: 6, 
                 summary: "Advanced regenerative aesthetics, micro-channels, and stem-cell derived exosome therapy.", 
                 problem: "Atrophic acne scars and deep facial furrows result from destroyed collagen matrix bands that topical creams cannot reach.",
-                solution: "Controlled automated microneedling creates thousands of microscopic dermal micro-channels, allowing cell-signaling exosomes to penetrate deeply and stimulate collagen type III formation.",
+                solution: "Controlled automated microneedling creates thousands of microscopic dermal micro-channels, allowing cell-signaling exosomes to penetrate deeply.",
                 webService: "Aesthetic clinics utilize custom web applications built by our agency to showcase before-and-after image galleries and procedure booking pages." 
             },
             { 
                 id: 16, 
                 title: "Digital Health Security: Protecting Patient Data Worldwide", 
                 category: "Telehealth", 
-                readTime: 6, 
                 summary: "Ensuring GDPR, HIPAA, and international privacy standards on all custom health web applications.", 
                 problem: "Healthcare websites face constant cyber threat attacks attempting to steal sensitive patient personal data.",
                 solution: "Constructing SSL/TLS encrypted pipelines, database tokenization, strict role-based access control, and zero-trust security architecture guarantees complete compliance.",
@@ -788,17 +770,15 @@
                 id: 17, 
                 title: "Antioxidant Synergies in Anti-Pollution Skincare", 
                 category: "Skincare & Glow", 
-                readTime: 4, 
                 summary: "Shielding skin against urban particulate matter (PM2.5) and oxidative stress.", 
-                problem: "Urban smog, ozone, and particulate matter generate reactive oxygen species (ROS) that degrade elastin fiber strands and cause dull skin tone.",
-                solution: "Layering resveratrol, EGCG green tea polyphenols, and niacinamide neutralizes free radicals and forms a physical shield against heavy-metal particle adherence.",
+                problem: "Urban smog, ozone, and particulate matter generate reactive oxygen species that degrade elastin fiber strands and cause dull skin tone.",
+                solution: "Layering resveratrol, green tea polyphenols, and niacinamide neutralizes free radicals and forms a physical shield against heavy-metal particle adherence.",
                 webService: "Skincare brands leverage high-ranking educational content hubs engineered by Pakeeza Khalid's agency to educate customers and scale sales." 
             },
             { 
                 id: 18, 
                 title: "Pediatric Telehealth Web Systems for Global Pediatrics", 
                 category: "Clinical Wellness", 
-                readTime: 5, 
                 summary: "Creating child-friendly, parental-portal booking engines with secure pediatric records.", 
                 problem: "Parents face significant anxiety when seeking fast medical guidance for childhood skin rashes or fevers after regular clinic hours.",
                 solution: "User-friendly parent web portals with instant video chat capabilities and direct prescription routing connect families with pediatric specialists in minutes.",
@@ -808,17 +788,15 @@
                 id: 19, 
                 title: "The Science of Liposomal Delivery in Advanced Serums", 
                 category: "Skincare & Glow", 
-                readTime: 5, 
                 summary: "Encapsulating active ingredients in phospholipid vesicles for deeper dermal penetration.", 
                 problem: "Large active molecule ingredients sit on top of the skin surface without penetrating the hydrophobic stratum corneum layer.",
-                solution: "Encapsulating peptides, retinoids, and antioxidants inside nano-sized phospholipid bilayer vesicles allows active ingredients to pass through skin barriers before releasing.",
+                solution: "Encapsulating peptides, retinoids, and antioxidants inside nano-sized phospholipid bilayer vesicles allows active ingredients to pass through skin barriers.",
                 webService: "Skincare brands highlight these formulation breakthroughs through high-converting, custom e-commerce web applications built by our agency." 
             },
             { 
                 id: 20, 
                 title: "Scaling Your Health or Skincare Brand with Pakeeza Khalid Agency", 
                 category: "Telehealth", 
-                readTime: 6, 
                 summary: "Partnering with CEO Pakeeza Khalid and co-owners Wajeeha Munir & Razia Jabeen for elite digital growth.", 
                 problem: "Generic agency websites lack deep healthcare compliance understanding, conversion optimization, and high-energy modern design.",
                 solution: "Partnering with an industry-specialized digital web development team guarantees custom design, global SEO performance, and compliant patient booking workflows.",
@@ -837,13 +815,8 @@
             setupEvents();
         });
 
-        // Dynamic Multi-Page Router
+        // Dynamic Category Multi-Page Router
         function openCategoryPage(category) {
-            if (category === 'all') {
-                showMainPage('#articles');
-                return;
-            }
-
             document.getElementById('page-main-view').classList.add('hidden');
             const catView = document.getElementById('page-category-view');
             catView.classList.remove('hidden');
@@ -868,7 +841,6 @@
                                 ${art.category}
                             </span>
                             <div class="flex items-center gap-2">
-                                <span class="text-xs font-bold text-slate-500 dark:text-slate-400"><i class="fa-regular fa-clock mr-1"></i>${art.readTime} min</span>
                                 <button onclick="toggleBookmark(${art.id})" class="text-slate-400 hover:text-neon-emerald p-1">
                                     <i class="${isSaved ? 'fa-solid' : 'fa-regular'} fa-bookmark text-neon-emerald text-base"></i>
                                 </button>
@@ -900,12 +872,13 @@
             }
         }
 
+        // Render EXACTLY 3 Articles on the Main Landing Page (Timers Removed)
         function renderArticles() {
             const grid = document.getElementById('articles-grid');
             const noResults = document.getElementById('no-results');
             grid.innerHTML = '';
 
-            const filtered = articles.filter(art => {
+            let filtered = articles.filter(art => {
                 return art.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                        art.summary.toLowerCase().includes(searchQuery.toLowerCase());
             });
@@ -917,7 +890,10 @@
                 noResults.classList.add('hidden');
             }
 
-            filtered.forEach(art => {
+            // Limit to ONLY 3 articles on the main page grid
+            const mainPageDisplay = filtered.slice(0, 3);
+
+            mainPageDisplay.forEach(art => {
                 const isSaved = bookmarkedIds.includes(art.id);
                 const card = document.createElement('div');
                 card.className = "p-7 rounded-3xl vibrant-card flex flex-col justify-between shadow-md";
@@ -928,7 +904,6 @@
                                 ${art.category}
                             </span>
                             <div class="flex items-center gap-2">
-                                <span class="text-xs font-bold text-slate-500 dark:text-slate-400"><i class="fa-regular fa-clock mr-1"></i>${art.readTime} min</span>
                                 <button onclick="toggleBookmark(${art.id})" class="text-slate-400 hover:text-neon-emerald p-1">
                                     <i class="${isSaved ? 'fa-solid' : 'fa-regular'} fa-bookmark text-neon-emerald text-base"></i>
                                 </button>
@@ -997,12 +972,11 @@
             renderBookmarks();
         }
 
-        // Open Enlarged Detailed Reader Modal
+        // Open Large Reader Modal
         function openModal(id) {
             const art = articles.find(a => a.id === id);
             if (!art) return;
             document.getElementById('modal-cat').innerText = art.category;
-            document.getElementById('modal-time').innerText = `${art.readTime} min read`;
             document.getElementById('modal-title').innerText = art.title;
             document.getElementById('modal-summary').innerText = art.summary;
             document.getElementById('modal-problem').innerText = art.problem;
